@@ -58,7 +58,7 @@ export default function Skills() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{}}
       >
         Core Technologies
       </motion.h2>
@@ -71,7 +71,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.15, duration: 0.5 }}
-            viewport={{ once: true }}
+            viewport={{}}
           >
             <img src={skill.logo} alt={`${skill.name} logo`} className="skill-logo" />
             <h3>{skill.name}</h3>
@@ -84,6 +84,8 @@ export default function Skills() {
           </motion.div>
         ))}
       </div>
+
+
     </section>
   );
 }

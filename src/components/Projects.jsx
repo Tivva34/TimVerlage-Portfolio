@@ -13,6 +13,32 @@ const repoScreenshots = {
 
 };
 
+const repoDemos = {
+  "IMDO": "https://tivva34.github.io/IMDO/index.html",
+};
+
+const featuredProjects = [
+  {
+    id: "macservice",
+    name: "MAC Service",
+    description:
+      "MAC Service Website – A modern business website for a local service company. Built with React, Vite, and Framer Motion, featuring responsive design, SEO optimization, accessibility improvements, contact form integration, and custom domain deployment.",
+    html_url: "https://github.com/Hallonpaj1/MACService",
+    liveUrl: "https://mackoping.se",
+    languages: ["JavaScript", "HTML", "CSS"],
+    screenshot: `${import.meta.env.BASE_URL}projects/MacService.png`,
+  },
+  {
+    id: "iron-turtles",
+    name: "Iron Turtles",
+    description:
+      "Movie discovery and watchlist app built with React, Vite, and Swiper for browsing, searching, and saving films.",
+    html_url: "https://github.com/Tivva34/Iron-Turtles",
+    languages: ["JavaScript", "HTML", "CSS"],
+    screenshot: defaultImage,
+  },
+];
+
 const truncate = (str, n) => (str?.length > n ? str.slice(0, n - 1) + "..." : str);
 
 export default function Projects() {
@@ -70,7 +96,14 @@ export default function Projects() {
     HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     CSharp: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+    Unity: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
   };
+
+  const repoLanguageOverrides = {
+    FadingLightDemo: ["CSharp", "Unity"],
+  };
+
+  const portfolioProjects = [featuredProjects[0], ...repos, featuredProjects[1]];
 
   return (
     <section id="projects">
@@ -78,23 +111,23 @@ export default function Projects() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{}}
       >
         GitHub Repositories
       </motion.h2>
       <div className="projects-grid">
-        {repos.map((repo, index) => (
+        {portfolioProjects.map((repo, index) => (
           <motion.div
             key={repo.id}
             className="project-card"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            viewport={{ once: true }}
+            viewport={{}}
           >
             <div className="project-image-viewport">
               <img
-                src={repoScreenshots[repo.name] || defaultImage}
+                src={repo.screenshot || repoScreenshots[repo.name] || defaultImage}
                 alt={repo.name + " preview"}
                 className="project-image"
               />
@@ -102,8 +135,8 @@ export default function Projects() {
             <h3>{repo.name}</h3>
             <p>{truncate(repo.description || "No description provided.", 140)}</p>
             <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem", flexWrap: "wrap" }}>
-              {repoLanguages[repo.name]
-                ? repoLanguages[repo.name].map((lang) => {
+              {(repo.languages || repoLanguageOverrides[repo.name] || repoLanguages[repo.name])
+                ? (repo.languages || repoLanguageOverrides[repo.name] || repoLanguages[repo.name]).map((lang) => {
                     let key = lang;
                     if (lang === "C#") key = "CSharp";
                     if (lang === "C++") key = "CPlusPlus";
@@ -125,9 +158,6 @@ export default function Projects() {
                   })
                 : <span style={{ fontSize: "0.85rem", color: "#d6c6ef" }}>N/A</span>}
             </div>
-            <p>
-              ⭐ {repo.stargazers_count} | 🍴 {repo.forks_count}
-            </p>
             <a
               href={repo.html_url}
               target="_blank"
@@ -136,6 +166,17 @@ export default function Projects() {
             >
               View on GitHub
             </a>
+            {(repo.liveUrl || repoDemos[repo.name] || repo.homepage) && (
+              <a
+                href={repo.liveUrl || repoDemos[repo.name] || repo.homepage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline project-btn"
+                style={{ marginTop: 8 }}
+              >
+                Live Demo
+              </a>
+            )}
           </motion.div>
         ))}
       </div>

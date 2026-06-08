@@ -21,9 +21,11 @@ const tools = [
   { name: "Postman", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
   { name: "Insomnia", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/insomnia/insomnia-original.svg" },
   { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-  { name: "Webpack", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" },
   { name: "Chrome DevTools", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" },
   { name: "Unity", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" },
+  { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+  { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Wix", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/wix.svg" },
 ];
 
   return (
@@ -34,7 +36,7 @@ const tools = [
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{}}
       >
         <h2>About Me</h2>
         <p>
@@ -51,7 +53,7 @@ const tools = [
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{}}
           >
             I'm currently deepening my React skills — working with component
             architecture, API integration, and performance optimization.
@@ -61,7 +63,7 @@ const tools = [
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{}}
           >
             I'm learning backend integration with Node.js to expand full-stack capabilities.
           </motion.div>
@@ -77,7 +79,7 @@ const tools = [
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * index, duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{}}
           >
             <h3>{card.title}</h3>
             <p>{card.text}</p>
@@ -96,7 +98,7 @@ const tools = [
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * index, duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{}}
           >
               <img src={tool.logo} alt={tool.name} className="tool-logo" />
               <p>{tool.name}</p>

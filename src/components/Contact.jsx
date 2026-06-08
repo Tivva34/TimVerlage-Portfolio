@@ -8,12 +8,11 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+        viewport={{}}
       >
         I’m excited to contribute to meaningful projects and grow alongside
         experienced development teams. Let’s connect!
       </motion.p>
-
       <motion.a
         href="mailto:tivva91@gmail.com"
         className="contact-btn"
