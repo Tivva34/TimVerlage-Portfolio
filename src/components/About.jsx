@@ -5,12 +5,12 @@ export default function About() {
 
   const boxMotion = shouldReduceMotion
     ? { initial: false }
-    : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.35 }, viewport: { amount: 0.35 } };
+    : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.35 }, viewport: { amount: 0.35, once: true } };
 
   const subBoxMotion = (delay = 0) =>
     shouldReduceMotion
       ? { initial: false }
-      : { initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 }, transition: { delay, duration: 0.35 }, viewport: { amount: 0.35 } };
+      : { initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 }, transition: { delay, duration: 0.35 }, viewport: { amount: 0.35, once: true } };
 
   const bringCards = [
     { title: "Modern Tech Stack", text: "Proficient in React, JavaScript (ES6+), and modern tools. I stay current with best practices and emerging technologies.",},
@@ -31,7 +31,7 @@ const tools = [
   { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
   { name: "Postman", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
   { name: "Insomnia", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/insomnia/insomnia-original.svg" },
-  { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+  { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
   { name: "Chrome DevTools", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" },
   { name: "Unity", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" },
   { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },

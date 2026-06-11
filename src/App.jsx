@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
 import Projects from "./components/Projects.jsx";
@@ -6,6 +7,12 @@ import Skills from "./components/Skills.jsx";
 import Contact from "./components/Contact.jsx";
 
 function App() {
+  useEffect(() => {
+    console.info(
+      "Tim's Portfolio: Enjoy the page, don't forget to run Lighthouse or a similar check. ;)"
+    );
+  }, []);
+
   return (
     <>
       <a className="skip-link" href="#main-content">

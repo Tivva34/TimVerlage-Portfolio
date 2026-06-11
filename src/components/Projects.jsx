@@ -30,7 +30,7 @@ const featuredProjects = [
   },
   {
     id: "iron-turtles",
-    name: "Iron Turtles",
+    name: "The Turtlebase",
     description:
       "Movie discovery and watchlist app built with React, Vite, and Swiper for browsing, searching, and saving films.",
     html_url: "https://github.com/Tivva34/Iron-Turtles",
@@ -44,59 +44,68 @@ const truncate = (str, n) => (str?.length > n ? str.slice(0, n - 1) + "..." : st
 export default function Projects() {
   const [repos, setRepos] = useState([]);
   const [repoLanguages, setRepoLanguages] = useState({});
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const username = "Tivva34";
   const shouldReduceMotion = useReducedMotion();
 
   const headingMotion = shouldReduceMotion
     ? { initial: false }
-    : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.35 }, viewport: { amount: 0.35 } };
+    : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.35 }, viewport: { amount: 0.35, once: true } };
 
   const cardMotion = (delay = 0) =>
     shouldReduceMotion
       ? { initial: false }
-      : { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { delay, duration: 0.3 }, viewport: { amount: 0.25 } };
+      : { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { delay, duration: 0.3 }, viewport: { amount: 0.25, once: true } };
 
   useEffect(() => {
-    console.log("Fetching repos...");
- 
-    const token = import.meta.env.DEV ? import.meta.env.VITE_GITHUB_TOKEN : undefined; 
-    
-    const headers = token ? { Authorization: `token ${token}` } : {};
-    
-    fetch(`https://api.github.com/users/${username}/repos?sort=updated`, { headers })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("All repos:", data);
-        
-        if (!Array.isArray(data)) {
-          console.error("API returned non-array:", data);
-          return;
-        }
-        
-        const filtered = data.filter((repo) => !repo.fork);
-        console.log("Filtered (no forks):", filtered);
-        const selectedRepos = ["Bonz.ai", "IMDO", "Nasa-SpaceViewer", "ReadingSloth", "Shui", "FadingLightDemo"]; 
-        const finalRepos = filtered.filter((repo) =>
-          selectedRepos.includes(repo.name)
-        );
-        console.log("Final repos to display:", finalRepos);
-        setRepos(finalRepos);
+    // Defer GitHub API calls using requestIdleCallback to prevent blocking LCP
+    const fetchRepos = () => {
+      const token = import.meta.env.DEV ? import.meta.env.VITE_GITHUB_TOKEN : undefined; 
+      
+      const headers = token ? { Authorization: `token ${token}` } : {};
+      
+      fetch(`https://api.github.com/users/${username}/repos?sort=updated`, { headers })
+        .then((res) => res.json())
+        .then((data) => {
+          if (!Array.isArray(data)) {
+            console.warn("GitHub API returned non-array data");
+            return;
+          }
+          
+          const filtered = data.filter((repo) => !repo.fork);
+          const selectedRepos = ["Bonz.ai", "IMDO", "Nasa-SpaceViewer", "ReadingSloth", "Shui", "FadingLightDemo"]; 
+          const finalRepos = filtered.filter((repo) =>
+            selectedRepos.includes(repo.name)
+          );
+          
+          if (finalRepos.length > 0) {
+            setRepos(finalRepos);
+          }
 
-        finalRepos.forEach((repo) => {
-          fetch(repo.languages_url, { headers })
-            .then((res) => res.json())
-            .then((langs) => {
-              console.log(`Languages for ${repo.name}:`, langs);
-              if (langs && typeof langs === 'object' && !langs.message) {
-                setRepoLanguages((prev) => ({
-                  ...prev,
-                  [repo.name]: Object.keys(langs)
-                }));
-              }
-            });
+          finalRepos.forEach((repo) => {
+            fetch(repo.languages_url, { headers })
+              .then((res) => res.json())
+              .then((langs) => {
+                if (langs && typeof langs === 'object' && !langs.message) {
+                  setRepoLanguages((prev) => ({
+                    ...prev,
+                    [repo.name]: Object.keys(langs)
+                  }));
+                }
+              });
+          });
+        })
+        .catch((error) => {
+          console.warn('GitHub API fetch error:', error?.message);
         });
-      })
-      .catch((err) => console.error("Error fetching repos:", err));
+    };
+
+    // Use requestIdleCallback if available, otherwise setTimeout
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => fetchRepos(), { timeout: 2000 });
+    } else {
+      setTimeout(fetchRepos, 100);
+    }
   }, []);
   
   const languageLogos = {
@@ -113,7 +122,16 @@ export default function Projects() {
     FadingLightDemo: ["CSharp", "Unity"],
   };
 
-  const portfolioProjects = [featuredProjects[0], ...repos, featuredProjects[1]];
+  const portfolioProjects = repos.length > 0 
+    ? [featuredProjects[0], ...repos, featuredProjects[1]]
+    : [featuredProjects[0], featuredProjects[1]];
+
+  const toggleDescription = (projectId) => {
+    setExpandedDescriptions((prev) => ({
+      ...prev,
+      [projectId]: !prev[projectId],
+    }));
+  };
 
   return (
     <section id="projects">
@@ -137,7 +155,23 @@ export default function Projects() {
               />
             </div>
             <h3>{repo.name}</h3>
-            <p>{truncate(repo.description || "No description provided.", 140)}</p>
+            <p
+              className="project-description"
+              id={`project-description-${repo.id}`}
+            >
+              {expandedDescriptions[repo.id]
+                ? repo.description || "No description provided."
+                : truncate(repo.description || "No description provided.", 140)}
+            </p>
+            <button
+              type="button"
+              className="project-description-toggle"
+              onClick={() => toggleDescription(repo.id)}
+              aria-expanded={Boolean(expandedDescriptions[repo.id])}
+              aria-controls={`project-description-${repo.id}`}
+            >
+              {expandedDescriptions[repo.id] ? "Show less" : "Show more"}
+            </button>
             <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem", flexWrap: "wrap" }}>
               {(repo.languages || repoLanguageOverrides[repo.name] || repoLanguages[repo.name])
                 ? (repo.languages || repoLanguageOverrides[repo.name] || repoLanguages[repo.name]).map((lang) => {
