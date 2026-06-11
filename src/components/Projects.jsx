@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
   
 const defaultImage = `${import.meta.env.BASE_URL}projects/default-project.png`;
 
@@ -45,6 +45,16 @@ export default function Projects() {
   const [repos, setRepos] = useState([]);
   const [repoLanguages, setRepoLanguages] = useState({});
   const username = "Tivva34";
+  const shouldReduceMotion = useReducedMotion();
+
+  const headingMotion = shouldReduceMotion
+    ? { initial: false }
+    : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.35 }, viewport: { amount: 0.35 } };
+
+  const cardMotion = (delay = 0) =>
+    shouldReduceMotion
+      ? { initial: false }
+      : { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { delay, duration: 0.3 }, viewport: { amount: 0.25 } };
 
   useEffect(() => {
     console.log("Fetching repos...");
@@ -108,10 +118,7 @@ export default function Projects() {
   return (
     <section id="projects">
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{}}
+        {...headingMotion}
       >
         GitHub Repositories
       </motion.h2>
@@ -120,10 +127,7 @@ export default function Projects() {
           <motion.div
             key={repo.id}
             className="project-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            viewport={{}}
+            {...cardMotion(index * 0.05)}
           >
             <div className="project-image-viewport">
               <img

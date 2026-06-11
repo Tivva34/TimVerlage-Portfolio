@@ -8,8 +8,11 @@ import Contact from "./components/Contact.jsx";
 function App() {
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <Nav />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Projects />

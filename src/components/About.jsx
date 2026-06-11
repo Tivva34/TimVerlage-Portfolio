@@ -1,6 +1,17 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function About() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const boxMotion = shouldReduceMotion
+    ? { initial: false }
+    : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.35 }, viewport: { amount: 0.35 } };
+
+  const subBoxMotion = (delay = 0) =>
+    shouldReduceMotion
+      ? { initial: false }
+      : { initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 }, transition: { delay, duration: 0.35 }, viewport: { amount: 0.35 } };
+
   const bringCards = [
     { title: "Modern Tech Stack", text: "Proficient in React, JavaScript (ES6+), and modern tools. I stay current with best practices and emerging technologies.",},
     { title: "Problem-Solving Mindset", text: "I approach challenges methodically, breaking complex requirements into manageable solutions.",},
@@ -33,10 +44,7 @@ const tools = [
       {/* About Box */}
       <motion.div
         className="about-box"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{}}
+        {...boxMotion}
       >
         <h2>About Me</h2>
         <p>
@@ -50,20 +58,14 @@ const tools = [
         <div className="about-subgrid">
           <motion.div
             className="about-subbox"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{}}
+            {...subBoxMotion()}
           >
             I'm currently deepening my React skills — working with component
             architecture, API integration, and performance optimization.
           </motion.div>
           <motion.div
             className="about-subbox"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{}}
+            {...subBoxMotion(0.2)}
           >
             I'm learning backend integration with Node.js to expand full-stack capabilities.
           </motion.div>
@@ -76,10 +78,9 @@ const tools = [
           <motion.div
             className="bring-card"
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 * index, duration: 0.6 }}
-            viewport={{}}
+            {...(shouldReduceMotion
+              ? { initial: false }
+              : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { delay: 0.05 * index, duration: 0.35 }, viewport: { amount: 0.35 } })}
           >
             <h3>{card.title}</h3>
             <p>{card.text}</p>
@@ -95,10 +96,9 @@ const tools = [
             <motion.div
             className="tool-card"
             key={index}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 * index, duration: 0.6 }}
-            viewport={{}}
+              {...(shouldReduceMotion
+                ? { initial: false }
+                  : { initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 }, transition: { delay: 0.05 * index, duration: 0.35 }, viewport: { amount: 0.35 } })}
           >
               <img src={tool.logo} alt={tool.name} className="tool-logo" />
               <p>{tool.name}</p>

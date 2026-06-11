@@ -1,6 +1,20 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import "../styles/animation.css";
 export default function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const headingMotion = shouldReduceMotion
+    ? { initial: false }
+    : { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.45 } };
+
+  const textMotion = shouldReduceMotion
+    ? { initial: false }
+    : { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 0.1, duration: 0.45 } };
+
+  const ctaMotion = shouldReduceMotion
+    ? { initial: false }
+    : { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { delay: 0.18, duration: 0.45 } };
+
   return (
     <section id="home" className="hero">
       <div className="simple-stars" aria-hidden="true">
@@ -26,16 +40,12 @@ export default function Hero() {
   <div className="star" style={{top: '90%', left: '35%'}}></div>
       </div>
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        {...headingMotion}
       >
         Frontend Developer & Problem Solver
       </motion.h1>
       <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
+        {...textMotion}
       >
         Hi, I'm Tim — a passionate frontend developer specializing in React and
         modern web technologies. I transform ideas into engaging, responsive web
@@ -43,9 +53,7 @@ export default function Hero() {
       </motion.p>
       <motion.div
         className="hero-cta"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
+        {...ctaMotion}
       >
         <a href="#projects" className="btn-primary">View My Work</a>
         <a href="#contact" className="btn-outline">Contact Me</a>

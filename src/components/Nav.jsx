@@ -29,13 +29,14 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="Primary">
       <ul>
         {links.map((link) => (
           <li key={link.id}>
             <a
               href={`#${link.id}`}
               className={active === link.id ? "active" : ""}
+              aria-current={active === link.id ? "page" : undefined}
             >
               {link.label}
             </a>

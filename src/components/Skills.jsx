@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const skills = [
   {
@@ -39,6 +39,17 @@ const skills = [
 ];
 
 export default function Skills() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const headingMotion = shouldReduceMotion
+    ? { initial: false }
+    : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.35 }, viewport: { amount: 0.35 } };
+
+  const cardMotion = (delay = 0) =>
+    shouldReduceMotion
+      ? { initial: false }
+      : { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { delay, duration: 0.3 }, viewport: { amount: 0.3 } };
+
   const getLevelColor = (level) => {
     switch (level) {
       case "Advanced":
@@ -55,10 +66,7 @@ export default function Skills() {
   return (
     <section id="skills">
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{}}
+        {...headingMotion}
       >
         Core Technologies
       </motion.h2>
@@ -68,10 +76,7 @@ export default function Skills() {
           <motion.div
             key={index}
             className="skill-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15, duration: 0.5 }}
-            viewport={{}}
+            {...cardMotion(index * 0.05)}
           >
             <img src={skill.logo} alt={`${skill.name} logo`} className="skill-logo" />
             <h3>{skill.name}</h3>

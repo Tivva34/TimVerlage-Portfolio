@@ -84,3 +84,21 @@
     position: relative;
     z-index: 2;
 }
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.hero,
+	.star,
+	.star::before,
+	.star::after {
+		animation: none !important;
+		transition: none !important;
+	}
+
+	.simple-stars {
+		display: none;
+	}
+}
