@@ -35,7 +35,7 @@ const featuredProjects = [
       "Movie discovery and watchlist app built with React, Vite, and Swiper for browsing, searching, and saving films.",
     html_url: "https://github.com/Tivva34/Iron-Turtles",
     languages: ["JavaScript", "HTML", "CSS"],
-    screenshot: defaultImage,
+    screenshot: `${import.meta.env.BASE_URL}projects/iron-turtles.png`,
   },
 ];
 
