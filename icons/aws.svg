@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AWS">
-  <path d="M16 40.89c0 2.61 2.14 4.75 4.75 4.75h26.5c2.61 0 4.75-2.14 4.75-4.75V23.56c0-2.61-2.14-4.75-4.75-4.75h-26.5c-2.61 0-4.75 2.14-4.75 4.75v17.33z" fill="#231F47"/>
-  <g fill="#FF9900">
-    <rect x="20" y="28" width="2.4" height="9.6"/>
-    <rect x="27.2" y="28" width="2.4" height="9.6"/>
-    <rect x="34.4" y="28" width="2.4" height="9.6"/>
-    <rect x="41.6" y="28" width="2.4" height="9.6"/>
-  </g>
-</svg>
