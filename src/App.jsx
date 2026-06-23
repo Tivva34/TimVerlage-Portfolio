@@ -22,8 +22,8 @@ function App() {
       <main id="main-content">
         <Hero />
         <About />
-        <Projects />
         <Skills />
+        <Projects />
         <Contact />
       </main>
     </>

@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Single-page-portfolio/',  build: {
+  base: '/TimVerlage-Portfolio/',  build: {
     minify: 'terser',
     terserOptions: {
       compress: {
