@@ -1,0 +1,168 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100svh;
+  padding: 7rem 1.5rem 4rem;
+
+  text-align: center;
+
+  background:
+    radial-gradient(circle at top left, rgba(157, 92, 255, 0.28), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(8, 200, 234, 0.18), transparent 30%),
+    linear-gradient(135deg, #1a1124 0%, #24163a 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+
+  background:
+    radial-gradient(circle, rgba(157, 92, 255, 0.22), transparent 40%),
+    radial-gradient(circle, rgba(8, 200, 234, 0.12), transparent 35%);
+
+  filter: blur(70px);
+  animation: aurora 14s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  width: min(1440px, 100%);
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(157, 92, 255, 0.75),
+    #08c8ea,
+    rgba(157, 92, 255, 0.75),
+    transparent
+  );
+
+  box-shadow:
+    0 0 24px rgba(157, 92, 255, 0.55),
+    0 0 48px rgba(8, 200, 234, 0.3);
+
+  transform: translateX(-50%);
+}
+
+.hero > *:not(.simple-stars) {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1.25rem;
+  padding: 0.45rem 1rem;
+
+  border: 1px solid rgba(157, 92, 255, 0.35);
+  border-radius: 999px;
+
+  background: rgba(157, 92, 255, 0.08);
+  backdrop-filter: blur(10px);
+
+  color: #cda7ff;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  box-shadow:
+    inset 0 0 10px rgba(157, 92, 255, 0.08),
+    0 0 18px rgba(157, 92, 255, 0.12);
+}
+
+
+ .hero h1 {
+  margin-bottom: .5rem;
+  padding-bottom: 0.12em;
+
+  font-size: clamp(3.25rem, 8vw, 6rem);
+  line-height: 1.12;
+  font-weight: 800;
+
+  overflow: visible;
+}
+
+.hero-name {
+  display: inline-block;
+  padding-bottom: 0.12em;
+  overflow: visible;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #d6b8ff 35%,
+    #8be9ff 65%,
+    #ffffff 100%
+  );
+
+  background-size: 250%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation: gradientShift 8s linear infinite;
+}
+.hero-intro {
+  max-width: 620px;
+  margin: 0 auto;
+
+  color: #c4b0e0;
+
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@keyframes gradientShift {
+  to {
+    background-position: 250%;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh;
+    padding: 6rem 1.25rem 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 16vw, 4.5rem);
+  }
+
+  .hero-cta {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hero-cta a {
+    width: min(280px, 100%);
+    text-align: center;
+  }
+}

@@ -1,0 +1,94 @@
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 1rem;
+
+  background: rgba(18, 11, 31, 0.9);
+  color: #f5f3ff;
+
+  border: 1px solid rgba(157, 92, 255, 0.25);
+  border-radius: 0.7rem;
+
+  font: inherit;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #9f8abf;
+}
+
+.form-field input:hover,
+.form-field textarea:hover {
+  border-color: #9d5cff;
+  box-shadow: 0 0 16px rgba(157, 92, 255, 0.15);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #08c8ea;
+  box-shadow:
+    0 0 0 3px rgba(8, 200, 234, 0.15),
+    0 0 24px rgba(8, 200, 234, 0.15);
+}
+
+.form-field textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.form-error {
+  min-height: 1.25rem;
+  margin-top: 0.35rem;
+
+  background: transparent;
+  color: #ff8fb1;
+  font-size: 0.9rem;
+}
+
+.contact-submit {
+  justify-self: start;
+  border: 0;
+  cursor: pointer;
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.contact-success {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.contact-success h3 {
+  margin-bottom: 0.75rem;
+  color: #8be9ff;
+}
+
+.contact-success p {
+  color: #d6c6ef;
+}
