@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
+import "../styles/ContactForm.css";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xvznwgwk");
@@ -31,7 +32,7 @@ export default function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <motion.div
+      <motion.section
         className="contact-success"
         role="status"
         aria-live="polite"
@@ -40,7 +41,7 @@ export default function ContactForm() {
       >
         <h3>Message sent</h3>
         <p>Thanks for reaching out. I’ll get back to you as soon as possible.</p>
-      </motion.div>
+      </motion.section>
     );
   }
 
@@ -53,11 +54,14 @@ export default function ContactForm() {
       {...formMotionProps}
     >
       <p id="contact-form-help" className="sr-only">
-        All fields are required. Name and email are used to respond to your message.
+        All fields are required. Name and email are used to respond to your
+        message.
       </p>
 
-      <div className="form-field">
-        <label htmlFor="name" className="sr-only">Name</label>
+      <fieldset className="form-field">
+        <label htmlFor="name" className="sr-only">
+          Name
+        </label>
         <input
           id="name"
           type="text"
@@ -72,10 +76,12 @@ export default function ContactForm() {
         <span id="name-error" className="form-error" aria-live="polite">
           <ValidationError prefix="Name" field="name" errors={state.errors} />
         </span>
-      </div>
+      </fieldset>
 
-      <div className="form-field">
-        <label htmlFor="email" className="sr-only">Email</label>
+      <fieldset className="form-field">
+        <label htmlFor="email" className="sr-only">
+          Email
+        </label>
         <input
           id="email"
           type="email"
@@ -90,10 +96,12 @@ export default function ContactForm() {
         <span id="email-error" className="form-error" aria-live="polite">
           <ValidationError prefix="Email" field="email" errors={state.errors} />
         </span>
-      </div>
+      </fieldset>
 
-      <div className="form-field">
-        <label htmlFor="message" className="sr-only">Message</label>
+      <fieldset className="form-field">
+        <label htmlFor="message" className="sr-only">
+          Message
+        </label>
         <textarea
           id="message"
           name="message"
@@ -105,11 +113,20 @@ export default function ContactForm() {
           aria-describedby={messageError ? "message-error" : undefined}
         />
         <span id="message-error" className="form-error" aria-live="polite">
-          <ValidationError prefix="Message" field="message" errors={state.errors} />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
         </span>
-      </div>
+      </fieldset>
 
-      <button type="submit" className="btn-primary contact-submit" disabled={state.submitting} aria-busy={state.submitting}>
+      <button
+        type="submit"
+        className="btn-primary contact-submit"
+        disabled={state.submitting}
+        aria-busy={state.submitting}
+      >
         {state.submitting ? "Sending..." : "Send Message"}
       </button>
     </motion.form>
