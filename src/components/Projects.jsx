@@ -29,18 +29,20 @@ export default function Projects() {
           initial: { opacity: 0, y: 30 },
           whileInView: { opacity: 1, y: 0 },
           transition: { delay, duration: 0.3 },
-          viewport: { amount: 0.25, once: true },
+          viewport: { amount: 0.25, once: false },
         };
 
   const portfolioProjects =
   repos.length > 0
-    ? [
-        featuredProjects[0],
-        featuredProjects[1],
-        ...repos,
-        featuredProjects[2],
-      ]
+    ? [featuredProjects[0], featuredProjects[1], ...repos, featuredProjects[2]]
     : featuredProjects;
+
+  const toggleDescription = (projectId) => {
+    setExpandedDescriptions((prev) => ({
+      ...prev,
+      [projectId]: !prev[projectId],
+    }));
+  };
 
   const getProjectLanguages = (repo) =>
     repo.languages ||
