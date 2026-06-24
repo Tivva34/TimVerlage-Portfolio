@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  defaultImage,
-  featuredProjects,
-  repoDemos,
-  repoLanguageOverrides,
-  repoScreenshots,
-} from "../data/projects.js";
+import { defaultImage, featuredProjects, repoDemos, repoLanguageOverrides, repoScreenshots, } from "../data/projects.js";
 import { getLanguageKey, languageLogos } from "../data/languageLogos.js";
 import { useGithubRepos } from "../hooks/useGithubRepos.js";
 import "../styles/Projects.css";
@@ -39,16 +33,14 @@ export default function Projects() {
         };
 
   const portfolioProjects =
-    repos.length > 0
-      ? [featuredProjects[0], ...repos, featuredProjects[1]]
-      : [featuredProjects[0], featuredProjects[1]];
-
-  const toggleDescription = (projectId) => {
-    setExpandedDescriptions((prev) => ({
-      ...prev,
-      [projectId]: !prev[projectId],
-    }));
-  };
+  repos.length > 0
+    ? [
+        featuredProjects[0],
+        featuredProjects[1],
+        ...repos,
+        featuredProjects[2],
+      ]
+    : featuredProjects;
 
   const getProjectLanguages = (repo) =>
     repo.languages ||
