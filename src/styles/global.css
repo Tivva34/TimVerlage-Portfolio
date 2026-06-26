@@ -17,6 +17,7 @@
   --color-accent: #9d5cff;
   --color-accent-dark: #7c3aed;
   --color-accent-soft: #b984ff;
+  --color-accent-hover: #c58cff;
   --color-cyan: #08c8ea;
   --color-cyan-soft: #8be9ff;
   --color-hero-purple: #24163a;
@@ -26,8 +27,6 @@
   --color-error: #ff8fb1;
   --color-nav-link: #e0d4ff;
   
-  --border-accent: rgba(124, 58, 237, 0.25);
-
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
@@ -44,7 +43,6 @@
   --shadow-star: 0 0 16px 2px var(--color-star-glow);
   --shadow-star-hover: 0 0 32px 8px var(--color-white);
 
-
   --bg-input: rgba(18, 11, 31, 0.9);
   --bg-nav: rgba(45, 26, 68, 0.7);
   --bg-badge: rgba(157, 92, 255, 0.08);
@@ -54,7 +52,9 @@
   --border-card-strong: 1px solid rgba(124, 58, 237, 0.30);
   --border-card-light: 1px solid rgba(124, 58, 237, 0.15);
   --border-input: 1px solid rgba(157, 92, 255, 0.25);
-
+  --border-accent: rgba(124, 58, 237, 0.25);
+  
+  
   --section-width: 950px;
   --section-padding: 2rem 1.5rem;
 
@@ -64,6 +64,7 @@
   border-color 0.25s ease,
   box-shadow 0.25s ease,
   background-color 0.25s ease;
+  
   --transition-card:
     transform 0.3s ease,
     border-color 0.3s ease,
@@ -169,11 +170,11 @@ section {
 }
 
 .btn-outline:hover {
-  background: rgba(157, 92, 255, 0.12);
-  border-color: #c58cff;
-  color: #ffffff;
+  background: var(--shadow-card);
+  border-color: var(--color-accent-hover);
+  color: var(--color-white);
   transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(157, 92, 255, 0.35);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .skip-link {
