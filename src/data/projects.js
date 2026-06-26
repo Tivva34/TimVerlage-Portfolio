@@ -23,19 +23,48 @@ export const selectedRepos = [
 ];
 
 export const repoLanguageOverrides = {
-  FadingLightDemo: ["CSharp", "Unity"],
+  FadingLightDemo: ["CSharp"],
 };
+export const repoTechOverrides = {
+  IMDO: ["API"],
+  Shui: ["React", "AWS", "DynamoDB"],
+  ReadingSloth: ["React", "React Router"],
+  FadingLightDemo: ["Unity"],
+  
+  "Nasa-SpaceViewer": ["React", "NASA API", "Framer Motion"],
+  "Bonz.ai": [],
+};
+export const projectOrder = [
+  "Supermon",
+  "MAC Service",
+  "Shui",
+  "IMDO",
+  "Nasa-SpaceViewer",
+  "ReadingSloth",
+  "The Turtlebase",
+  "Bonz.ai",
+  "FadingLightDemo",
+];
+
+export const getSortedProjects = (projects) =>
+  [...projects].sort((a, b) => {
+    const indexA = projectOrder.indexOf(a.name);
+    const indexB = projectOrder.indexOf(b.name);
+
+    return indexA - indexB;
+  });
 
 export const featuredProjects = [
   {
-  id: "supermon",
-  name: "SuperMon",
-  description:
-    "A Pokémon-inspired platformer built in Unity and C# as part of a collaborative exam project. Inspired by our teacher's love of Pokémon, we made him the main character in a classic Super Mario-style adventure. Explore three handcrafted levels, collect coins and Poké Balls, catch Pokémon, battle unique enemies with different attack mechanics, uncover hidden easter eggs, and track your score. The game features custom gameplay systems, animations, artwork, music, and a level selection menu, all created from scratch by our team. My contributions included developing core gameplay mechanics, enemy behaviors, player interactions, UI systems, custom animations, visual effects, and helping shape the overall game experience, while the artwork was created by our artist.",
-  html_url: "https://github.com/Zypherkill/Exam",
-  liveUrl: "https://zypherkill.github.io/supermon/",
-  languages: ["CSharp","Unity", "HTML", "CSS"],
-  screenshot: `${import.meta.env.BASE_URL}projects/SuperMon.png`,
+    id: "supermon",
+    name: "SuperMon",
+    description:
+      "A Pokémon-inspired platformer built in Unity and C# as part of a collaborative exam project. Inspired by our teacher's love of Pokémon, we made him the main character in a classic Super Mario-style adventure. Explore three handcrafted levels, collect coins and Poké Balls, catch Pokémon, battle unique enemies with different attack mechanics, uncover hidden easter eggs, and track your score. The game features custom gameplay systems, animations, artwork, music, and a level selection menu, all created from scratch by our team. My contributions included developing core gameplay mechanics, enemy behaviors, player interactions, UI systems, custom animations, visual effects, and helping shape the overall game experience, while the artwork was created by our artist.",
+    html_url: "https://github.com/Zypherkill/Exam",
+    liveUrl: "https://zypherkill.github.io/supermon/",
+    languages: ["CSharp", "HTML", "CSS"],
+    tech: ["Unity"],
+    screenshot: `${import.meta.env.BASE_URL}projects/SuperMon.png`,
   },
   {
     id: "macservice",
@@ -45,6 +74,7 @@ export const featuredProjects = [
     html_url: "https://github.com/Hallonpaj1/MACService",
     liveUrl: "https://mackoping.se",
     languages: ["JavaScript", "HTML", "CSS"],
+    tech: ["React", "Vite", "Framer Motion"],
     screenshot: `${import.meta.env.BASE_URL}projects/MacService.png`,
   },
   {
@@ -54,6 +84,7 @@ export const featuredProjects = [
       "Movie discovery and watchlist app built with React, Vite, and Swiper for browsing, searching, and saving films.",
     html_url: "https://github.com/Tivva34/Iron-Turtles",
     languages: ["JavaScript", "HTML", "CSS"],
+    tech: ["React", "Vite", "Swiper"],
     screenshot: `${import.meta.env.BASE_URL}projects/iron-turtles.png`,
   },
 ];

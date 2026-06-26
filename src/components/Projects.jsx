@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { defaultImage, featuredProjects, repoDemos, repoLanguageOverrides, repoScreenshots, } from "../data/projects.js";
-import { getLanguageKey, languageLogos } from "../data/languageLogos.js";
+import { defaultImage, featuredProjects, getSortedProjects, repoDemos, repoLanguageOverrides, repoScreenshots, repoTechOverrides, } from "../data/projects.js";
+import { getTechKey, techLogos } from "../data/languageLogos.js";
 import { useGithubRepos } from "../hooks/useGithubRepos.js";
 import "../styles/Projects.css";
 
@@ -32,10 +32,10 @@ export default function Projects() {
           viewport: { amount: 0.25, once: false },
         };
 
-  const portfolioProjects =
-  repos.length > 0
-    ? [featuredProjects[0], featuredProjects[1], ...repos, featuredProjects[2]]
-    : featuredProjects;
+  const portfolioProjects = getSortedProjects([
+    ...featuredProjects,
+    ...repos,
+  ]);
 
   const toggleDescription = (projectId) => {
     setExpandedDescriptions((prev) => ({
@@ -44,11 +44,17 @@ export default function Projects() {
     }));
   };
 
-  const getProjectLanguages = (repo) =>
+  const getProjectTech = (repo) => {
+  const languages =
     repo.languages ||
     repoLanguageOverrides[repo.name] ||
-    repoLanguages[repo.name];
+    repoLanguages[repo.name] ||
+    [];
 
+  const tech = repo.tech || repoTechOverrides[repo.name] || [];
+
+  return [...languages, ...tech];
+};
   return (
     <section id="projects" aria-labelledby="projects-title">
       <motion.h2 id="projects-title" {...headingMotion}>
@@ -57,7 +63,7 @@ export default function Projects() {
 
       <section className="projects-grid" aria-label="Project list">
         {portfolioProjects.map((repo, index) => {
-          const projectLanguages = getProjectLanguages(repo);
+          const projectTech = getProjectTech(repo);
 
           return (
             <motion.article
@@ -106,21 +112,21 @@ export default function Projects() {
                   className="project-tech-list"
                   aria-label={`${repo.name} technologies`}
                 >
-                  {projectLanguages ? (
-                    projectLanguages.map((lang) => {
-                      const key = getLanguageKey(lang);
+                  {projectTech.length > 0 ? ( 
+                    projectTech.map((tech) => {
+                      const key = getTechKey(tech);
 
                       return (
-                        <li className="project-tech-item" key={lang}>
-                          {languageLogos[key] ? (
+                        <li className="project-tech-item" key={tech}>
+                          {techLogos[key] ? (
                             <img
-                              src={languageLogos[key]}
-                              alt={`${lang} logo`}
-                              title={lang}
+                              src={techLogos[key]}
+                              alt={`${tech} logo`}
+                              title={tech}
                               className="project-tech-logo"
                             />
                           ) : (
-                            <span>{lang}</span>
+                            <span>{tech}</span>
                           )}
                         </li>
                       );
