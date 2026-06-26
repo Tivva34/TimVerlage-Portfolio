@@ -18,10 +18,10 @@
 		position: absolute;
 		width: 3px;
 		height: 3px;
-		background: white;
+		background: var(--color-white);
 		border-radius: 50%;
 		opacity: 0.85;
-		box-shadow: 0 0 16px 2px #fff8;
+		box-shadow: var(--shadow-star);
 		animation: simple-twinkle 2.5s infinite ease-in-out, star-move 8s linear infinite;
 		transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
 		cursor: pointer;
@@ -54,8 +54,12 @@
 	border-radius: 2px;
 	opacity: 0.7;
 	transform: translate(-50%, -50%) scale(1);
-	background: linear-gradient(90deg, transparent, #fff 60%, transparent);
-	z-index: 1;
+	background: linear-gradient(
+	90deg, 
+	var(--color-transparent),
+    var(--color-white) 60%,
+    var(--color-transparent));
+	
 }
 .star::before {
 	width: 5px;
@@ -67,20 +71,33 @@
 	height: 5px;
 	animation: cross-twinkle 2.5s infinite ease-in-out reverse;
 }
-@keyframes cross-twinkle {
-	0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
-	50% { opacity: 0.2; transform: translate(-50%, -50%) scale(1.2); }
-}
 
 .star:hover {
 	transform: scale(1.5);
-	box-shadow: 0 0 32px 8px #fff;
+	box-shadow: var(--shadow-star-hover);
 	opacity: 1;
+}
+
+@keyframes cross-twinkle {
+	0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+	50% { opacity: 0.2; transform: translate(-50%, -50%) scale(1.2); }
 }
 @keyframes simple-twinkle {
 	0%, 100% { opacity: 0.85; }
 	50% { opacity: 0.4; }
 }
+
+@keyframes aurora {
+  from { transform: translate(-10%, -5%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(10%, 8%) rotate(25deg);
+  }
+}
+
+
+
 
 
 @media (prefers-reduced-motion: reduce) {

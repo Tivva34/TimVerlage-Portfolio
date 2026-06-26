@@ -9,11 +9,11 @@
 }
 
 .skill-group-title {
-  color: #b984ff;
+  color: var(--color-accent-soft);
   font-size: 1.6rem;
   margin-bottom: 1.25rem;
   text-align: left;
-  border-left: 4px solid #9d5cff;
+  border-left: 4px solid var(--color-accent);
   padding-left: 0.75rem;
 }
 
@@ -24,9 +24,9 @@
 }
 
 .skill-card {
-  background: #2b1a3d;
-  border: 1px solid rgba(124, 58, 237, 0.25);
-  border-radius: 0.75rem;
+  background: var(--color-surface);
+  border: var(--border-card);
+  border-radius: var(--radius-md);
 
   padding: 1.5rem;
   text-align: center;
@@ -36,16 +36,14 @@
   align-items: center;
   justify-content: center;
 
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-card);
 }
 
 .skill-card:hover {
   transform: translateY(-6px);
-  border-color: #9d5cff;
-  box-shadow: 0 8px 24px rgba(157, 92, 255, 0.35);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .skill-logo {
@@ -55,7 +53,7 @@
 }
 
 .skill-card h4 {
-  color: #fff;
+  color: var(--color-white);
   margin: 0.75rem 0;
   font-size: 1rem;
 }
@@ -64,7 +62,7 @@
   display: inline-block;
   padding: 0.3rem 0.75rem;
 
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 
   font-size: 0.85rem;
   font-weight: 600;

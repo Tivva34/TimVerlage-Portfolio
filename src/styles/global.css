@@ -1,3 +1,75 @@
+:root {
+  --font-main: "Inter", system-ui, sans-serif;
+
+  --color-bg: #231731;
+  --color-bg-dark: #1a1124;
+  --color-surface: #2b1a3d;
+  --color-surface-alt: #341f5a;
+  --color-transparent: transparent;
+  --color-white: #ffffff;
+  --color-star-glow: #fff8;
+
+  --color-text: #f5f3ff;
+  --color-text-muted: #d6c6ef;
+  --color-text-soft: #b8a9d9;
+  --color-text-accent: #c8b5f8;
+
+  --color-accent: #9d5cff;
+  --color-accent-dark: #7c3aed;
+  --color-accent-soft: #b984ff;
+  --color-cyan: #08c8ea;
+  --color-cyan-soft: #8be9ff;
+  --color-hero-purple: #24163a;
+  --color-hero-text: #c4b0e0;
+  --color-badge-text: #cda7ff;
+  --color-placeholder: #9f8abf;
+  --color-error: #ff8fb1;
+  --color-nav-link: #e0d4ff;
+  
+  --border-accent: rgba(124, 58, 237, 0.25);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 2px 8px rgba(124, 58, 237, 0.1);
+  --shadow-card-hover: 0 8px 24px rgba(157, 92, 255, 0.35);
+  --shadow-focus: 0 0 0 3px rgba(8, 200, 234, 0.15);
+  --shadow-nav: 0 0 20px rgba(124, 58, 237, 0.3);
+  --shadow-glow-purple: 0 0 20px rgba(157, 92, 255, 0.35);
+  --shadow-input-hover: 0 0 16px rgba(157, 92, 255, 0.15);
+  --shadow-input-focus: 0 0 24px rgba(8, 200, 234, 0.15);
+  
+  --shadow-star: 0 0 16px 2px var(--color-star-glow);
+  --shadow-star-hover: 0 0 32px 8px var(--color-white);
+
+
+  --bg-input: rgba(18, 11, 31, 0.9);
+  --bg-nav: rgba(45, 26, 68, 0.7);
+  --bg-badge: rgba(157, 92, 255, 0.08);
+  --bg-transparent: transparent;
+
+  --border-card: 1px solid rgba(124, 58, 237, 0.25);
+  --border-card-strong: 1px solid rgba(124, 58, 237, 0.30);
+  --border-card-light: 1px solid rgba(124, 58, 237, 0.15);
+  --border-input: 1px solid rgba(157, 92, 255, 0.25);
+
+  --section-width: 950px;
+  --section-padding: 2rem 1.5rem;
+
+  --radius-input: 0.7rem;
+
+  --transition-input:
+  border-color 0.25s ease,
+  box-shadow 0.25s ease,
+  background-color 0.25s ease;
+  --transition-card:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,23 +78,21 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-main);
 }
 
 body {
-  background-color: #231731;
-  color: #f5f3ff;
-  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Global */
-
 a {
   color: inherit;
   text-decoration: none;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
 a:focus-visible,
@@ -30,7 +100,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 [role="button"]:focus-visible {
-  outline: 3px solid #f5f3ff;
+  outline: 3px solid var(--color-text);
   outline-offset: 3px;
 }
 
@@ -44,67 +114,83 @@ h3 {
 p {
   max-width: 640px;
   margin-bottom: 1rem;
-  color: #b8a9d9;
+  color: var(--color-text-soft);
 }
 
 section {
-  padding: 2rem 1.5rem;
-  max-width: 950px;
+  padding: var(--section-padding);
+  max-width: var(--section-width);
   margin: 0 auto;
 }
 
-/* Buttons */
+/* Reusable card style */
+.card-surface {
+  background: var(--color-surface);
+  border: var(--border-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-card);
+}
 
+.card-surface:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Buttons */
 .btn-primary,
 .btn-outline {
-  padding: .75rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
   transition:
-    background .3s ease,
-    color .3s ease,
-    transform .3s ease;
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .btn-primary {
-  background: #7c3aed;
-  color: white;
+  background: var(--color-accent-dark);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background: #9d5cff;
+  background: var(--color-accent);
   transform: translateY(-3px);
 }
 
 .btn-outline {
   background: transparent;
-  color: #9d5cff;
-  border: 2px solid #9d5cff;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
 }
+
 .btn-outline:hover {
   background: rgba(157, 92, 255, 0.12);
   border-color: #c58cff;
   color: #ffffff;
-
   transform: translateY(-3px);
-
   box-shadow: 0 0 20px rgba(157, 92, 255, 0.35);
 }
+
 .skip-link {
   position: absolute;
-  top: .75rem;
-  left: .75rem;
+  top: 0.75rem;
+  left: 0.75rem;
   z-index: 2000;
 
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
 
-  background: #f5f3ff;
-  color: #231731;
+  background: var(--color-text);
+  color: var(--color-bg);
 
-  border-radius: .5rem;
+  border-radius: var(--radius-sm);
 
   transform: translateY(-200%);
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
 .skip-link:focus {
@@ -115,7 +201,9 @@ section {
   position: absolute;
   width: 1px;
   height: 1px;
+
   margin: -1px;
+
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;

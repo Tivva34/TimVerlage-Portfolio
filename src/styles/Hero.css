@@ -15,7 +15,7 @@
   background:
     radial-gradient(circle at top left, rgba(157, 92, 255, 0.28), transparent 35%),
     radial-gradient(circle at bottom right, rgba(8, 200, 234, 0.18), transparent 30%),
-    linear-gradient(135deg, #1a1124 0%, #24163a 100%);
+    linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-hero-purple) 100%);
 }
 
 .hero::before {
@@ -44,7 +44,7 @@
     90deg,
     transparent,
     rgba(157, 92, 255, 0.75),
-    #08c8ea,
+    var(--color-cyan),
     rgba(157, 92, 255, 0.75),
     transparent
   );
@@ -70,12 +70,12 @@
   padding: 0.45rem 1rem;
 
   border: 1px solid rgba(157, 92, 255, 0.35);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 
   background: rgba(157, 92, 255, 0.08);
   backdrop-filter: blur(10px);
 
-  color: #cda7ff;
+  color: var(--color-badge-text);
 
   font-size: 0.85rem;
   font-weight: 700;
@@ -106,17 +106,17 @@
 
   background: linear-gradient(
     90deg,
-    #ffffff 0%,
-    #d6b8ff 35%,
-    #8be9ff 65%,
-    #ffffff 100%
+    var(--color-white) 0%,
+    var(--color-accent-soft) 35%,
+    var(--color-cyan-soft) 65%,
+    var(--color-white) 100%
   );
 
   background-size: 250%;
   -webkit-background-clip: text;
   background-clip: text;
 
-  color: transparent;
+  color: var(--color-transparent);
 
   animation: gradientShift 8s linear infinite;
 }
@@ -124,7 +124,7 @@
   max-width: 620px;
   margin: 0 auto;
 
-  color: #c4b0e0;
+  color: var(--color-hero-text);
 
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   line-height: 1.8;
