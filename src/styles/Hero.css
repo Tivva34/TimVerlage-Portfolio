@@ -12,10 +12,7 @@
 
   text-align: center;
 
-  background:
-    radial-gradient(circle at top left, rgba(157, 92, 255, 0.28), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(8, 200, 234, 0.18), transparent 30%),
-    linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-hero-purple) 100%);
+  background: var(--gradient-hero-bg);
 }
 
 .hero::before {
@@ -23,11 +20,9 @@
   position: absolute;
   inset: -20%;
 
-  background:
-    radial-gradient(circle, rgba(157, 92, 255, 0.22), transparent 40%),
-    radial-gradient(circle, rgba(8, 200, 234, 0.12), transparent 35%);
+  background: var(--gradient-hero-aurora);
+  filter: blur(var(--blur-hero-aurora));
 
-  filter: blur(70px);
   animation: aurora 14s ease-in-out infinite alternate;
 }
 
@@ -40,18 +35,8 @@
   width: min(1440px, 100%);
   height: 2px;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(157, 92, 255, 0.75),
-    var(--color-cyan),
-    rgba(157, 92, 255, 0.75),
-    transparent
-  );
-
-  box-shadow:
-    0 0 24px rgba(157, 92, 255, 0.55),
-    0 0 48px rgba(8, 200, 234, 0.3);
+  background: var(--gradient-hero-line);
+  box-shadow: var(--shadow-hero-line);
 
   transform: translateX(-50%);
 }
@@ -69,11 +54,11 @@
   margin-bottom: 1.25rem;
   padding: 0.45rem 1rem;
 
-  border: 1px solid rgba(157, 92, 255, 0.35);
+  border:  var(--border-badge);
   border-radius: var(--radius-pill);
 
-  background: rgba(157, 92, 255, 0.08);
-  backdrop-filter: blur(10px);
+  background: var(--bg-badge);
+  backdrop-filter: blur(var(--blur-badge));
 
   color: var(--color-badge-text);
 
@@ -82,9 +67,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
 
-  box-shadow:
-    inset 0 0 10px rgba(157, 92, 255, 0.08),
-    0 0 18px rgba(157, 92, 255, 0.12);
+  box-shadow: var(--shadow-badge);
 }
 
 
@@ -104,15 +87,9 @@
   padding-bottom: 0.12em;
   overflow: visible;
 
-  background: linear-gradient(
-    90deg,
-    var(--color-white) 0%,
-    var(--color-accent-soft) 35%,
-    var(--color-cyan-soft) 65%,
-    var(--color-white) 100%
-  );
-
+  background: var(--gradient-hero-name);
   background-size: 250%;
+  
   -webkit-background-clip: text;
   background-clip: text;
 
