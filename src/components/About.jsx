@@ -48,10 +48,18 @@ export default function About() {
         <h2 id="about-title">About Me</h2>
 
         <p>
-          My programming journey began in 2020 during game development studies,
-          where I discovered my passion for solving problems through code. This
-          led me to focus on web development, crafting meaningful user
-          experiences using modern frontend technologies.
+          I recently graduated from a two-year web development program, where
+          I built a strong foundation in modern frontend development,
+          responsive design, API integration, and creating thoughtful user
+          experiences.
+        </p>
+
+        <p>
+          My programming journey began with indie game development studies,
+          where I developed a solid understanding of object-oriented
+          programming, C#, Unity, and problem-solving. That background now
+          shapes how I approach web development: with curiosity, structure,
+          and a focus on building useful experiences.
         </p>
 
         <ul className="about-subgrid" aria-label="Current focus areas">
@@ -78,7 +86,7 @@ export default function About() {
                   initial: { opacity: 0, y: 20 },
                   whileInView: { opacity: 1, y: 0 },
                   transition: { delay: 0.05 * index, duration: 0.35 },
-                  viewport: { amount: 0.35 },
+                  viewport: { amount: 0, once: false },
                 })}
           >
             <h3>{card.title}</h3>

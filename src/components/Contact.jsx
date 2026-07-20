@@ -14,7 +14,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        viewport={{ amount: 0.4 }}
+        viewport={{ amount: 0, once: false }}
       >
         <header className="contact-copy">
           <h2 id="contact-title">Let's Build Something Great Together</h2>

@@ -11,7 +11,7 @@ export default function Skills() {
         initial: { opacity: 0, y: 20 },
         whileInView: { opacity: 1, y: 0 },
         transition: { duration: 0.35 },
-        viewport: { amount: 0.35 },
+        viewport: { amount: 0, margin: "0px 0px -15% 0px", once: false },
       };
 
   const cardMotion = (delay = 0) =>
@@ -21,7 +21,7 @@ export default function Skills() {
           initial: { opacity: 0, y: 30 },
           whileInView: { opacity: 1, y: 0 },
           transition: { delay, duration: 0.3 },
-          viewport: { amount: 0.3 },
+          viewport: { amount: 0, margin: "0px 0px -15% 0px", once: false },
         };
 
   const getLevelColor = (level) => {
@@ -61,12 +61,14 @@ export default function Skills() {
 
                   <h4>{skill.name}</h4>
 
-                  <span
-                    className="skill-level"
-                    style={{ backgroundColor: getLevelColor(skill.level) }}
-                  >
-                    {skill.level}
-                  </span>
+                  {skill.level && (
+                    <span
+                      className="skill-level"
+                      style={{ backgroundColor: getLevelColor(skill.level) }}
+                    >
+                      {skill.level}
+                    </span>
+                  )}
                 </motion.div>
               ))}
             </div>

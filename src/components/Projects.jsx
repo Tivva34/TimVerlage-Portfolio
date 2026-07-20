@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { defaultImage, featuredProjects, getSortedProjects, repoDemos, repoLanguageOverrides, repoScreenshots, repoTechOverrides, } from "../data/projects.js";
+import {
+  defaultImage,
+  featuredProjects,
+  getSortedProjects,
+  projectCategoryByName,
+  projectTabs,
+  repoDemos,
+  repoLanguageOverrides,
+  repoScreenshots,
+  repoTechOverrides,
+} from "../data/projects.js";
 import { getTechKey, techLogos } from "../data/languageLogos.js";
 import { useGithubRepos } from "../hooks/useGithubRepos.js";
 import "../styles/Projects.css";
@@ -8,8 +18,12 @@ import "../styles/Projects.css";
 const truncate = (str, n) =>
   str?.length > n ? `${str.slice(0, n - 1)}...` : str;
 
+const hasLiveDemo = (project) =>
+  Boolean(project.liveUrl || repoDemos[project.name] || project.homepage);
+
 export default function Projects() {
   const { repos, repoLanguages } = useGithubRepos("Tivva34");
+  const [activeCategory, setActiveCategory] = useState("live");
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const shouldReduceMotion = useReducedMotion();
 
@@ -19,7 +33,7 @@ export default function Projects() {
         initial: { opacity: 0, y: 20 },
         whileInView: { opacity: 1, y: 0 },
         transition: { duration: 0.35 },
-        viewport: { amount: 0.35, once: true },
+        viewport: { amount: 0, once: false },
       };
 
   const cardMotion = (delay = 0) =>
@@ -29,13 +43,24 @@ export default function Projects() {
           initial: { opacity: 0, y: 30 },
           whileInView: { opacity: 1, y: 0 },
           transition: { delay, duration: 0.3 },
-          viewport: { amount: 0.25, once: false },
+          viewport: { amount: 0, once: false },
         };
 
   const portfolioProjects = getSortedProjects([
     ...featuredProjects,
-    ...repos,
+    ...repos.map((repo) => ({
+      ...repo,
+      category: projectCategoryByName[repo.name] || "frontend",
+    })),
   ]);
+
+  const visibleProjects = portfolioProjects.filter(
+    (project) =>
+      activeCategory === "live"
+        ? hasLiveDemo(project)
+        : (project.category || projectCategoryByName[project.name] || "frontend") ===
+          activeCategory
+  );
 
   const toggleDescription = (projectId) => {
     setExpandedDescriptions((prev) => ({
@@ -45,24 +70,48 @@ export default function Projects() {
   };
 
   const getProjectTech = (repo) => {
-  const languages =
-    repo.languages ||
-    repoLanguageOverrides[repo.name] ||
-    repoLanguages[repo.name] ||
-    [];
+    const languages =
+      repo.languages ||
+      repoLanguageOverrides[repo.name] ||
+      repoLanguages[repo.name] ||
+      [];
 
-  const tech = repo.tech || repoTechOverrides[repo.name] || [];
+    const tech = repo.tech || repoTechOverrides[repo.name] || [];
 
-  return [...languages, ...tech];
-};
+    return [...languages, ...tech];
+  };
+
   return (
     <section id="projects" aria-labelledby="projects-title">
       <motion.h2 id="projects-title" {...headingMotion}>
-        Featured Projects
+        Projects
       </motion.h2>
 
-      <section className="projects-grid" aria-label="Project list">
-        {portfolioProjects.map((repo, index) => {
+      <div className="projects-tabs" role="tablist" aria-label="Project categories">
+        {projectTabs.map((tab) => (
+          <button
+            key={tab.key}
+            type="button"
+            role="tab"
+            id={`projects-tab-${tab.key}`}
+            aria-selected={activeCategory === tab.key}
+            aria-controls={`projects-panel-${tab.key}`}
+            className={`project-tab ${activeCategory === tab.key ? "is-active" : ""}`}
+            onClick={() => setActiveCategory(tab.key)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      <div
+        className="projects-panel"
+        role="tabpanel"
+        id={`projects-panel-${activeCategory}`}
+        aria-labelledby={`projects-tab-${activeCategory}`}
+      >
+        <div className="projects-grid" aria-label="Project list">
+          {visibleProjects.map((repo, index) => {
           const projectTech = getProjectTech(repo);
 
           return (
@@ -162,8 +211,9 @@ export default function Projects() {
               </div>
             </motion.article>
           );
-        })}
-      </section>
+          })}
+        </div>
+      </div>
     </section>
   );
 }
