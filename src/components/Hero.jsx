@@ -50,7 +50,7 @@ export default function Hero() {
       </ul>
 
       <motion.div className="hero-badge" {...textMotion}>
-        Frontend Developer
+        Web Developer
       </motion.div>
 
       <motion.h1 {...headingMotion}>

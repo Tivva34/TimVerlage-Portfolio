@@ -49,8 +49,8 @@ export default function About() {
 
         <p>
           I recently graduated from a two-year web development program, where
-          I built a strong foundation in modern frontend development,
-          responsive design, API integration, and creating thoughtful user
+          I built a strong foundation in modern frontend development, backend development, and database management. 
+          I have hands-on experience with responsive design, API integration, and creating thoughtful user
           experiences.
         </p>
 
