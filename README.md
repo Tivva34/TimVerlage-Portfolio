@@ -17,15 +17,23 @@ The goal of this project was to create a modern, responsive portfolio while impr
 - CSS3
 - Framer Motion
 - Formspree
+- Supabase
 - GitHub Pages
 
 ## Features
 
 - Responsive design for desktop, tablet and mobile
-- Animated hero section
-- Project showcase with GitHub integration
-- Dynamic language icons for projects
-- Contact form using Formspree
+- Improved animated stars in the Hero section
+- Aurora/neon hover effect on the About section
+- Wider section containers for a more spacious desktop layout
+- Individual project detail pages with clean URL routing
+- GitHub Pages deployment with proper handling for direct URL requests
+- Hover-based image slideshow on project cards with dynamic borders
+- Expanded project presentations with detailed information
+- Project image galleries featuring lightbox/fullscreen viewing, categorized sections, and captions
+- Expanded freelance section including Hammarö Maskin & Smide, MAC Service, Wermlands Skomakeri, Arvika Bygg & Stenarbeten, and LJS Måleri Värmland
+- Project showcase with updated technology icons and GitHub integration
+- Contact form utilizing Formspree, following the wider container layout
 - Accessible navigation and semantic HTML
 - Component-based architecture
 
@@ -37,6 +45,7 @@ src/
 ├── components/
 ├── data/
 ├── hooks/
+├── pages/
 ├── styles/
 └── assets/
 ```
@@ -44,6 +53,7 @@ src/
 The project has been refactored to separate:
 
 - Components
+- Pages
 - Styles
 - Static data
 - Custom React hooks

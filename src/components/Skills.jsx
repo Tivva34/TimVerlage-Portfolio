@@ -50,7 +50,7 @@ export default function Skills() {
               {group.skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
-                  className="skill-card"
+                  className="skill-card aurora-glow"
                   {...cardMotion(index * 0.05)}
                 >
                   <img

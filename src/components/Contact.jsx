@@ -16,7 +16,7 @@ export default function Contact() {
         transition={{ duration: 0.35 }}
         viewport={{ amount: 0, once: false }}
       >
-        <header className="contact-copy">
+        <header className="contact-copy aurora-glow">
           <h2 id="contact-title">Let's Build Something Great Together</h2>
           <p>
             I'm excited to contribute to meaningful projects and grow alongside
@@ -26,7 +26,7 @@ export default function Contact() {
         </header>
 
         <section
-          className="contact-form-shell"
+          className="contact-form-shell aurora-glow"
           aria-label="Contact form"
         >
           <ContactForm />

@@ -11,11 +11,13 @@
 
   padding: 2rem;
 
-  max-width: 900px;
+  max-width: 1050px;
   margin: 0 auto 2rem;
 
   box-shadow: var(--shadow-card);
   transition: var(--transition-card);
+
+  position: relative;
 }
 
 .about-box:hover {

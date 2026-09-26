@@ -98,7 +98,7 @@
   animation: gradientShift 8s linear infinite;
 }
 .hero-intro {
-  max-width: 620px;
+  max-width: 740px;
   margin: 0 auto;
 
   color: var(--color-hero-text);

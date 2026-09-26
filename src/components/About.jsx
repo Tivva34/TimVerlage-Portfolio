@@ -44,7 +44,10 @@ export default function About() {
 
   return (
     <section id="about" className="bring-section" aria-labelledby="about-title">
-      <motion.article className="about-box" {...boxMotion}>
+      <motion.article 
+        className="about-box aurora-glow" 
+        {...boxMotion}
+      >
         <h2 id="about-title">About Me</h2>
 
         <p>
@@ -78,7 +81,7 @@ export default function About() {
       <section className="bring-grid" aria-label="What I bring">
         {bringCards.map((card, index) => (
           <motion.article
-            className="bring-card"
+            className="bring-card aurora-glow"
             key={card.title}
             {...(shouldReduceMotion
               ? { initial: false }

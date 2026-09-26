@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BASE_PATH, navigateTo } from "../App.jsx";
 import "../styles/Nav.css";
 
 export default function Nav() {
@@ -40,13 +41,31 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const isHomePage = window.location.pathname === BASE_PATH || window.location.pathname === BASE_PATH + '/';
+    
+    if (!isHomePage) {
+      navigateTo('/');
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.history.pushState(null, '', BASE_PATH + '/');
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="navbar" aria-label="Primary navigation">
       <ul className="navbar-list">
         {links.map((link) => (
           <li key={link.id}>
             <a
-              href={`#${link.id}`}
+              href={`${BASE_PATH}/`}
+              onClick={(e) => handleNavClick(e, link.id)}
               className={active === link.id ? "active" : ""}
               aria-current={active === link.id ? "page" : undefined}
             >
