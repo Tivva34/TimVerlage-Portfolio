@@ -5,13 +5,13 @@
 .project-detail-container {
   max-width: var(--section-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   padding-bottom: 4rem;
 }
 .project-detail-header-container {
   max-width: var(--section-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 .back-btn {
   display: inline-block;
@@ -207,6 +207,13 @@
   font-weight: 500;
 }
 @media (max-width: 768px) {
+  .project-detail-container {
+    padding: 0;
+    padding-bottom: 4rem;
+  }
+  .project-detail-header-container {
+    padding: 0 1rem;
+  }
   .project-detail-header h2 {
     font-size: 2rem;
   }

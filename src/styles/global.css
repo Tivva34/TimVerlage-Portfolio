@@ -56,7 +56,7 @@
   
   
   --section-width: 1150px;
-  --section-padding: 2rem 1.5rem;
+  --section-padding: 2rem 1rem;
 
   --radius-input: 0.7rem;
 
@@ -110,6 +110,12 @@
 
 --blur-hero-aurora: 70px;
 --blur-badge: 10px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-padding: 2rem 1.5rem;
+  }
 }
 
 * {
