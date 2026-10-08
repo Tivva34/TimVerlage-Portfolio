@@ -48,6 +48,7 @@ export const repoTechOverrides = {
 };
 export const projectOrder = [
   "Hammarö Maskin & Smide AB",
+  "Jannes Maskin o Smide",
   "MAC Service",
   "Wermlands Skomakeri",
   "Arvika Bygg & Stenarbeten",
@@ -76,6 +77,7 @@ export const featuredProjects = [
     name: "Hammarö Maskin & Smide AB",
     category: "fullstack",
     type: "CUSTOM BUSINESS PLATFORM",
+    hidden: true,
     slug: "hammaro-maskin-smide",
     description: "Projektet är en skräddarsydd, webbaserad digital affärsplattform. Målet med lösningen är att samla företagets digitala försäljning, kundförfrågningar, kunddialog och interna administration i ett enda, sammanhängande system.",
     detailedContent: {
@@ -193,6 +195,149 @@ export const featuredProjects = [
         "projects/HammaröMaskin&Smide/Admin-Lightmode/2.Admin - Förfrågan - Lightmode.png"
       ]
     }
+  },
+  {
+    id: "jannes-maskin-o-smide",
+    name: "Jannes Maskin o Smide",
+    category: "fullstack",
+    type: "CUSTOM BUSINESS PLATFORM",
+    slug: "jannes-maskin-o-smide",
+    description: "Projektet är en skräddarsydd, webbaserad digital affärsplattform. Målet med lösningen är att samla företagets digitala försäljning, kundförfrågningar, kunddialog och interna administration i ett enda, sammanhängande system.",
+    detailedContent: {
+      introTitle: "En lösning med tydligt syfte.",
+      intro: "Projektet är en skräddarsydd, webbaserad digital affärsplattform. Målet med lösningen är att samla företagets digitala försäljning, kundförfrågningar, kunddialog och interna administration i ett enda, sammanhängande system. Genom denna arkitektur ersätts tidigare isolerade system med ett kontextdrivet flöde där all information hänger ihop – från första sökning på Google till avslutad affär.",
+      sections: [
+        {
+          tag: "01 — PUBLIK WEBBPLATS & FÖRETAGSYTA",
+          title: "Företagets digitala yta mot kunder.",
+          text: "Den publika webbplatsen är byggd för att fungera sömlöst över dator, mobil och surfplatta, med ett tydligt fokus på responsiv design, tillgänglighet och konvertering.",
+          bullets: [
+            "Startsida och Företagsinformation",
+            "Maskinförsäljning och Maskinlistningar (inkl. detaljsidor)",
+            "Presentation av Yttre lösöre",
+            "Specifika sektioner för Verkstad och Smide",
+            "Transportrelaterade kontaktflöden",
+            "Smarta, kontextuella kontaktfunktioner och en direkt \"Ring oss\"-funktion för mobila enheter"
+          ]
+        },
+        {
+          tag: "02 — FÖRSÄLJNING",
+          title: "Maskiner & Yttre Lösöre.",
+          text: "Försäljningen är integrerad direkt i plattformen. Personalen kan hantera lagret via administrationen, och det som publiceras internt speglas omedelbart externt. Varje maskin och lösöre har sin egen detaljsida med specifikationer, bilder och unika kontaktmöjligheter."
+        },
+        {
+          tag: "03 — KUNDDIALOG",
+          title: "Kontextbaserade Förfrågningar.",
+          text: "Ett centralt koncept i plattformen är att alla förfrågningar kopplas till rätt sammanhang. Smarta formulär kopplar automatiskt ihop kunden, meddelandet och maskinen i ett ärende. Förfrågningar för smidesarbete och verkstad separeras automatiskt, och e-postkommunikation är helt integrerad in i systemet."
+        },
+        {
+          tag: "04 — ADMIN & CRM",
+          title: "Administrativt Verksamhetssystem.",
+          text: "Det interna administrationssystemet är byggt som en separat applikation (PWA) för hantering av all affärsdata. Det inkluderar hantering av ärenden, kunddialog med historik, filtrering, och rollbaserad inloggning (RBAC) för säkerhet. Systemet kan installeras som en riktig app på alla enheter."
+        },
+        {
+          tag: "05 — TEKNIK & PRESTANDA",
+          title: "Realtid, Arkitektur & SEO.",
+          text: "Systemet använder avancerad realtidsfunktionalitet med Supabase Realtime för omedelbara uppdateringar och Web Push-notiser. Backend hanteras av en robust PostgreSQL-databas med Edge Functions och RLS. Frontenden är byggd i React & Vite och optimerad för blixtsnabba laddtider och hög SEO-ranking."
+        },
+        {
+          tag: "06 — KUNDRESAN",
+          title: "Sammanhängande flöde.",
+          text: "Google → Webbplats → Maskin / Tjänst → Detaljsida → Kontaktförfrågan → Automatiskt kopplat ärende → Notifiering till rätt personal (via PWA) → Svar inifrån CRM (e-post integrerad) → Uppföljning och avslut."
+        }
+      ]
+    },
+    html_url: null,
+    liveUrl: "https://jannes-maskin-o-smide-cloudflare.pages.dev/",
+    languages: ["JavaScript", "HTML", "CSS"],
+    tech: ["React", "Supabase", "Realtime", "PWA", "Service Worker", "Responsive Design"],
+    screenshot: `${import.meta.env.BASE_URL}projects/JannesMaskinOSmide/Kundsida/1. Hem - Hero - Sektion.png`,
+    gallery: {
+        "Kundsida": [
+          "projects/JannesMaskinOSmide/Kundsida/1. Hem - Hero - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/2. Hem - Info - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/3. Maskiner - Översikt - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/4. Maskiner - Lazy Load - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/5. Maskiner - Försäljning Inköp Transport - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/6. Maskiner - Kontaktformulär - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/7. Maskiner - Ring Försäljning - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/9. Maskiner - Vald Maskin Bilder - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/10. Maskiner - Vald Maskin Bildgalleri - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/11. Maskiner - Vald Maskin - Page.png",
+          "projects/JannesMaskinOSmide/Kundsida/11. Maskiner - Vald Maskin Lightbox - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/12. Maskiner - Vald Maskin Info - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/13. Maskiner - Vald Maskin Botten - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/14. Maskiner - Kontaktformulär Vald Maskin - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/15. Maskiner - Transport Vald Maskin - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/16. Lösöre - Översikt - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/17. Lösöre - Alla Lösören - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/18. Lösöre - Hittar Inte - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/19. Lösöre - Vald Lösöre - Page.png",
+          "projects/JannesMaskinOSmide/Kundsida/20. Lösöre - Vald Lösöre Detaljer - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/21. Lösöre - Vald Lösöre Botten - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/22. Lösöre - Kontaktformulär Vald Lösöre - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/23. Verkstad & Smide - Verkstad - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/24. Verkstad & Smide - Specialtillverkning Transport - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/25. Verkstad & Smide - Kontaktformulär - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/26. Om oss - Om Företaget - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/27. Om oss - Vad Vi Gör - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/28. Om oss - Familjeföretaget - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/29. Kontakt - Kontakta Oss - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida/30. Kontakt - Formulär - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/31. Hem - Footer - Sektion.png"
+        ],
+        "Kundsida-Lightmode": [
+          "projects/JannesMaskinOSmide/Kundsida-Lightmode/1. Hem - Hero - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida-Lightmode/2. Hem - Info - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida-Lightmode/3. Maskiner - Alla Maskiner - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida-Lightmode/4. Lösöre - Alla Lösören - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida-Lightmode/5. Verkstad & Smide - Verkstad - Sektion.png",
+          "projects/JannesMaskinOSmide/Kundsida-Lightmode/6. Om oss - Om Företaget - Sektion.png"
+        ],
+        "Kundsida-English": [
+          "projects/JannesMaskinOSmide/Kundsida-English/1. Home - Hero - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/2. Home - Info - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/3. Machines - All Machines - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/4. Machines - Chosen Machine Top - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/5. Machines - Chosen Machine Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/6. Machines - Contactform - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/11. Inventory - All Inventory - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/12. Workshop & Metalwork - Workshop - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/13. About us - About us - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/14. Contact - Contactform - Modal.png"
+        ],
+        "Admin": [
+          "projects/JannesMaskinOSmide/Admin/1. Admin - Inloggning - Page.png",
+          "projects/JannesMaskinOSmide/Admin/2. Admin - Återställ Lösenord - Page.png",
+          "projects/JannesMaskinOSmide/Admin/3. Admin - Maskiner Översikt Top - Page.png",
+          "projects/JannesMaskinOSmide/Admin/4. Admin - Maskiner Översikt Botten - Page.png",
+          "projects/JannesMaskinOSmide/Admin/5. Admin - Lägg Till Maskin Top - Page.png",
+          "projects/JannesMaskinOSmide/Admin/6. Admin - Lägg Till Maskin Mitten - Page.png",
+          "projects/JannesMaskinOSmide/Admin/7. Admin - Lägg Till Maskin Botten - Page.png",
+          "projects/JannesMaskinOSmide/Admin/8. Admin - Lägg Till Maskin Engelsk Sektion - Sektion.png",
+          "projects/JannesMaskinOSmide/Admin/9. Admin - Lägg Till Maskin Bilduppladdning - Sektion.png",
+          "projects/JannesMaskinOSmide/Admin/10. Admin - Redigera Maskin - Page.png",
+          "projects/JannesMaskinOSmide/Admin/11. Admin - Lösöre Översikt - Page.png",
+          "projects/JannesMaskinOSmide/Admin/12. Admin - Redigera Lösöre - Page.png",
+          "projects/JannesMaskinOSmide/Admin/13. Admin - Lägg Till Lösöre Botten - Page.png",
+          "projects/JannesMaskinOSmide/Admin/14. Admin - Förfrågningar Översikt - Page.png",
+          "projects/JannesMaskinOSmide/Admin/15. Admin - Förfrågan Detaljer Top - Modal.png",
+          "projects/JannesMaskinOSmide/Admin/16. Admin - Förfrågan Detaljer Mitten - Modal.png",
+          "projects/JannesMaskinOSmide/Admin/17. Admin - Förfrågan Detaljer Botten - Modal.png",
+          "projects/JannesMaskinOSmide/Admin/18. Admin - Statistik - Page.png",
+          "projects/JannesMaskinOSmide/Admin/19. Admin - Försäljning Översikt - Page.png",
+          "projects/JannesMaskinOSmide/Admin/20. Admin - Försäljning Top - Page.png",
+          "projects/JannesMaskinOSmide/Admin/21. Admin - Försäljning Såld Maskin - Modal.png",
+          "projects/JannesMaskinOSmide/Admin/22. Admin - Användare & Behörigheter - Page.png",
+          "projects/JannesMaskinOSmide/Admin/23. Admin - Min Profil Översikt - Page.png",
+          "projects/JannesMaskinOSmide/Admin/24. Admin - Min Profil Notifikationer - Sektion.png"
+        ],
+        "Admin-Lightmode": [
+          "projects/JannesMaskinOSmide/Admin-Lightmode/1. Admin - Förfrågningar Översikt - Page.png",
+          "projects/JannesMaskinOSmide/Admin-Lightmode/2. Admin - Försäljning Översikt - Page.png",
+          "projects/JannesMaskinOSmide/Admin-Lightmode/3. Admin - Användare & Behörigheter - Page.png"
+        ]
+      }
   },
   {
     id: "macservice",

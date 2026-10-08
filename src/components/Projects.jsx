@@ -195,10 +195,11 @@ export default function Projects() {
 
   const visibleProjects = portfolioProjects.filter(
     (project) =>
+      !project.hidden && (
       activeCategory === "live"
         ? hasLiveDemo(project)
         : (project.category || projectCategoryByName[project.name] || "frontend") ===
-          activeCategory
+          activeCategory)
   );
 
   const toggleDescription = (projectId) => {
