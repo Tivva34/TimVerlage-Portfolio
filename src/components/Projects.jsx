@@ -41,11 +41,11 @@ const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDesc
     if (img.startsWith(import.meta.env.BASE_URL)) return img;
     return `${import.meta.env.BASE_URL}${img.replace(/^\//, '')}`;
   });
-  
+
   // Always ensure the first image is exactly the defaultScreenshot so it matches what works,
   // and append the rest of the gallery.
-  const images = formattedGallery.length > 1 
-    ? [defaultScreenshot, ...formattedGallery.filter(img => img !== defaultScreenshot && img !== defaultScreenshot.replace(import.meta.env.BASE_URL, ''))].slice(0, 6) 
+  const images = formattedGallery.length > 1
+    ? [defaultScreenshot, ...formattedGallery.filter(img => img !== defaultScreenshot && img !== defaultScreenshot.replace(import.meta.env.BASE_URL, ''))].slice(0, 6)
     : [defaultScreenshot];
 
   useEffect(() => {
@@ -100,9 +100,9 @@ const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDesc
         {expandedDescriptions[repo.id]
           ? repo.description || "No description provided."
           : truncate(
-              repo.description || "No description provided.",
-              140
-            )}
+            repo.description || "No description provided.",
+            140
+          )}
       </p>
 
       <button
@@ -120,7 +120,7 @@ const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDesc
           className="project-tech-list"
           aria-label={`${repo.name} technologies`}
         >
-          {projectTech.length > 0 ? ( 
+          {projectTech.length > 0 ? (
             projectTech.map((tech) => {
               const key = getTechKey(tech);
 
@@ -169,21 +169,21 @@ export default function Projects() {
   const headingMotion = shouldReduceMotion
     ? { initial: false }
     : {
-        initial: { opacity: 0, y: 20 },
-        whileInView: { opacity: 1, y: 0 },
-        transition: { duration: 0.35 },
-        viewport: { amount: 0, once: false },
-      };
+      initial: { opacity: 0, y: 20 },
+      whileInView: { opacity: 1, y: 0 },
+      transition: { duration: 0.35 },
+      viewport: { amount: 0, once: false },
+    };
 
   const cardMotion = (delay = 0) =>
     shouldReduceMotion
       ? { initial: false }
       : {
-          initial: { opacity: 0, y: 30 },
-          whileInView: { opacity: 1, y: 0 },
-          transition: { delay, duration: 0.3 },
-          viewport: { amount: 0, once: false },
-        };
+        initial: { opacity: 0, y: 30 },
+        whileInView: { opacity: 1, y: 0 },
+        transition: { delay, duration: 0.3 },
+        viewport: { amount: 0, once: false },
+      };
 
   const portfolioProjects = getSortedProjects([
     ...featuredProjects,
@@ -196,9 +196,9 @@ export default function Projects() {
   const visibleProjects = portfolioProjects.filter(
     (project) =>
       !project.hidden && (
-      activeCategory === "live"
-        ? hasLiveDemo(project)
-        : (project.category || projectCategoryByName[project.name] || "frontend") ===
+        activeCategory === "live"
+          ? hasLiveDemo(project)
+          : (project.category || projectCategoryByName[project.name] || "frontend") ===
           activeCategory)
   );
 
@@ -252,14 +252,14 @@ export default function Projects() {
       >
         <div className="projects-grid" aria-label="Project list">
           {visibleProjects.map((repo, index) => (
-            <ProjectCard 
+            <ProjectCard
               key={repo.id}
-              repo={repo} 
-              index={index} 
-              cardMotion={cardMotion} 
-              expandedDescriptions={expandedDescriptions} 
-              toggleDescription={toggleDescription} 
-              getProjectTech={getProjectTech} 
+              repo={repo}
+              index={index}
+              cardMotion={cardMotion}
+              expandedDescriptions={expandedDescriptions}
+              toggleDescription={toggleDescription}
+              getProjectTech={getProjectTech}
             />
           ))}
         </div>
