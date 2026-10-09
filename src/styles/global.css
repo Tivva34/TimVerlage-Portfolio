@@ -169,6 +169,19 @@ section {
   padding: var(--section-padding);
   max-width: var(--section-width);
   margin: 0 auto;
+  scroll-margin-top: 100px;
+}
+
+/* Subtle elegant divider lines between major sections */
+section + section {
+  border-top: 1px solid;
+  border-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(157, 92, 255, 0.15) 15%,
+    rgba(157, 92, 255, 0.15) 85%,
+    transparent 100%
+  ) 1;
 }
 
 /* Reusable card style */

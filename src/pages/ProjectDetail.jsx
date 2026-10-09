@@ -114,9 +114,32 @@ export default function ProjectDetail(props) {
     if (Array.isArray(project.gallery)) {
       return (
         <div className="project-gallery-grid">
-          {project.gallery.map((img, idx) => (
-            <img key={idx} src={`${import.meta.env.BASE_URL}${img}`} alt={`${project.name} screenshot ${idx + 1}`} className="gallery-image" loading="lazy" onClick={() => openLightbox(idx)} />
-          ))}
+          {project.gallery.map((img, idx) => {
+            const meta = generateCaption(img);
+            return (
+              <figure key={idx} className="gallery-figure">
+                <img 
+                  src={`${import.meta.env.BASE_URL}${img}`} 
+                  alt={`${meta.content || 'Project view'} ${idx + 1}`} 
+                  className="gallery-image" 
+                  loading="lazy" 
+                  onClick={() => openLightbox(idx)} 
+                />
+                {(meta.page || meta.content || meta.type) && meta.content !== img.split('/').pop() && (
+                  <figcaption className="gallery-caption">
+                    {meta.page && (
+                      <>
+                        <strong>{meta.page}</strong>
+                        <br />
+                      </>
+                    )}
+                    {meta.content}
+                    {meta.type && ` · ${meta.type}`}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          })}
         </div>
       );
     }
@@ -196,14 +219,14 @@ export default function ProjectDetail(props) {
           {hasDetails && project.detailedContent.intro && (
             <div className="project-detail-section">
               <span className="project-meta-tag">01 — OVERVIEW</span>
-              <h3>{project.detailedContent.introTitle || "En lösning med tydligt syfte."}</h3>
+              <h3>{project.detailedContent.introTitle || "A solution with a clear purpose."}</h3>
               <p className="project-description">{project.detailedContent.intro}</p>
             </div>
           )}
 
           <div className="project-detail-section">
-             <span className="project-meta-tag">{hasDetails && project.detailedContent.intro ? '02 — TEKNIK & VERKTYG' : '01 — TEKNIK & VERKTYG'}</span>
-             <h3>Teknologier</h3>
+             <span className="project-meta-tag">{hasDetails && project.detailedContent.intro ? '02 — TECH & TOOLS' : '01 — TECH & TOOLS'}</span>
+             <h3>Technologies</h3>
              <ul className="project-tech-list" aria-label={`${project.name} technologies`}>
               {projectTech.map((tech) => {
                 const key = getTechKey(tech);
@@ -218,8 +241,8 @@ export default function ProjectDetail(props) {
 
           {hasDetails && project.detailedContent.features && (
             <div className="project-detail-section">
-              <span className="project-meta-tag">02 — FUNKTIONER & RESULTAT</span>
-              <h3>Egenskaper</h3>
+              <span className="project-meta-tag">02 — FEATURES & RESULTS</span>
+              <h3>Features</h3>
               <ul className="project-feature-list">
                 {project.detailedContent.features.map((feature, idx) => (
                   <li key={idx}>{feature}</li>
@@ -258,7 +281,7 @@ export default function ProjectDetail(props) {
         </div>
 
         <div className="project-gallery-section">
-          <h2>Galleri</h2>
+          <h2>Gallery</h2>
           {renderGallery()}
         </div>
       </div>

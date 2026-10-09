@@ -78,13 +78,12 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: var(--radius-sm);
-  margin-bottom: 1rem;
-  border: var(--border-card);
-  transition: border-color 0.45s ease;
+  margin-bottom: 1.25rem;
+  transition: transform 0.45s ease;
 }
 
 .project-card:hover .project-image-viewport {
-  border-color: var(--color-accent);
+  transform: scale(1.02);
 }
 
 .project-image {
@@ -170,7 +169,7 @@
   }
 
   .project-tab {
-    width: 100%;
+    width: auto;
     justify-content: center;
   }
 

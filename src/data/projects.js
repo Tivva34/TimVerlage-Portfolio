@@ -1,11 +1,11 @@
 export const defaultImage = `${import.meta.env.BASE_URL}projects/default-project.png`;
 
 export const repoScreenshots = {
-  Shui: `${import.meta.env.BASE_URL}projects/Shui.png`,
-  IMDO: `${import.meta.env.BASE_URL}projects/IMDO.png`,
-  "Nasa-SpaceViewer": `${import.meta.env.BASE_URL}projects/Nasa2.png`,
-  ReadingSloth: `${import.meta.env.BASE_URL}projects/ReadingSloth.png`,
-  FadingLightDemo: `${import.meta.env.BASE_URL}projects/FadingLight4.png`,
+  Shui: `${import.meta.env.BASE_URL}projects/1. Shui - Student Project.png`,
+  IMDO: `${import.meta.env.BASE_URL}projects/1. IMDO - Student Project.png`,
+  "Nasa-SpaceViewer": `${import.meta.env.BASE_URL}projects/1. Nasa SpaceViewer - Student Project.png`,
+  ReadingSloth: `${import.meta.env.BASE_URL}projects/1. ReadingSloth - Student Project.png`,
+  FadingLightDemo: `${import.meta.env.BASE_URL}projects/1. FadingLight - Prototype.png`,
 };
 
 export const repoDemos = {
@@ -79,48 +79,48 @@ export const featuredProjects = [
     type: "CUSTOM BUSINESS PLATFORM",
     hidden: true,
     slug: "hammaro-maskin-smide",
-    description: "Projektet är en skräddarsydd, webbaserad digital affärsplattform. Målet med lösningen är att samla företagets digitala försäljning, kundförfrågningar, kunddialog och interna administration i ett enda, sammanhängande system.",
+    description: "The project is a custom, web-based digital business platform. The goal of the solution is to gather the company's digital sales, customer inquiries, customer dialogue, and internal administration into a single, cohesive system.",
     detailedContent: {
-      introTitle: "En lösning med tydligt syfte.",
-      intro: "Projektet är en skräddarsydd, webbaserad digital affärsplattform. Målet med lösningen är att samla företagets digitala försäljning, kundförfrågningar, kunddialog och interna administration i ett enda, sammanhängande system. Genom denna arkitektur ersätts tidigare isolerade system med ett kontextdrivet flöde där all information hänger ihop – från första sökning på Google till avslutad affär.",
+      introTitle: "A solution with a clear purpose.",
+      intro: "The project is a custom, web-based digital business platform. The goal of the solution is to gather the company's digital sales, customer inquiries, customer dialogue, and internal administration into a single, cohesive system. Through this architecture, previously isolated systems are replaced with a context-driven flow where all information is connected - from the first search on Google to a closed deal.",
       sections: [
         {
-          tag: "01 — PUBLIK WEBBPLATS & FÖRETAGSYTA",
-          title: "Företagets digitala yta mot kunder.",
-          text: "Den publika webbplatsen är byggd för att fungera sömlöst över dator, mobil och surfplatta, med ett tydligt fokus på responsiv design, tillgänglighet och konvertering.",
+          tag: "01 — PUBLIC WEBSITE & CORPORATE AREA",
+          title: "The company's digital interface towards customers.",
+          text: "The public website is built to work seamlessly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
           bullets: [
-            "Startsida och Företagsinformation",
-            "Maskinförsäljning och Maskinlistningar (inkl. detaljsidor)",
-            "Presentation av Yttre lösöre",
-            "Specifika sektioner för Verkstad och Smide",
-            "Transportrelaterade kontaktflöden",
-            "Smarta, kontextuella kontaktfunktioner och en direkt \"Ring oss\"-funktion för mobila enheter"
+            "Home page and Company Information",
+            "Machine Sales and Machine Listings (incl. detail pages)",
+            "Presentation of Inventory",
+            "Specific sections for Workshop and Metalwork",
+            "Transport-related contact flows",
+            "Smart, contextual contact features and a direct \"Call us\" function for mobile devices"
           ]
         },
         {
-          tag: "02 — FÖRSÄLJNING",
-          title: "Maskiner & Yttre Lösöre.",
-          text: "Försäljningen är integrerad direkt i plattformen. Personalen kan hantera lagret via administrationen, och det som publiceras internt speglas omedelbart externt. Varje maskin och lösöre har sin egen detaljsida med specifikationer, bilder och unika kontaktmöjligheter."
+          tag: "02 — SALES",
+          title: "Machines & Inventory.",
+          text: "Sales are integrated directly into the platform. Staff can manage the inventory via the administration, and what is published internally is immediately mirrored externally. Each machine and inventory item has its own detail page with specifications, images, and unique contact options."
         },
         {
-          tag: "03 — KUNDDIALOG",
-          title: "Kontextbaserade Förfrågningar.",
-          text: "Ett centralt koncept i plattformen är att alla förfrågningar kopplas till rätt sammanhang. Smarta formulär kopplar automatiskt ihop kunden, meddelandet och maskinen i ett ärende. Förfrågningar för smidesarbete och verkstad separeras automatiskt, och e-postkommunikation är helt integrerad in i systemet."
+          tag: "03 — CUSTOMER DIALOGUE",
+          title: "Context-based Inquiries.",
+          text: "A central concept in the platform is that all inquiries are linked to the right context. Smart forms automatically connect the customer, the message, and the machine in a ticket. Inquiries for metalwork and workshop are separated automatically, and email communication is fully integrated into the system."
         },
         {
           tag: "04 — ADMIN & CRM",
-          title: "Administrativt Verksamhetssystem.",
-          text: "Det interna administrationssystemet är byggt som en separat applikation (PWA) för hantering av all affärsdata. Det inkluderar hantering av ärenden, kunddialog med historik, filtrering, och rollbaserad inloggning (RBAC) för säkerhet. Systemet kan installeras som en riktig app på alla enheter."
+          title: "Administrative Business System.",
+          text: "The internal administration system is built as a separate application (PWA) for managing all business data. It includes handling tickets, customer dialogue with history, filtering, and role-based access control (RBAC) for security. The system can be installed as a real app on all devices."
         },
         {
-          tag: "05 — TEKNIK & PRESTANDA",
-          title: "Realtid, Arkitektur & SEO.",
-          text: "Systemet använder avancerad realtidsfunktionalitet med Supabase Realtime för omedelbara uppdateringar och Web Push-notiser. Backend hanteras av en robust PostgreSQL-databas med Edge Functions och RLS. Frontenden är byggd i React & Vite och optimerad för blixtsnabba laddtider och hög SEO-ranking."
+          tag: "05 — TECH & PERFORMANCE",
+          title: "Real-time, Architecture & SEO.",
+          text: "The system uses advanced real-time functionality with Supabase Realtime for instant updates and Web Push notifications. The backend is handled by a robust PostgreSQL database with Edge Functions and RLS. The frontend is built in React & Vite and optimized for lightning-fast load times and high SEO ranking."
         },
         {
-          tag: "06 — KUNDRESAN",
-          title: "Sammanhängande flöde.",
-          text: "Google → Webbplats → Maskin / Tjänst → Detaljsida → Kontaktförfrågan → Automatiskt kopplat ärende → Notifiering till rätt personal (via PWA) → Svar inifrån CRM (e-post integrerad) → Uppföljning och avslut."
+          tag: "06 — THE CUSTOMER JOURNEY",
+          title: "Cohesive flow.",
+          text: "Google → Website → Machine / Service → Detail page → Contact inquiry → Automatically linked ticket → Notification to the right staff (via PWA) → Reply from within CRM (email integrated) → Follow-up and closing."
         }
       ]
     },
@@ -134,14 +134,14 @@ export const featuredProjects = [
         "projects/HammaröMaskin&Smide/Kundsida/1.Home - Hero - Section.png",
         "projects/HammaröMaskin&Smide/Kundsida/2.Home - About us - Section.png",
         "projects/HammaröMaskin&Smide/Kundsida/3.Machines - All machines.png",
-        "projects/HammaröMaskin&Smide/Kundsida/4.Machines - Alla Machines - Lazy loading.png",
+        "projects/HammaröMaskin&Smide/Kundsida/4.Machines - All Machines - Lazy loading.png",
         "projects/HammaröMaskin&Smide/Kundsida/5.Machines - Chosen machine.png",
         "projects/HammaröMaskin&Smide/Kundsida/6.Machines - Chosen machine.png",
         "projects/HammaröMaskin&Smide/Kundsida/7.Machine - Contact form - Modal.png",
         "projects/HammaröMaskin&Smide/Kundsida/8.Machine & Transport - Form - Modal.png",
         "projects/HammaröMaskin&Smide/Kundsida/9.Machines - Sales Purchasing Transport - Section.png",
-        "projects/HammaröMaskin&Smide/Kundsida/10.Inventory - Alla Inventoryn.png",
-        "projects/HammaröMaskin&Smide/Kundsida/11.Inventory - Alla Inventoryn - Section.png",
+        "projects/HammaröMaskin&Smide/Kundsida/10.Inventory - All Inventory.png",
+        "projects/HammaröMaskin&Smide/Kundsida/11.Inventory - All Inventory - Section.png",
         "projects/HammaröMaskin&Smide/Kundsida/12.Inventory - Chosen inventory.png",
         "projects/HammaröMaskin&Smide/Kundsida/13.About us - Looking for something else - Section.png",
         "projects/HammaröMaskin&Smide/Kundsida/14.About us - Machines & Smide - Section.png",
@@ -150,7 +150,7 @@ export const featuredProjects = [
         "projects/HammaröMaskin&Smide/Kundsida/17.Workshop & Metalwork -Metalwork & Transport - Section.png",
         "projects/HammaröMaskin&Smide/Kundsida/18.About us - About us - Section.png",
         "projects/HammaröMaskin&Smide/Kundsida/19.About us - The family business - Section.png",
-        "projects/HammaröMaskin&Smide/Kundsida/20.Contact - Contacta oss - Section.png",
+        "projects/HammaröMaskin&Smide/Kundsida/20.Contact - Contact us - Section.png",
         "projects/HammaröMaskin&Smide/Kundsida/21.Contact Form -Modal.png",
         "projects/HammaröMaskin&Smide/Kundsida/22.Footer - Section.png",
         "projects/HammaröMaskin&Smide/Kundsida/23.LightHouse - Rating.png"
@@ -171,22 +171,22 @@ export const featuredProjects = [
       "Admin Panel": [
         "projects/HammaröMaskin&Smide/Admin/1.Admin - Login.png",
         "projects/HammaröMaskin&Smide/Admin/2.Admin - Machines.png",
-        "projects/HammaröMaskin&Smide/Admin/3.Admin - Machines - Sortering.png",
-        "projects/HammaröMaskin&Smide/Admin/4.Admin - Inventoryn.png",
-        "projects/HammaröMaskin&Smide/Admin/5.Admin - Edit maskin.png",
-        "projects/HammaröMaskin&Smide/Admin/6.Admin - Edit maskin - Properties & Specifications.png",
-        "projects/HammaröMaskin&Smide/Admin/7.Admin - Edit maskin - English.png",
-        "projects/HammaröMaskin&Smide/Admin/8.Admin - Edit maskin - Image upload.png",
+        "projects/HammaröMaskin&Smide/Admin/3.Admin - Machines - Sorting.png",
+        "projects/HammaröMaskin&Smide/Admin/4.Admin - Inventory.png",
+        "projects/HammaröMaskin&Smide/Admin/5.Admin - Edit machine.png",
+        "projects/HammaröMaskin&Smide/Admin/6.Admin - Edit machine - Properties & Specifications.png",
+        "projects/HammaröMaskin&Smide/Admin/7.Admin - Edit machine - English.png",
+        "projects/HammaröMaskin&Smide/Admin/8.Admin - Edit machine - Image upload.png",
         "projects/HammaröMaskin&Smide/Admin/9.Admin - Inquiries.png",
         "projects/HammaröMaskin&Smide/Admin/10.Admin - Inquiry.png",
         "projects/HammaröMaskin&Smide/Admin/11.Admin - Inquiry - Attached images.png",
-        "projects/HammaröMaskin&Smide/Admin/12.Admin - Inquiry - Reply sektion.png",
+        "projects/HammaröMaskin&Smide/Admin/12.Admin - Inquiry - Reply section.png",
         "projects/HammaröMaskin&Smide/Admin/13.Admin - Statistics.png",
         "projects/HammaröMaskin&Smide/Admin/14.Admin - Statistics -Example.png",
         "projects/HammaröMaskin&Smide/Admin/15.Admin - Sales.png",
         "projects/HammaröMaskin&Smide/Admin/16.Admin - Sales - Machine.png",
         "projects/HammaröMaskin&Smide/Admin/17.Admin - Users & Permissions.png",
-        "projects/HammaröMaskin&Smide/Admin/18.Admin - Edit användare.png",
+        "projects/HammaröMaskin&Smide/Admin/18.Admin - Edit user.png",
         "projects/HammaröMaskin&Smide/Admin/19.Admin - My profile.png",
         "projects/HammaröMaskin&Smide/Admin/20.Admin - My profile - Notifications.png"
       ],
@@ -260,37 +260,36 @@ export const featuredProjects = [
           "projects/JannesMaskinOSmide/Kundsida/4. Machines - Lazy Load - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/5. Machines - Sales Purchasing Transport - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/6. Machines - Contact form - Modal.png",
-          "projects/JannesMaskinOSmide/Kundsida/7. Machines - Ring Sales - Modal.png",
-          "projects/JannesMaskinOSmide/Kundsida/9. Machines - Vald Machine Images - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/10. Machines - Vald Machine Image Gallery - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/11. Machines - Vald Machine - Page.png",
-          "projects/JannesMaskinOSmide/Kundsida/11. Machines - Vald Machine Lightbox - Modal.png",
-          "projects/JannesMaskinOSmide/Kundsida/12. Machines - Vald Machine Info - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/13. Machines - Vald Machine Bottom - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/14. Machines - Contact form Vald Machine - Modal.png",
-          "projects/JannesMaskinOSmide/Kundsida/15. Machines - Transport Vald Machine - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/7. Machines - Call Sales - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/9. Machines - Chosen Machine Images - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/10. Machines - Chosen Machine Image Gallery - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/11. Machines - Chosen Machine Lightbox - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/12. Machines - Chosen Machine Info - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/13. Machines - Chosen Machine Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/14. Machines - Contact form Chosen Machine - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/15. Machines - Transport Chosen Machine - Modal.png",
           "projects/JannesMaskinOSmide/Kundsida/16. Inventory - Overview - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/17. Inventory - Alla Inventoryn - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/17. Inventory - All Inventory - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/18. Inventory - Cant Find - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/19. Inventory - Vald Inventory - Page.png",
-          "projects/JannesMaskinOSmide/Kundsida/20. Inventory - Vald Inventory Details - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/21. Inventory - Vald Inventory Bottom - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/22. Inventory - Contact form Vald Inventory - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/19. Inventory - Chosen Inventory - Page.png",
+          "projects/JannesMaskinOSmide/Kundsida/20. Inventory - Chosen Inventory Details - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/21. Inventory - Chosen Inventory Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/22. Inventory - Contact form Chosen Inventory - Modal.png",
           "projects/JannesMaskinOSmide/Kundsida/23. Workshop & Metalwork - Workshop - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/24. Workshop & Metalwork - Custom Manufacturing Transport - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/25. Workshop & Metalwork - Contact form - Modal.png",
           "projects/JannesMaskinOSmide/Kundsida/26. About us - About the Company - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/27. About us - Vad Vi Gör - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/27. About us - What we do - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/28. About us - The family business - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/29. Contact - Contacta Oss - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/29. Contact - Contact us - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/30. Contact - Form - Modal.png",
           "projects/JannesMaskinOSmide/Kundsida/31. Home - Footer - Section.png"
         ],
         "Customer Portal - Light Mode": [
           "projects/JannesMaskinOSmide/Kundsida-Lightmode/1. Home - Hero - Section.png",
           "projects/JannesMaskinOSmide/Kundsida-Lightmode/2. Home - Info - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida-Lightmode/3. Machines - Alla Machines - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida-Lightmode/4. Inventory - Alla Inventoryn - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-Lightmode/3. Machines - All Machines - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-Lightmode/4. Inventory - All Inventory - Section.png",
           "projects/JannesMaskinOSmide/Kundsida-Lightmode/5. Workshop & Metalwork - Workshop - Section.png",
           "projects/JannesMaskinOSmide/Kundsida-Lightmode/6. About us - About the Company - Section.png"
         ],
@@ -375,21 +374,21 @@ export const featuredProjects = [
     liveUrl: "https://mackoping.se",
     languages: ["JavaScript", "HTML", "CSS"],
     tech: ["React", "Vite", "Framer Motion", "SEO", "Responsive Design"],
-    screenshot: `${import.meta.env.BASE_URL}projects/MacService/1.Home - Hero - Section.png`,
+    screenshot: `${import.meta.env.BASE_URL}projects/MacService/1. Home - Hero - Section.png`,
     gallery: [
-      "projects/MacService/1.Home - Hero - Section.png",
-      "projects/MacService/2.Home - Our services - Section.png",
-      "projects/MacService/3.Home - About us - Section.png",
-      "projects/MacService/4.Home -About us - Section Slideshow.png",
-      "projects/MacService/5.Home - Contacta oss & Footer - Section.png",
-      "projects/MacService/6.About us - Hero - Section.png",
-      "projects/MacService/7.About us - About us - Section.png",
-      "projects/MacService/8.About us - Why choose MAC - Section.png",
-      "projects/MacService/9.Tjänster-Hero - Section.png",
-      "projects/MacService/10.Tjänster - Our services - Section.png",
-      "projects/MacService/11.Tjänster - Detailsade tjänster - Section.png",
-      "projects/MacService/12.Tjänster - Hiring us - Section.png",
-      "projects/MacService/13.Contact - Hero - Section.png"
+      "projects/MacService/1. Home - Hero - Section.png",
+      "projects/MacService/2. Home - Our services - Section.png",
+      "projects/MacService/3. Home - About us - Section.png",
+      "projects/MacService/4. Home - About us - Slideshow.png",
+      "projects/MacService/5. Home - Contact us & Footer - Section.png",
+      "projects/MacService/6. About us - Hero - Section.png",
+      "projects/MacService/7. About us - About us - Section.png",
+      "projects/MacService/8. About us - Why choose MAC - Section.png",
+      "projects/MacService/9. Services - Hero - Section.png",
+      "projects/MacService/10. Services - Our services - Section.png",
+      "projects/MacService/11. Services - Detailed services - Section.png",
+      "projects/MacService/12. Services - Hiring us - Section.png",
+      "projects/MacService/13. Contact - Hero - Section.png"
     ]
   },
   {
@@ -428,16 +427,16 @@ export const featuredProjects = [
     liveUrl: "https://tivva34.github.io/Wermlands-Skomakeri/",
     languages: ["TypeScript", "HTML", "CSS"],
     tech: ["React", "Vite", "Tailwind CSS", "Responsive Design"],
-    screenshot: `${import.meta.env.BASE_URL}projects/WermlandsSkomakeri/1.Home - Hero - Section.png`,
+    screenshot: `${import.meta.env.BASE_URL}projects/WermlandsSkomakeri/1. Home - Hero - Section.png`,
     gallery: [
-      "projects/WermlandsSkomakeri/1.Home - Hero - Section.png",
-      "projects/WermlandsSkomakeri/2.Home - Our services - Section.png",
-      "projects/WermlandsSkomakeri/3.Home - Craftsmanship - Section.png",
-      "projects/WermlandsSkomakeri/4.Home - Before & After - Section.png",
-      "projects/WermlandsSkomakeri/5.Home - The workshop - Section.png",
-      "projects/WermlandsSkomakeri/6.Home - Contact & Hitta hit - Section.png",
-      "projects/WermlandsSkomakeri/7.Home - Footer - Section.png",
-      "projects/WermlandsSkomakeri/8.LightHouse - Report.png"
+      "projects/WermlandsSkomakeri/1. Home - Hero - Section.png",
+      "projects/WermlandsSkomakeri/2. Home - Our services - Section.png",
+      "projects/WermlandsSkomakeri/3. Home - Craftsmanship - Section.png",
+      "projects/WermlandsSkomakeri/4. Home - Before & After - Section.png",
+      "projects/WermlandsSkomakeri/5. Home - The workshop - Section.png",
+      "projects/WermlandsSkomakeri/6. Home - Contact & Find us - Section.png",
+      "projects/WermlandsSkomakeri/7. Home - Footer - Section.png",
+      "projects/WermlandsSkomakeri/8. LightHouse - Report.png"
     ]
   },
   {
@@ -475,15 +474,15 @@ export const featuredProjects = [
     liveUrl: "https://tivva34.github.io/Arvika-Bygg-o-Stenarbeten/",
     languages: ["JavaScript", "HTML", "CSS"],
     tech: ["React", "Vite", "Responsive Design"],
-    screenshot: `${import.meta.env.BASE_URL}projects/ArvikaBygg&Stenarbete/1.Hero - Section.png`,
+    screenshot: `${import.meta.env.BASE_URL}projects/ArvikaBygg&Stenarbete/1. Home - Hero - Section.png`,
     gallery: [
-      "projects/ArvikaBygg&Stenarbete/1.Hero - Section.png",
-      "projects/ArvikaBygg&Stenarbete/2.Our services - Section.png",
-      "projects/ArvikaBygg&Stenarbete/3.Authorized - Section.png",
-      "projects/ArvikaBygg&Stenarbete/4.Industry experience - Section.png",
-      "projects/ArvikaBygg&Stenarbete/5.Why choose us - Section.png",
-      "projects/ArvikaBygg&Stenarbete/6.Process - Section.png",
-      "projects/ArvikaBygg&Stenarbete/7.Contact - Section.png"
+      "projects/ArvikaBygg&Stenarbete/1. Home - Hero - Section.png",
+      "projects/ArvikaBygg&Stenarbete/2. Home - Our services - Section.png",
+      "projects/ArvikaBygg&Stenarbete/3. Home - Authorized - Section.png",
+      "projects/ArvikaBygg&Stenarbete/4. Home - Industry experience - Section.png",
+      "projects/ArvikaBygg&Stenarbete/5. Home - Why choose us - Section.png",
+      "projects/ArvikaBygg&Stenarbete/6. Home - Process - Section.png",
+      "projects/ArvikaBygg&Stenarbete/7. Home - Contact - Section.png"
     ]
   },
   {
@@ -521,15 +520,15 @@ export const featuredProjects = [
     liveUrl: "https://tivva34.github.io/LJS-Maleri-Varmland/",
     languages: ["JavaScript", "HTML", "CSS"],
     tech: ["Responsive Design"],
-    screenshot: `${import.meta.env.BASE_URL}projects/LJSMåleriVärmland/1.Hero - Section.png`,
+    screenshot: `${import.meta.env.BASE_URL}projects/LJSMåleriVärmland/1. Home - Hero - Section.png`,
     gallery: [
-      "projects/LJSMåleriVärmland/1.Hero - Section.png",
-      "projects/LJSMåleriVärmland/2.Who are we - Section.png",
-      "projects/LJSMåleriVärmland/3.What we do - Section.png",
-      "projects/LJSMåleriVärmland/4.Process - Section.png",
-      "projects/LJSMåleriVärmland/5.Process - Section Hover.png",
-      "projects/LJSMåleriVärmland/6.Contact - Section.png",
-      "projects/LJSMåleriVärmland/7.Googlemaps - Section.png"
+      "projects/LJSMåleriVärmland/1. Home - Hero - Section.png",
+      "projects/LJSMåleriVärmland/2. Home - Who are we - Section.png",
+      "projects/LJSMåleriVärmland/3. Home - What we do - Section.png",
+      "projects/LJSMåleriVärmland/4. Home - Process - Section.png",
+      "projects/LJSMåleriVärmland/5. Home - Process - Section Hover.png",
+      "projects/LJSMåleriVärmland/6. Home - Contact - Section.png",
+      "projects/LJSMåleriVärmland/7. Home - Google Maps - Section.png"
     ]
   },
     {
@@ -539,27 +538,27 @@ export const featuredProjects = [
     slug: 'supermon',
     description: 'A Pokémon-inspired platformer built in Unity and C# as part of a collaborative exam project.',
     detailedContent: {
-      introTitle: "Ett nostalgiskt 2D-äventyr i Unity.",
-      intro: "Super Jespermon är ett plattformsbaserat 2D-äventyr inspirerat av klassiska titlar som Super Mario och Pokémon. Spelet utvecklades helt från grunden i Unity (C#) som ett omfattande examensarbete, med målet att tillämpa avancerad spelprogrammering, bandesign och systemarkitektur i praktiken.",
+      introTitle: "A nostalgic 2D adventure in Unity.",
+      intro: "Super Jespermon is a platform-based 2D adventure inspired by classic titles like Super Mario and Pokémon. The game was developed entirely from scratch in Unity (C#) as a comprehensive degree project, with the goal of applying advanced game programming, level design, and system architecture in practice.",
       sections: [
         {
-          tag: "01 — SPELMEKANIK",
-          title: "Plattformande och strid.",
-          text: "Projektet krävde utveckling av flera samverkande system för att hantera spelarens rörelser, fiendernas AI och interaktioner i världen. Spelaren kan utforska handgjorda nivåer, samla mynt och använda fångstmekaniker för att besegra olika fiender.",
+          tag: "01 — GAME MECHANICS",
+          title: "Platforming and combat.",
+          text: "The project required the development of several interacting systems to handle player movements, enemy AI, and interactions in the world. The player can explore hand-crafted levels, collect coins, and use capture mechanics to defeat various enemies.",
           bullets: [
-            "Tre unikt designade nivåer fyllda med interaktiva objekt och easter eggs",
-            "Dynamiska attackmekaniker och möjlighet att fånga Pokémon",
-            "Egenutvecklade system för gameplay och karaktärsfysik"
+            "Three uniquely designed levels filled with interactive objects and easter eggs",
+            "Dynamic attack mechanics and the ability to capture Pokémon",
+            "Custom-developed systems for gameplay and character physics"
           ]
         },
         {
-          tag: "02 — TEKNISK IMPLEMENTATION",
-          title: "Systemarkitektur i Unity.",
-          text: "För att säkerställa att spelet var både utbyggbart och presterande, skapades robusta C#-skript för att styra allt från animationstillstånd och poängräkning till nivåval och UI-hantering.",
+          tag: "02 — TECHNICAL IMPLEMENTATION",
+          title: "System architecture in Unity.",
+          text: "To ensure the game was both expandable and performant, robust C# scripts were created to control everything from animation states and score keeping to level selection and UI management.",
           bullets: [
-            "Objektorienterad C#-arkitektur för spelets kärnsystem",
-            "Skräddarsydd hantering av animationer och användargränssnitt (UI)",
-            "Spar- och laddningslogik för att spåra spelarens poäng"
+            "Object-oriented C# architecture for the game's core systems",
+            "Custom handling of animations and user interfaces (UI)",
+            "Save and load logic to track the player's score"
           ]
         }
       ]
@@ -568,8 +567,8 @@ export const featuredProjects = [
     liveUrl: 'https://zypherkill.github.io/supermon/',
     languages: ['CSharp', 'HTML', 'CSS'],
     tech: ['Unity'],
-    screenshot: `${import.meta.env.BASE_URL}projects/SuperMon.png`,
-    gallery: ['projects/SuperMon.png']
+    screenshot: `${import.meta.env.BASE_URL}projects/1. SuperMon - Student Project.png`,
+    gallery: ['projects/1. SuperMon - Student Project.png']
   },
   {
     id: 'iron-turtles',
@@ -578,7 +577,7 @@ export const featuredProjects = [
     slug: 'the-turtlebase',
     description: 'Movie discovery and watchlist app built with React, Vite, and Swiper for browsing, searching, and saving films.',
     detailedContent: {
-      introTitle: "Modern filmupptäckt och state management.",
+      introTitle: "Modern movie discovery and state management.",
       intro: "The Turtlebase is a modern, responsive movie discovery application built entirely with React and Vite. The primary goal of this project was to strengthen architectural skills in building component-based frontend applications, managing complex global state, and integrating external REST APIs.",
       sections: [
         {
@@ -607,8 +606,8 @@ export const featuredProjects = [
     liveUrl: 'https://tivva34.github.io/Iron-Turtles/',
     languages: ['JavaScript', 'HTML', 'CSS'],
     tech: ['React', 'Vite', 'Swiper', 'Responsive Design'],
-    screenshot: `${import.meta.env.BASE_URL}projects/iron-turtles.png`,
-    gallery: ['projects/iron-turtles.png']
+    screenshot: `${import.meta.env.BASE_URL}projects/1. The Turtlebase - Student Project.png`,
+    gallery: ['projects/1. The Turtlebase - Student Project.png']
   },
   {
     id: 'imdo',
@@ -617,7 +616,7 @@ export const featuredProjects = [
     slug: 'imdo',
     description: 'School assignment - a movie browsing web app similar to IMDb. It uses a custom API called IMDO API to fetch and display movie data such as favorites, search results, and detailed movie info.',
     detailedContent: {
-      introTitle: "Ett skräddarsytt filmbibliotek med vanilj-JS.",
+      introTitle: "A custom movie library with vanilla JS.",
       intro: "IMDO is a web application heavily inspired by IMDb, designed as a comprehensive school assignment. The project focuses on core web development fundamentals, specifically utilizing vanilla JavaScript modules, intricate DOM manipulation, and asynchronous API integrations through a custom 'IMDO API'.",
       sections: [
         {
@@ -645,8 +644,8 @@ export const featuredProjects = [
     liveUrl: 'https://tivva34.github.io/IMDO/index.html',
     languages: ['JavaScript', 'HTML', 'CSS'],
     tech: ['API', 'Responsive Design'],
-    screenshot: `${import.meta.env.BASE_URL}projects/IMDO.png`,
-    gallery: ['projects/IMDO.png']
+    screenshot: `${import.meta.env.BASE_URL}projects/1. IMDO - Student Project.png`,
+    gallery: ['projects/1. IMDO - Student Project.png']
   },
   {
     id: 'nasa-spaceviewer',
@@ -655,7 +654,7 @@ export const featuredProjects = [
     slug: 'nasa-spaceviewer',
     description: 'NASA Space Viewer: A React app that fetches and displays NASA\'s Astronomy Picture of the Day (APOD) using the official NASA API.',
     detailedContent: {
-      introTitle: "Utforskning av kosmos via NASA:s API.",
+      introTitle: "Exploration of the cosmos via NASA's API.",
       intro: "Nasa-SpaceViewer is a visually engaging React application that leverages the official NASA Astronomy Picture of the Day (APOD) API. The project was built with a strong focus on creating a stunning, immersive frontend experience through fluid micro-animations and responsive, high-fidelity media presentation.",
       sections: [
         {
@@ -683,8 +682,8 @@ export const featuredProjects = [
     liveUrl: null,
     languages: ['JavaScript', 'HTML', 'CSS'],
     tech: ['React', 'NASA API', 'Framer Motion', 'Responsive Design'],
-    screenshot: `${import.meta.env.BASE_URL}projects/Nasa2.png`,
-    gallery: ['projects/Nasa2.png']
+    screenshot: `${import.meta.env.BASE_URL}projects/1. Nasa SpaceViewer - Student Project.png`,
+    gallery: ['projects/1. Nasa SpaceViewer - Student Project.png']
   },
   {
     id: 'readingsloth',
@@ -693,7 +692,7 @@ export const featuredProjects = [
     slug: 'readingsloth',
     description: 'A React app with user authentication (login/register), book browsing, and a persistent shopping cart.',
     detailedContent: {
-      introTitle: "Simulerad e-handel och beständig kundvagn.",
+      introTitle: "Simulated e-commerce and persistent shopping cart.",
       intro: "ReadingSloth is a fully functional frontend e-commerce bookstore prototype built with React. The project was designed to simulate a real-world shopping experience, requiring the implementation of complex client-side logic such as user authentication flows, protected routes, and a persistent shopping cart system.",
       sections: [
         {
@@ -722,8 +721,8 @@ export const featuredProjects = [
     liveUrl: null,
     languages: ['JavaScript', 'HTML', 'CSS'],
     tech: ['React', 'React Router', 'Responsive Design'],
-    screenshot: `${import.meta.env.BASE_URL}projects/ReadingSloth.png`,
-    gallery: ['projects/ReadingSloth.png', 'projects/Sloth3.png']
+    screenshot: `${import.meta.env.BASE_URL}projects/1. ReadingSloth - Student Project.png`,
+    gallery: ['projects/1. ReadingSloth - Student Project.png', 'projects/2. ReadingSloth - In Game.png']
   },
   {
     id: 'shui',
@@ -733,26 +732,26 @@ export const featuredProjects = [
     description: 'A full-stack project where users can post, edit, and delete messages on a digital message board. The frontend is built with React and hosted on AWS.',
     detailedContent: {
       introTitle: "Serverlös meddelandehantering med AWS.",
-      intro: "Shui är ett molnbaserat fullstack-projekt som fungerar som en digital anslagstavla. Applikationen är helt serverlös och byggdes från grunden för att demonstrera hur moderna frontend-ramverk (React) kan integreras sömlöst med skalbar molninfrastruktur via Amazon Web Services (AWS).",
+      intro: "Shui is a cloud-based full-stack project that acts as a digital bulletin board. The application is completely serverless and was built from the ground up to demonstrate how modern frontend frameworks (React) can be seamlessly integrated with scalable cloud infrastructure via Amazon Web Services (AWS).",
       sections: [
         {
           tag: "01 — FRONTEND & FUNKTIONALITET",
           title: "Interaktion och Användarflöden.",
           text: "Användargränssnittet tillåter besökare att registrera konton, logga in och interagera med den digitala anslagstavlan. Det finns fullt stöd för CRUD-operationer (Skapa, Läsa, Uppdatera, Ta bort) på egna inlägg, samt möjlighet att filtrera och läsa specifika användares samlade meddelandehistorik.",
           bullets: [
-            "Fullständigt flöde för användarregistrering och säker autentisering",
-            "CRUD-funktionalitet för personliga anslagstavleinlägg",
-            "Filtrering av historik kopplat till unika användarprofiler"
+            "Complete flow for user registration and secure authentication",
+            "CRUD functionality for personal bulletin board posts",
+            "Filtering of history linked to unique user profiles"
           ]
         },
         {
-          tag: "02 — BACKEND & MOLNARKITEKTUR",
-          title: "Serverlös AWS-infrastruktur.",
-          text: "Istället för att hantera en traditionell server, driftas hela backend-logiken serverlöst. React-frontenden ligger hostad i en AWS S3-bucket, medan API-anrop dirigeras via AWS API Gateway till Lambda-funktioner som i sin tur kommunicerar med en NoSQL-databas (DynamoDB).",
+          tag: "02 — BACKEND & CLOUD ARCHITECTURE",
+          title: "Serverless AWS infrastructure.",
+          text: "Instead of managing a traditional server, the entire backend logic is hosted serverless. The React frontend is hosted in an AWS S3 bucket, while API calls are routed via AWS API Gateway to Lambda functions which in turn communicate with a NoSQL database (DynamoDB).",
           bullets: [
-            "Serverlös backend-arkitektur byggd med AWS Lambda och API Gateway",
-            "Säker och snabb databaslagring via Amazon DynamoDB",
-            "Frontend-hosting distribuerad via AWS S3"
+            "Serverless backend architecture built with AWS Lambda and API Gateway",
+            "Secure and fast database storage via Amazon DynamoDB",
+            "Frontend hosting distributed via AWS S3"
           ]
         }
       ]
@@ -761,8 +760,8 @@ export const featuredProjects = [
     liveUrl: 'http://shui-tim-2025.s3-website.eu-north-1.amazonaws.com/',
     languages: ['JavaScript', 'HTML', 'CSS'],
     tech: ['React', 'AWS', 'DynamoDB', 'Responsive Design'],
-    screenshot: `${import.meta.env.BASE_URL}projects/Shui.png`,
-    gallery: ['projects/Shui.png']
+    screenshot: `${import.meta.env.BASE_URL}projects/1. Shui - Student Project.png`,
+    gallery: ['projects/1. Shui - Student Project.png']
   },
   {
     id: 'fading-light-demo',
@@ -771,7 +770,7 @@ export const featuredProjects = [
     slug: 'fading-light-demo',
     description: 'Fading Light is a top-down 2D puzzle solver with a strong focus on storytelling around mental health themes.',
     detailedContent: {
-      introTitle: "Berättardriven pussellösning i Unity.",
+      introTitle: "Narrative-driven puzzle solving in Unity.",
       intro: "Fading Light is a top-down 2D puzzle-solving game developed over the course of two years using Unity and C#. More than just a technical prototype, this project serves as an interactive demo specifically designed to showcase the integration of narrative game design with mechanical gameplay, exploring sensitive mental health themes.",
       sections: [
         {
@@ -800,14 +799,14 @@ export const featuredProjects = [
     liveUrl: null,
     languages: ['CSharp'],
     tech: ['Unity'],
-    screenshot: `${import.meta.env.BASE_URL}projects/FadingLight4.png`,
+    screenshot: `${import.meta.env.BASE_URL}projects/1. FadingLight - Prototype.png`,
     gallery: [
-      'projects/FadingLight4.png',
-      'projects/FadingLight.png',
-      'projects/FadingLight2.png',
-      'projects/FadingLight3.png',
-      'projects/FadingLight5.png',
-      'projects/FadingLightMind.png'
+      'projects/1. FadingLight - Prototype.png',
+      'projects/2. FadingLight - Gameplay.png',
+      'projects/3. FadingLight - Level Design.png',
+      'projects/4. FadingLight - Combat.png',
+      'projects/5. FadingLight - Atmosphere.png',
+      'projects/6. FadingLight - Mind Map.png'
     ]
   }
 ];
