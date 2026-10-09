@@ -248,7 +248,7 @@ export const featuredProjects = [
       ]
     },
     html_url: null,
-    liveUrl: "https://jannes-maskin-o-smide-cloudflare.pages.dev/",
+    liveUrl: "https://tivva34.github.io/JannesMaskin/",
     languages: ["JavaScript", "HTML", "CSS"],
     tech: ["React", "Supabase", "Realtime", "PWA", "Service Worker", "Responsive Design"],
     screenshot: `${import.meta.env.BASE_URL}projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png`,
