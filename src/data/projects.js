@@ -202,48 +202,48 @@ export const featuredProjects = [
     category: "fullstack",
     type: "CUSTOM BUSINESS PLATFORM",
     slug: "jannes-maskin-o-smide",
-    description: "Projektet är en skräddarsydd, webbaserad digital affärsplattform. Målet med lösningen är att samla företagets digitala försäljning, kundförfrågningar, kunddialog och interna administration i ett enda, sammanhängande system.",
+    description: "The project is a custom, web-based digital business platform. The goal of the solution is to gather the company's digital sales, customer inquiries, customer dialogue, and internal administration into a single, cohesive system.",
     detailedContent: {
-      introTitle: "En lösning med tydligt syfte.",
-      intro: "Projektet är en skräddarsydd, webbaserad digital affärsplattform. Målet med lösningen är att samla företagets digitala försäljning, kundförfrågningar, kunddialog och interna administration i ett enda, sammanhängande system. Genom denna arkitektur ersätts tidigare isolerade system med ett kontextdrivet flöde där all information hänger ihop – från första sökning på Google till avslutad affär.",
+      introTitle: "A solution with a clear purpose.",
+      intro: "The project is a custom, web-based digital business platform. The goal of the solution is to gather the company's digital sales, customer inquiries, customer dialogue, and internal administration into a single, cohesive system. Through this architecture, previously isolated systems are replaced with a context-driven flow where all information is connected - from the first search on Google to a closed deal.",
       sections: [
         {
-          tag: "01 — PUBLIK WEBBPLATS & FÖRETAGSYTA",
-          title: "Företagets digitala yta mot kunder.",
-          text: "Den publika webbplatsen är byggd för att fungera sömlöst över dator, mobil och surfplatta, med ett tydligt fokus på responsiv design, tillgänglighet och konvertering.",
+          tag: "01 — PUBLIC WEBSITE & COMPANY AREA",
+          title: "The company's digital interface towards customers.",
+          text: "The public website is built to work seamlessly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
           bullets: [
-            "Startsida och Företagsinformation",
-            "Maskinförsäljning och Maskinlistningar (inkl. detaljsidor)",
-            "Presentation av Yttre lösöre",
-            "Specifika sektioner för Verkstad och Smide",
-            "Transportrelaterade kontaktflöden",
-            "Smarta, kontextuella kontaktfunktioner och en direkt \"Ring oss\"-funktion för mobila enheter"
+            "Home page and Company Information",
+            "Machine Sales and Machine Listings (incl. detail pages)",
+            "Presentation of Inventory",
+            "Specific sections for Workshop and Metalwork",
+            "Transport-related contact flows",
+            "Smart, contextual contact features and a direct \"Call us\" function for mobile devices"
           ]
         },
         {
-          tag: "02 — FÖRSÄLJNING",
-          title: "Maskiner & Yttre Lösöre.",
-          text: "Försäljningen är integrerad direkt i plattformen. Personalen kan hantera lagret via administrationen, och det som publiceras internt speglas omedelbart externt. Varje maskin och lösöre har sin egen detaljsida med specifikationer, bilder och unika kontaktmöjligheter."
+          tag: "02 — SALES",
+          title: "Machines & Inventory.",
+          text: "Sales are integrated directly into the platform. Staff can manage the inventory via the administration, and what is published internally is immediately mirrored externally. Each machine and inventory item has its own detail page with specifications, images, and unique contact options."
         },
         {
-          tag: "03 — KUNDDIALOG",
-          title: "Kontextbaserade Förfrågningar.",
-          text: "Ett centralt koncept i plattformen är att alla förfrågningar kopplas till rätt sammanhang. Smarta formulär kopplar automatiskt ihop kunden, meddelandet och maskinen i ett ärende. Förfrågningar för smidesarbete och verkstad separeras automatiskt, och e-postkommunikation är helt integrerad in i systemet."
+          tag: "03 — CUSTOMER DIALOGUE",
+          title: "Context-based Inquiries.",
+          text: "A central concept in the platform is that all inquiries are linked to the right context. Smart forms automatically connect the customer, the message, and the machine in a ticket. Inquiries for metalwork and workshop are separated automatically, and email communication is fully integrated into the system."
         },
         {
           tag: "04 — ADMIN & CRM",
-          title: "Administrativt Verksamhetssystem.",
-          text: "Det interna administrationssystemet är byggt som en separat applikation (PWA) för hantering av all affärsdata. Det inkluderar hantering av ärenden, kunddialog med historik, filtrering, och rollbaserad inloggning (RBAC) för säkerhet. Systemet kan installeras som en riktig app på alla enheter."
+          title: "Administrative Business System.",
+          text: "The internal administration system is built as a separate application (PWA) for managing all business data. It includes handling tickets, customer dialogue with history, filtering, and role-based access control (RBAC) for security. The system can be installed as a real app on all devices."
         },
         {
-          tag: "05 — TEKNIK & PRESTANDA",
-          title: "Realtid, Arkitektur & SEO.",
-          text: "Systemet använder avancerad realtidsfunktionalitet med Supabase Realtime för omedelbara uppdateringar och Web Push-notiser. Backend hanteras av en robust PostgreSQL-databas med Edge Functions och RLS. Frontenden är byggd i React & Vite och optimerad för blixtsnabba laddtider och hög SEO-ranking."
+          tag: "05 — TECH & PERFORMANCE",
+          title: "Real-time, Architecture & SEO.",
+          text: "The system uses advanced real-time functionality with Supabase Realtime for instant updates and Web Push notifications. The backend is handled by a robust PostgreSQL database with Edge Functions and RLS. The frontend is built in React & Vite and optimized for lightning-fast load times and high SEO ranking."
         },
         {
-          tag: "06 — KUNDRESAN",
-          title: "Sammanhängande flöde.",
-          text: "Google → Webbplats → Maskin / Tjänst → Detaljsida → Kontaktförfrågan → Automatiskt kopplat ärende → Notifiering till rätt personal (via PWA) → Svar inifrån CRM (e-post integrerad) → Uppföljning och avslut."
+          tag: "06 — THE CUSTOMER JOURNEY",
+          title: "Cohesive flow.",
+          text: "Google → Website → Machine / Service → Detail page → Contact inquiry → Automatically linked ticket → Notification to the right staff (via PWA) → Reply from within CRM (email integrated) → Follow-up and closing."
         }
       ]
     },
@@ -345,28 +345,28 @@ export const featuredProjects = [
     category: "frontend",
     type: "BUSINESS WEBSITE",
     slug: "mac-service",
-    description: "En modern och responsiv företagswebbplats för MAC Service i Köping. Webbplatsen presenterar byggnation och renovering, fastighetsskötsel samt trädgårdsservice, och leder besökaren från tjänst och projektbilder till en kostnadsfri offertförfrågan.",
+    description: "A modern and responsive corporate website for MAC Service in Köping. The website presents construction and renovation, property maintenance, and gardening services, leading the visitor from services and project images to a free quote request.",
     detailedContent: {
-      introTitle: "En säljdrivande plattform för hantverkstjänster.",
-      intro: "En anpassad och responsiv företagswebbplats utvecklad för MAC Service i Köping. Syftet med projektet var att skapa en modern, snabb och användarvänlig plattform för att presentera företagets tjänster inom byggnation, fastighetsskötsel och trädgårdsservice. Huvudfokus låg på att konvertera besökare till kunder genom tydliga kontaktflöden för kostnadsfria offerter.",
+      introTitle: "A sales-driving platform for craftsmanship services.",
+      intro: "A custom and responsive corporate website developed for MAC Service in Köping. The purpose of the project was to create a modern, fast, and user-friendly platform to present the company's services in construction, property maintenance, and gardening. The main focus was on converting visitors into customers through clear contact flows for free quotes.",
       sections: [
         {
-          tag: "01 — TJÄNSTER & GALLERI",
-          title: "Struktur och förtroende.",
-          text: "Webbplatsen är uppdelad i tydliga, custom-designade sektioner för varje affärsområde. För att bygga förtroende integrerades ett dynamiskt projektgalleri som visar upp tidigare utförda arbeten.",
+          tag: "01 — SERVICES & GALLERY",
+          title: "Structure and trust.",
+          text: "The website is divided into clear, custom-designed sections for each business area. To build trust, a dynamic project gallery was integrated to showcase previously completed works.",
           bullets: [
-            "Sektioner för byggnation, fastighetsskötsel och trädgårdsservice",
-            "Projektgalleri för att stärka förtroende hos nya kunder"
+            "Sections for construction, property maintenance, and gardening services",
+            "Project gallery to strengthen trust with new customers"
           ]
         },
         {
-          tag: "02 — UX & KONVERTERING",
-          title: "Fokus på användarupplevelsen.",
-          text: "Genom att optimera CTA-flöden (Call To Action) säkerställdes det att användaren enkelt kan navigera från att läsa om en specifik tjänst direkt till att begära en kostnadsfri offert.",
+          tag: "02 — UX & CONVERSION",
+          title: "Focus on the user experience.",
+          text: "By optimizing CTA (Call To Action) flows, it was ensured that the user can easily navigate from reading about a specific service directly to requesting a free quote.",
           bullets: [
-            "Tydliga CTA-flöden för offertförfrågan",
-            "Direkta kontaktvägar via telefon, e-post och sociala medier",
-            "Responsiv design som fungerar lika bra på mobil som desktop"
+            "Clear CTA flows for quote requests",
+            "Direct contact paths via phone, email, and social media",
+            "Responsive design that works just as well on mobile as desktop"
           ]
         }
       ]
@@ -398,28 +398,28 @@ export const featuredProjects = [
     category: "frontend",
     type: "COMPANY WEBSITE",
     slug: "wermlands-skomakeri",
-    description: "En modern och avskalad företagswebbplats för Wermlands Skomakeri i Karlstad, med fokus på traditionellt hantverk, skoreparationer och personlig service. Webbplatsen lyfter verkstadens hantverk och gör det enkelt för besökaren att hitta information, se tjänster och komma i kontakt med skomakeriet.",
+    description: "A modern and minimalistic corporate website for Wermlands Skomakeri in Karlstad, focusing on traditional craftsmanship, shoe repairs, and personal service. The website highlights the workshop's craftsmanship and makes it easy for the visitor to find information, view services, and get in touch with the shoemaker.",
     detailedContent: {
-      introTitle: "Genuint hantverk i digitalt format.",
-      intro: "En skräddarsydd och responsiv företagswebbplats för Wermlands Skomakeri i Karlstad. Huvudsyftet var att skapa en digital närvaro som känns lika genuin och hantverksmässig som själva verksamheten. Genom att kombinera ett tidlöst visuellt uttryck med modern webbteknik blev resultatet en plattform där besökaren snabbt kan hitta rätt tjänster, öppettider och kontaktinformation.",
+      introTitle: "Genuine craftsmanship in a digital format.",
+      intro: "A custom and responsive corporate website for Wermlands Skomakeri in Karlstad. The main purpose was to create a digital presence that feels just as genuine and crafted as the business itself. By combining a timeless visual expression with modern web technology, the result was a platform where the visitor can quickly find the right services, opening hours, and contact information.",
       sections: [
         {
-          tag: "01 — PRESENTATION AV HANTVERK",
-          title: "Att visa värdet av reparationer.",
-          text: "För att belysa kvaliteten i skomakeriets hantverk byggdes specifika sektioner för att visa före- och efterbilder. Detta ger kunden en direkt förståelse för värdet i att reparera istället för att köpa nytt.",
+          tag: "01 — PRESENTATION OF CRAFTSMANSHIP",
+          title: "Showing the value of repairs.",
+          text: "To highlight the quality of the shoemaker's craftsmanship, specific sections were built to show before and after pictures. This gives the customer a direct understanding of the value of repairing instead of buying new.",
           bullets: [
-            "Före- och efterbilder för olika typer av skoreparationer",
-            "Tydlig och strukturerad presentation av tillgängliga tjänster"
+            "Before and after pictures for different types of shoe repairs",
+            "Clear and structured presentation of available services"
           ]
         },
         {
           tag: "02 — INTEGRATION & ADMINISTRATION",
-          title: "Digital närvaro i symbios.",
-          text: "Webbplatsen byggdes med modern arkitektur och en centraliserad hantering av kunddata. För att hålla innehållet levande integrerades även företagets Instagram-flöde, vilket ger besökarna en inblick i verkstadens vardag.",
+          title: "Digital presence in symbiosis.",
+          text: "The website was built with a modern architecture and centralized management of customer data. To keep the content alive, the company's Instagram feed was also integrated, giving visitors an insight into the workshop's everyday life.",
           bullets: [
-            "Instagram-integration för aktuella uppdateringar direkt från verkstaden",
-            "Centraliserad datahantering för öppettider och kontaktuppgifter",
-            "Optimerad, snabb och helt responsiv design för alla enheter"
+            "Instagram integration for current updates directly from the workshop",
+            "Centralized data management for opening hours and contact details",
+            "Optimized, fast, and fully responsive design for all devices"
           ]
         }
       ]
@@ -446,27 +446,27 @@ export const featuredProjects = [
     category: "frontend",
     type: "COMPANY WEBSITE",
     slug: "arvika-bygg-stenarbeten",
-    description: "En professionell företagswebbplats byggd för ett lokalt företag. Fokus låg på att skapa en förtroendeingivande design, lyfta fram deras tjänster och göra det enkelt för kunder att begära offert.",
+    description: "A professional corporate website built for a local company. The focus was on creating a trustworthy design, highlighting their services, and making it easy for customers to request a quote.",
     detailedContent: {
-      introTitle: "Förtroendebyggande närvaro online.",
-      intro: "En professionell och förtroendeingivande företagswebbplats framtagen för ett lokalt bygg- och stenarbetesföretag i Arvika. Fokus låg på att bygga en stabil och snabb digital närvaro som effektivt lyfter fram företagets kärntjänster och driver in nya offertförfrågningar.",
+      introTitle: "Trust-building online presence.",
+      intro: "A professional and trustworthy corporate website developed for a local construction and stonework company in Arvika. The focus was on building a stable and fast digital presence that effectively highlights the company's core services and drives new quote requests.",
       sections: [
         {
-          tag: "01 — STRUKTUR & FÖRTROENDE",
-          title: "Referensdriven design.",
-          text: "Eftersom byggbranschen bygger starkt på tillit, strukturerades webbplatsen för att framhäva referensprojekt och certifieringar. Det skapar en trygghet för potentiella kunder redan vid första intrycket.",
+          tag: "01 — STRUCTURE & TRUST",
+          title: "Reference-driven design.",
+          text: "Since the construction industry relies heavily on trust, the website was structured to highlight reference projects and certifications. This creates a sense of security for potential customers right from the first impression.",
           bullets: [
-            "Tydlig uppdelning av företagets bygg- och stenarbetestjänster",
-            "Referensdriven struktur utformad för att bygga kundförtroende"
+            "Clear division of the company's construction and stonework services",
+            "Reference-driven structure designed to build customer trust"
           ]
         },
         {
-          tag: "02 — ANVÄNDARUPPLEVELSE",
-          title: "Konvertering och tillgänglighet.",
-          text: "Sidan utvecklades med en 'mobile-first'-strategi för att säkerställa en utmärkt upplevelse oavsett vilken enhet kunden använder. Välplacerade CTA-knappar leder besökaren snabbt till en smidig offertförfrågan.",
+          tag: "02 — USER EXPERIENCE",
+          title: "Conversion and accessibility.",
+          text: "The site was developed with a 'mobile-first' strategy to ensure an excellent experience regardless of which device the customer is using. Well-placed CTA buttons quickly lead the visitor to a smooth quote request.",
           bullets: [
-            "Snabb och enkel väg till offertförfrågan",
-            "Helt responsiv och tillgänglig design"
+            "Fast and easy path to a quote request",
+            "Fully responsive and accessible design"
           ]
         }
       ]
@@ -492,27 +492,27 @@ export const featuredProjects = [
     category: "frontend",
     type: "COMPANY WEBSITE",
     slug: "ljs-maleri-varmland",
-    description: "Företagswebbplats som hjälper målerifirman att visa upp tidigare referensprojekt och ta in nya kundförfrågningar. Snabb laddningstid och optimerad för lokal SEO.",
+    description: "Corporate website that helps the painting company showcase past reference projects and collect new customer inquiries. Fast loading time and optimized for local SEO.",
     detailedContent: {
-      introTitle: "Lokal synlighet och snabb kontakt.",
-      intro: "En snabb, modern och lokalt optimerad företagswebbplats utvecklad för LJS Måleri Värmland. Projektets målsättning var att digitalisera företagets portfölj, visa upp tidigare referensprojekt och skapa en enkel, friktionsfri kanal för nya kundförfrågningar.",
+      introTitle: "Local visibility and fast contact.",
+      intro: "A fast, modern, and locally optimized corporate website developed for LJS Måleri Värmland. The project's goal was to digitize the company's portfolio, showcase past reference projects, and create a simple, frictionless channel for new customer inquiries.",
       sections: [
         {
-          tag: "01 — PORTFÖLJ & LOKAL SEO",
-          title: "Att synas där kunderna finns.",
-          text: "Arkitekturen och innehållsstrukturen byggdes med lokal synlighet (Local SEO) i åtanke. Genom att tydligt presentera specifika måleritjänster och lokala referensprojekt förbättrades företagets möjligheter att nå rätt målgrupp.",
+          tag: "01 — PORTFOLIO & LOCAL SEO",
+          title: "Being visible where the customers are.",
+          text: "The architecture and content structure were built with local visibility (Local SEO) in mind. By clearly presenting specific painting services and local reference projects, the company's chances of reaching the right target audience were improved.",
           bullets: [
-            "Optimerad struktur för bättre lokal synlighet",
-            "Tydlig presentation av måleritjänster och referensarbeten"
+            "Optimized structure for better local visibility",
+            "Clear presentation of painting services and reference works"
           ]
         },
         {
-          tag: "02 — FUNKTIONALITET",
-          title: "Responsiv och lättillgänglig.",
-          text: "Med en stor andel besökare från mobila enheter, utvecklades designen för att vara hundra procent responsiv. Kontaktvägarna gjordes extra tydliga så att kunder enkelt kan begära en offert direkt från arbetsplatsen eller hemifrån.",
+          tag: "02 — FUNCTIONALITY",
+          title: "Responsive and accessible.",
+          text: "With a large proportion of visitors from mobile devices, the design was developed to be one hundred percent responsive. Contact paths were made extra clear so that customers can easily request a quote directly from the workplace or from home.",
           bullets: [
-            "Tydliga kontaktvägar optimerade för konvertering",
-            "Fullt responsiv upplevelse på mobil, tablet och desktop"
+            "Clear contact paths optimized for conversion",
+            "Fully responsive experience on mobile, tablet, and desktop"
           ]
         }
       ]
