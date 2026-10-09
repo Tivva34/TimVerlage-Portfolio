@@ -23,6 +23,7 @@
 }
 .project-meta-type {
   display: inline-block;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -59,6 +60,7 @@
   gap: 1rem;
 }
 .project-meta-tag {
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 2px;

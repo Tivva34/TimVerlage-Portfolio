@@ -87,7 +87,7 @@ export const featuredProjects = [
         {
           tag: "01 — PUBLIC WEBSITE & CORPORATE AREA",
           title: "The company's digital interface towards customers.",
-          text: "The public website is built to work seamlessly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
+          text: "The public website is built to adapt fluidly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
           bullets: [
             "Home page and Company Information",
             "Machine Sales and Machine Listings (incl. detail pages)",
@@ -210,7 +210,7 @@ export const featuredProjects = [
         {
           tag: "01 — PUBLIC WEBSITE & COMPANY AREA",
           title: "The company's digital interface towards customers.",
-          text: "The public website is built to work seamlessly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
+          text: "The public website is built to adapt fluidly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
           bullets: [
             "Home page and Company Information",
             "Machine Sales and Machine Listings (incl. detail pages)",
@@ -583,7 +583,7 @@ export const featuredProjects = [
         {
           tag: "01 — CORE FUNCTIONALITY",
           title: "Browsing and Discovery.",
-          text: "The application seamlessly interfaces with a movie database API to fetch and display popular movies, detailed synopses, and high-resolution posters. It features a robust search mechanism that instantly queries and filters titles based on user input.",
+          text: "The application directly interfaces with a movie database API to fetch and display popular movies, detailed synopses, and high-resolution posters. It features a robust search mechanism that instantly queries and filters titles based on user input.",
           bullets: [
             "Dynamic browsing of popular and trending movies",
             "Real-time search functionality for specific film titles",
@@ -732,7 +732,7 @@ export const featuredProjects = [
     description: 'A full-stack project where users can post, edit, and delete messages on a digital message board. The frontend is built with React and hosted on AWS.',
     detailedContent: {
       introTitle: "Serverlös meddelandehantering med AWS.",
-      intro: "Shui is a cloud-based full-stack project that acts as a digital bulletin board. The application is completely serverless and was built from the ground up to demonstrate how modern frontend frameworks (React) can be seamlessly integrated with scalable cloud infrastructure via Amazon Web Services (AWS).",
+      intro: "Shui is a cloud-based full-stack project that acts as a digital bulletin board. The application is completely serverless and was built from the ground up to demonstrate how modern frontend frameworks (React) can be efficiently integrated with scalable cloud infrastructure via Amazon Web Services (AWS).",
       sections: [
         {
           tag: "01 — FRONTEND & FUNKTIONALITET",
