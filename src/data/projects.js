@@ -85,7 +85,7 @@ export const featuredProjects = [
       intro: "The project is a custom, web-based digital business platform. The goal of the solution is to gather the company's digital sales, customer inquiries, customer dialogue, and internal administration into a single, cohesive system. Through this architecture, previously isolated systems are replaced with a context-driven flow where all information is connected - from the first search on Google to a closed deal.",
       sections: [
         {
-          tag: "01 — PUBLIC WEBSITE & CORPORATE AREA",
+          tag: "03 — PUBLIC WEBSITE & CORPORATE AREA",
           title: "The company's digital interface towards customers.",
           text: "The public website is built to adapt fluidly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
           bullets: [
@@ -98,27 +98,27 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — SALES",
+          tag: "04 — SALES",
           title: "Machines & Inventory.",
           text: "Sales are integrated directly into the platform. Staff can manage the inventory via the administration, and what is published internally is immediately mirrored externally. Each machine and inventory item has its own detail page with specifications, images, and unique contact options."
         },
         {
-          tag: "03 — CUSTOMER DIALOGUE",
+          tag: "05 — CUSTOMER DIALOGUE",
           title: "Context-based Inquiries.",
           text: "A central concept in the platform is that all inquiries are linked to the right context. Smart forms automatically connect the customer, the message, and the machine in a ticket. Inquiries for metalwork and workshop are separated automatically, and email communication is fully integrated into the system."
         },
         {
-          tag: "04 — ADMIN & CRM",
+          tag: "06 — ADMIN & CRM",
           title: "Administrative Business System.",
           text: "The internal administration system is built as a separate application (PWA) for managing all business data. It includes handling tickets, customer dialogue with history, filtering, and role-based access control (RBAC) for security. The system can be installed as a real app on all devices."
         },
         {
-          tag: "05 — TECH & PERFORMANCE",
+          tag: "07 — TECH & PERFORMANCE",
           title: "Real-time, Architecture & SEO.",
           text: "The system uses advanced real-time functionality with Supabase Realtime for instant updates and Web Push notifications. The backend is handled by a robust PostgreSQL database with Edge Functions and RLS. The frontend is built in React & Vite and optimized for lightning-fast load times and high SEO ranking."
         },
         {
-          tag: "06 — THE CUSTOMER JOURNEY",
+          tag: "08 — THE CUSTOMER JOURNEY",
           title: "Cohesive flow.",
           text: "Google → Website → Machine / Service → Detail page → Contact inquiry → Automatically linked ticket → Notification to the right staff (via PWA) → Reply from within CRM (email integrated) → Follow-up and closing."
         }
@@ -208,7 +208,7 @@ export const featuredProjects = [
       intro: "Through this architecture, previously isolated systems are replaced with a context-driven flow where all information is connected - from the first search on Google to a closed deal.",
       sections: [
         {
-          tag: "01 — PUBLIC WEBSITE & COMPANY AREA",
+          tag: "03 — PUBLIC WEBSITE & COMPANY AREA",
           title: "The company's digital interface towards customers.",
           text: "The public website is built to adapt fluidly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
           bullets: [
@@ -221,27 +221,27 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — SALES",
+          tag: "04 — SALES",
           title: "Machines & Inventory.",
           text: "Sales are integrated directly into the platform. Staff can manage the inventory via the administration, and what is published internally is immediately mirrored externally. Each machine and inventory item has its own detail page with specifications, images, and unique contact options."
         },
         {
-          tag: "03 — CUSTOMER DIALOGUE",
+          tag: "05 — CUSTOMER DIALOGUE",
           title: "Context-based Inquiries.",
           text: "A central concept in the platform is that all inquiries are linked to the right context. Smart forms automatically connect the customer, the message, and the machine in a ticket. Inquiries for metalwork and workshop are separated automatically, and email communication is fully integrated into the system."
         },
         {
-          tag: "04 — ADMIN & CRM",
+          tag: "06 — ADMIN & CRM",
           title: "Administrative Business System.",
           text: "The internal administration system is built as a separate application (PWA) for managing all business data. It includes handling tickets, customer dialogue with history, filtering, and role-based access control (RBAC) for security. The system can be installed as a real app on all devices."
         },
         {
-          tag: "05 — TECHNICAL ARCHITECTURE & PERFORMANCE",
+          tag: "07 — TECHNICAL ARCHITECTURE & PERFORMANCE",
           title: "Real-time, Architecture & SEO.",
           text: "The system uses advanced real-time functionality with Supabase Realtime for instant updates and Web Push notifications. The backend is handled by a robust PostgreSQL database with Edge Functions and RLS. The frontend is built in React & Vite and optimized for lightning-fast load times and high SEO ranking."
         },
         {
-          tag: "06 — THE CUSTOMER JOURNEY",
+          tag: "08 — THE CUSTOMER JOURNEY",
           title: "Cohesive flow.",
           text: "Google → Website → Machine / Service → Detail page → Contact inquiry → Automatically linked ticket → Notification to the right staff (via PWA) → Reply from within CRM (email integrated) → Follow-up and closing."
         }
@@ -350,7 +350,7 @@ export const featuredProjects = [
       intro: "A custom and responsive corporate website developed for MAC Service in Köping. The purpose of the project was to create a modern, fast, and user-friendly platform to present the company's services in construction, property maintenance, and gardening. The main focus was on converting visitors into customers through clear contact flows for free quotes.",
       sections: [
         {
-          tag: "01 — SERVICES & GALLERY",
+          tag: "03 — SERVICES & GALLERY",
           title: "Structure and trust.",
           text: "The website is divided into clear, custom-designed sections for each business area. To build trust, a dynamic project gallery was integrated to showcase previously completed works.",
           bullets: [
@@ -359,7 +359,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — UX & CONVERSION",
+          tag: "04 — UX & CONVERSION",
           title: "Focus on the user experience.",
           text: "By optimizing CTA (Call To Action) flows, it was ensured that the user can easily navigate from reading about a specific service directly to requesting a free quote.",
           bullets: [
@@ -403,7 +403,7 @@ export const featuredProjects = [
       intro: "A custom and responsive corporate website for Wermlands Skomakeri in Karlstad. The main purpose was to create a digital presence that feels just as genuine and crafted as the business itself. By combining a timeless visual expression with modern web technology, the result was a platform where the visitor can quickly find the right services, opening hours, and contact information.",
       sections: [
         {
-          tag: "01 — PRESENTATION OF CRAFTSMANSHIP",
+          tag: "03 — PRESENTATION OF CRAFTSMANSHIP",
           title: "Showing the value of repairs.",
           text: "To highlight the quality of the shoemaker's craftsmanship, specific sections were built to show before and after pictures. This gives the customer a direct understanding of the value of repairing instead of buying new.",
           bullets: [
@@ -412,7 +412,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — INTEGRATION & ADMINISTRATION",
+          tag: "04 — INTEGRATION & ADMINISTRATION",
           title: "Digital presence in symbiosis.",
           text: "The website was built with a modern architecture and centralized management of customer data. To keep the content alive, the company's Instagram feed was also integrated, giving visitors an insight into the workshop's everyday life.",
           bullets: [
@@ -451,7 +451,7 @@ export const featuredProjects = [
       intro: "A professional and trustworthy corporate website developed for a local construction and stonework company in Arvika. The focus was on building a stable and fast digital presence that effectively highlights the company's core services and drives new quote requests.",
       sections: [
         {
-          tag: "01 — STRUCTURE & TRUST",
+          tag: "03 — STRUCTURE & TRUST",
           title: "Reference-driven design.",
           text: "Since the construction industry relies heavily on trust, the website was structured to highlight reference projects and certifications. This creates a sense of security for potential customers right from the first impression.",
           bullets: [
@@ -460,7 +460,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — USER EXPERIENCE",
+          tag: "04 — USER EXPERIENCE",
           title: "Conversion and accessibility.",
           text: "The site was developed with a 'mobile-first' strategy to ensure an excellent experience regardless of which device the customer is using. Well-placed CTA buttons quickly lead the visitor to a smooth quote request.",
           bullets: [
@@ -497,7 +497,7 @@ export const featuredProjects = [
       intro: "A fast, modern, and locally optimized corporate website developed for LJS Måleri Värmland. The project's goal was to digitize the company's portfolio, showcase past reference projects, and create a simple, frictionless channel for new customer inquiries.",
       sections: [
         {
-          tag: "01 — PORTFOLIO & LOCAL SEO",
+          tag: "03 — PORTFOLIO & LOCAL SEO",
           title: "Being visible where the customers are.",
           text: "The architecture and content structure were built with local visibility (Local SEO) in mind. By clearly presenting specific painting services and local reference projects, the company's chances of reaching the right target audience were improved.",
           bullets: [
@@ -506,7 +506,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — FUNCTIONALITY",
+          tag: "04 — FUNCTIONALITY",
           title: "Responsive and accessible.",
           text: "With a large proportion of visitors from mobile devices, the design was developed to be one hundred percent responsive. Contact paths were made extra clear so that customers can easily request a quote directly from the workplace or from home.",
           bullets: [
@@ -542,7 +542,7 @@ export const featuredProjects = [
       intro: "Super Jespermon is a platform-based 2D adventure inspired by classic titles like Super Mario and Pokémon. The game was developed entirely from scratch in Unity (C#) as a comprehensive degree project, with the goal of applying advanced game programming, level design, and system architecture in practice.",
       sections: [
         {
-          tag: "01 — GAME MECHANICS",
+          tag: "03 — GAME MECHANICS",
           title: "Platforming and combat.",
           text: "The project required the development of several interacting systems to handle player movements, enemy AI, and interactions in the world. The player can explore hand-crafted levels, collect coins, and use capture mechanics to defeat various enemies.",
           bullets: [
@@ -552,7 +552,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — TECHNICAL IMPLEMENTATION",
+          tag: "04 — TECHNICAL IMPLEMENTATION",
           title: "System architecture in Unity.",
           text: "To ensure the game was both expandable and performant, robust C# scripts were created to control everything from animation states and score keeping to level selection and UI management.",
           bullets: [
@@ -581,7 +581,7 @@ export const featuredProjects = [
       intro: "The Turtlebase is a modern, responsive movie discovery application built entirely with React and Vite. The primary goal of this project was to strengthen architectural skills in building component-based frontend applications, managing complex global state, and integrating external REST APIs.",
       sections: [
         {
-          tag: "01 — CORE FUNCTIONALITY",
+          tag: "03 — CORE FUNCTIONALITY",
           title: "Browsing and Discovery.",
           text: "The application directly interfaces with a movie database API to fetch and display popular movies, detailed synopses, and high-resolution posters. It features a robust search mechanism that instantly queries and filters titles based on user input.",
           bullets: [
@@ -591,7 +591,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — TECHNICAL FEATURES",
+          tag: "04 — TECHNICAL FEATURES",
           title: "State Management and UI.",
           text: "To create a smooth user experience, the app utilizes React Router for client-side navigation without page reloads. A personal watchlist feature is implemented using localStorage, ensuring that users' saved movies persist across sessions.",
           bullets: [
@@ -620,7 +620,7 @@ export const featuredProjects = [
       intro: "IMDO is a web application heavily inspired by IMDb, designed as a comprehensive school assignment. The project focuses on core web development fundamentals, specifically utilizing vanilla JavaScript modules, intricate DOM manipulation, and asynchronous API integrations through a custom 'IMDO API'.",
       sections: [
         {
-          tag: "01 — DYNAMIC RENDERING",
+          tag: "03 — DYNAMIC RENDERING",
           title: "Interacting with the DOM.",
           text: "Rather than relying on modern frameworks, the entire interface is dynamically generated using vanilla JavaScript. The application fetches data from the API and systematically renders movie cards, detail views, and embedded trailers directly into the Document Object Model.",
           bullets: [
@@ -630,7 +630,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — DATA PERSISTENCE",
+          tag: "04 — DATA PERSISTENCE",
           title: "Managing User Favorites.",
           text: "A key feature of the application is the ability for users to curate their own list of favorite movies. This is handled entirely on the client side, using the browser's localStorage API to add, remove, and persist data between active sessions.",
           bullets: [
@@ -658,7 +658,7 @@ export const featuredProjects = [
       intro: "Nasa-SpaceViewer is a visually engaging React application that leverages the official NASA Astronomy Picture of the Day (APOD) API. The project was built with a strong focus on creating a stunning, immersive frontend experience through fluid micro-animations and responsive, high-fidelity media presentation.",
       sections: [
         {
-          tag: "01 — API INTEGRATION",
+          tag: "03 — API INTEGRATION",
           title: "Exploring the Cosmos.",
           text: "The application communicates asynchronously with NASA's endpoints to fetch and render the latest astronomical data. Users are not only presented with the current day's imagery, but can also query the archive to discover space media from random historical dates.",
           bullets: [
@@ -668,7 +668,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — UI & ANIMATIONS",
+          tag: "04 — UI & ANIMATIONS",
           title: "An Immersive Experience.",
           text: "To complement the breathtaking space imagery, the user interface was designed to be minimalistic and cinematic. Framer Motion is utilized throughout the app to orchestrate smooth page transitions and interactive micro-animations.",
           bullets: [
@@ -696,7 +696,7 @@ export const featuredProjects = [
       intro: "ReadingSloth is a fully functional frontend e-commerce bookstore prototype built with React. The project was designed to simulate a real-world shopping experience, requiring the implementation of complex client-side logic such as user authentication flows, protected routes, and a persistent shopping cart system.",
       sections: [
         {
-          tag: "01 — AUTHENTICATION & ROUTING",
+          tag: "03 — AUTHENTICATION & ROUTING",
           title: "Controlling Access.",
           text: "The application utilizes React Router to handle client-side navigation. A simulated authentication system manages user login and registration states, allowing the application to conditionally render specific views and restrict areas to authenticated users only.",
           bullets: [
@@ -706,7 +706,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — E-COMMERCE LOGIC",
+          tag: "04 — E-COMMERCE LOGIC",
           title: "The Shopping Experience.",
           text: "Users can browse a detailed catalog of books, view specific item details, and add products to their cart. The cart state is synchronized with the browser's localStorage, ensuring that the user's selected items survive page reloads and navigating away from the site.",
           bullets: [
@@ -735,7 +735,7 @@ export const featuredProjects = [
       intro: "Shui is a cloud-based full-stack project that acts as a digital bulletin board. The application is completely serverless and was built from the ground up to demonstrate how modern frontend frameworks (React) can be efficiently integrated with scalable cloud infrastructure via Amazon Web Services (AWS).",
       sections: [
         {
-          tag: "01 — FRONTEND & FUNKTIONALITET",
+          tag: "03 — FRONTEND & FUNKTIONALITET",
           title: "Interaktion och Användarflöden.",
           text: "Användargränssnittet tillåter besökare att registrera konton, logga in och interagera med den digitala anslagstavlan. Det finns fullt stöd för CRUD-operationer (Skapa, Läsa, Uppdatera, Ta bort) på egna inlägg, samt möjlighet att filtrera och läsa specifika användares samlade meddelandehistorik.",
           bullets: [
@@ -745,7 +745,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — BACKEND & CLOUD ARCHITECTURE",
+          tag: "04 — BACKEND & CLOUD ARCHITECTURE",
           title: "Serverless AWS infrastructure.",
           text: "Instead of managing a traditional server, the entire backend logic is hosted serverless. The React frontend is hosted in an AWS S3 bucket, while API calls are routed via AWS API Gateway to Lambda functions which in turn communicate with a NoSQL database (DynamoDB).",
           bullets: [
@@ -774,7 +774,7 @@ export const featuredProjects = [
       intro: "Fading Light is a top-down 2D puzzle-solving game developed over the course of two years using Unity and C#. More than just a technical prototype, this project serves as an interactive demo specifically designed to showcase the integration of narrative game design with mechanical gameplay, exploring sensitive mental health themes.",
       sections: [
         {
-          tag: "01 — GAME DESIGN",
+          tag: "03 — GAME DESIGN",
           title: "Narrative through Mechanics.",
           text: "The core gameplay loop revolves around puzzle-solving mechanics that metaphorically represent internal struggles. The atmospheric level design and intentional lighting choices are crafted to evoke specific emotional responses and drive the storytelling forward.",
           bullets: [
@@ -784,7 +784,7 @@ export const featuredProjects = [
           ]
         },
         {
-          tag: "02 — PROGRAMMING",
+          tag: "04 — PROGRAMMING",
           title: "Custom Systems in Unity.",
           text: "Under the hood, the game relies entirely on custom-written C# scripts. These scripts control player movement, environmental interactions, puzzle state management, and the synchronization between gameplay events and narrative triggers.",
           bullets: [

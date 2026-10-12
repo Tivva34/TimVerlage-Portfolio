@@ -197,6 +197,16 @@ export default function ProjectDetail(props) {
 
   const hasDetails = !!project.detailedContent;
 
+  let sectionCounter = 0;
+  const overviewTag = hasDetails && project.detailedContent.intro
+    ? `${String(++sectionCounter).padStart(2, '0')} — OVERVIEW`
+    : null;
+  const techTag = `${String(++sectionCounter).padStart(2, '0')} — TECH & TOOLS`;
+  const featuresTag = hasDetails && project.detailedContent.features
+    ? `${String(++sectionCounter).padStart(2, '0')} — FEATURES & RESULTS`
+    : null;
+  const baseSectionOffset = sectionCounter;
+
   return (
     <section id="project-detail" className="projects-panel is-active" aria-labelledby="project-title">
       <div className="project-detail-header-container">
@@ -216,16 +226,16 @@ export default function ProjectDetail(props) {
       <div className="project-detail-container">
         <div className="project-detail-content project-card aurora-glow">
           
-          {hasDetails && project.detailedContent.intro && (
+          {overviewTag && (
             <div className="project-detail-section">
-              <span className="project-meta-tag">01 — OVERVIEW</span>
+              <span className="project-meta-tag">{overviewTag}</span>
               <h3>{project.detailedContent.introTitle || "A solution with a clear purpose."}</h3>
               <p className="project-description">{project.detailedContent.intro}</p>
             </div>
           )}
 
           <div className="project-detail-section">
-             <span className="project-meta-tag">{hasDetails && project.detailedContent.intro ? '02 — TECH & TOOLS' : '01 — TECH & TOOLS'}</span>
+             <span className="project-meta-tag">{techTag}</span>
              <h3>Technologies</h3>
              <ul className="project-tech-list" aria-label={`${project.name} technologies`}>
               {projectTech.map((tech) => {
@@ -239,9 +249,9 @@ export default function ProjectDetail(props) {
             </ul>
           </div>
 
-          {hasDetails && project.detailedContent.features && (
+          {featuresTag && (
             <div className="project-detail-section">
-              <span className="project-meta-tag">02 — FEATURES & RESULTS</span>
+              <span className="project-meta-tag">{featuresTag}</span>
               <h3>Features</h3>
               <ul className="project-feature-list">
                 {project.detailedContent.features.map((feature, idx) => (
@@ -252,18 +262,24 @@ export default function ProjectDetail(props) {
           )}
 
           {hasDetails && project.detailedContent.sections && (
-            project.detailedContent.sections.map((section, idx) => (
-               <div key={idx} className="project-detail-section">
-                 <span className="project-meta-tag">{section.tag}</span>
-                 <h3>{section.title}</h3>
-                 <p className="project-description">{section.text}</p>
-                 {section.bullets && (
-                   <ul className="project-feature-list">
-                     {section.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                   </ul>
-                 )}
-               </div>
-            ))
+            project.detailedContent.sections.map((section, idx) => {
+              const currentNum = String(baseSectionOffset + idx + 1).padStart(2, '0');
+              const cleanTagTitle = section.tag ? section.tag.replace(/^\d+\s*[-—–]\s*/, '') : section.title;
+              const displayTag = `${currentNum} — ${cleanTagTitle}`;
+
+              return (
+                <div key={idx} className="project-detail-section">
+                  <span className="project-meta-tag">{displayTag}</span>
+                  <h3>{section.title}</h3>
+                  <p className="project-description">{section.text}</p>
+                  {section.bullets && (
+                    <ul className="project-feature-list">
+                      {section.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                    </ul>
+                  )}
+                </div>
+              );
+            })
           )}
 
           <div className="project-links">
