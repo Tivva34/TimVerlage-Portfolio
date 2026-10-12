@@ -17,7 +17,6 @@ The goal of this project was to create a modern, responsive portfolio while impr
 - CSS3
 - Framer Motion
 - Formspree
-- Supabase
 - GitHub Pages
 
 ## Features
@@ -31,7 +30,7 @@ The goal of this project was to create a modern, responsive portfolio while impr
 - Hover-based image slideshow on project cards with dynamic borders
 - Expanded project presentations with detailed information
 - Project image galleries featuring lightbox/fullscreen viewing, categorized sections, and captions
-- Expanded freelance section including Hammarö Maskin & Smide, MAC Service, Wermlands Skomakeri, Arvika Bygg & Stenarbeten, and LJS Måleri Värmland
+- Expanded freelance section including Jannes Maskin & Smide, MAC Service, Wermlands Skomakeri, Arvika Bygg & Stenarbeten, and LJS Måleri Värmland
 - Project showcase with updated technology icons and GitHub integration
 - Contact form utilizing Formspree, following the wider container layout
 - Accessible navigation and semantic HTML

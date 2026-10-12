@@ -7,10 +7,10 @@ import "./ProjectDetail.css";
 
 export default function ProjectDetail(props) {
   const slug = props.slug;
-  
+
   // Find project
   const project = featuredProjects.find(p => p.slug === slug);
-  
+
   const [activeCategory, setActiveCategory] = useState(() => {
     if (project && project.gallery && !Array.isArray(project.gallery)) {
       return Object.keys(project.gallery)[0];
@@ -20,7 +20,7 @@ export default function ProjectDetail(props) {
 
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  const currentImages = project.gallery 
+  const currentImages = project.gallery
     ? (Array.isArray(project.gallery) ? project.gallery : (project.gallery[activeCategory] || []))
     : [];
 
@@ -50,7 +50,7 @@ export default function ProjectDetail(props) {
     if (delta < -50) prevImage();
     setTouchStart(null);
   };
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
@@ -67,20 +67,20 @@ export default function ProjectDetail(props) {
 
   const projectTech = [...(project.languages || []), ...(project.tech || [])];
 
-  
+
   const generateCaption = (url) => {
     let name = url.split('/').pop();
     name = name.replace(/\.[^/.]+$/, '');
-    
+
     const match = name.match(/^(\d+)\.(.+)$/);
     if (!match) {
       return { order: Infinity, page: '', content: name, type: '', raw: name };
     }
-    
+
     const order = parseInt(match[1], 10);
     const rest = match[2].trim();
     const parts = rest.split('-').map(p => p.trim());
-    
+
     if (parts.length >= 3) {
       return {
         order,
@@ -118,12 +118,12 @@ export default function ProjectDetail(props) {
             const meta = generateCaption(img);
             return (
               <figure key={idx} className="gallery-figure">
-                <img 
-                  src={`${import.meta.env.BASE_URL}${img}`} 
-                  alt={`${meta.content || 'Project view'} ${idx + 1}`} 
-                  className="gallery-image" 
-                  loading="lazy" 
-                  onClick={() => openLightbox(idx)} 
+                <img
+                  src={`${import.meta.env.BASE_URL}${img}`}
+                  alt={`${meta.content || 'Project view'} ${idx + 1}`}
+                  className="gallery-image"
+                  loading="lazy"
+                  onClick={() => openLightbox(idx)}
                 />
                 {(meta.page || meta.content || meta.type) && meta.content !== img.split('/').pop() && (
                   <figcaption className="gallery-caption">
@@ -164,18 +164,18 @@ export default function ProjectDetail(props) {
             ))}
           </ul>
         </nav>
-        
+
         <div className="project-gallery-grid">
           {currentImages.map((img, idx) => {
             const meta = generateCaption(img);
             return (
               <figure key={idx} className="gallery-figure">
-                <img 
-                  src={`${import.meta.env.BASE_URL}${img}`} 
-                  alt={`${meta.content || 'Project view'} ${idx + 1}`} 
-                  className="gallery-image" 
-                  loading="lazy" 
-                  onClick={() => openLightbox(idx)} 
+                <img
+                  src={`${import.meta.env.BASE_URL}${img}`}
+                  alt={`${meta.content || 'Project view'} ${idx + 1}`}
+                  className="gallery-image"
+                  loading="lazy"
+                  onClick={() => openLightbox(idx)}
                 />
                 <figcaption className="gallery-caption">
                   {meta.page && (
@@ -213,7 +213,7 @@ export default function ProjectDetail(props) {
         <a href={BASE_PATH + '/'} onClick={(e) => { e.preventDefault(); navigateTo('/'); }} className="btn-outline project-btn back-btn">
           &larr; Back to Portfolio
         </a>
-        
+
         <header className="project-detail-header">
           {project.type && <span className="project-meta-type">{project.type}</span>}
           <h2 id="project-title">{project.name}</h2>
@@ -222,10 +222,10 @@ export default function ProjectDetail(props) {
           </p>
         </header>
       </div>
-        
+
       <div className="project-detail-container">
         <div className="project-detail-content project-card aurora-glow">
-          
+
           {overviewTag && (
             <div className="project-detail-section">
               <span className="project-meta-tag">{overviewTag}</span>
@@ -235,9 +235,9 @@ export default function ProjectDetail(props) {
           )}
 
           <div className="project-detail-section">
-             <span className="project-meta-tag">{techTag}</span>
-             <h3>Technologies</h3>
-             <ul className="project-tech-list" aria-label={`${project.name} technologies`}>
+            <span className="project-meta-tag">{techTag}</span>
+            <h3>Technologies</h3>
+            <ul className="project-tech-list" aria-label={`${project.name} technologies`}>
               {projectTech.map((tech) => {
                 const key = getTechKey(tech);
                 return (
@@ -283,16 +283,16 @@ export default function ProjectDetail(props) {
           )}
 
           <div className="project-links">
-             {project.html_url && (
-                <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="btn-primary project-btn">
-                  View on GitHub
-                </a>
-              )}
-              {project.liveUrl && (
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-outline project-btn">
-                  Live Demo
-                </a>
-              )}
+            {project.html_url && (
+              <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="btn-primary project-btn">
+                View on GitHub
+              </a>
+            )}
+            {project.liveUrl && (
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-outline project-btn">
+                Live Demo
+              </a>
+            )}
           </div>
         </div>
 
@@ -313,9 +313,9 @@ export default function ProjectDetail(props) {
           <button className="lightbox-prev" onClick={(e) => { e.stopPropagation(); prevImage(); }} aria-label="Previous image">
             &#10094;
           </button>
-          
-          <div 
-            className="lightbox-content" 
+
+          <div
+            className="lightbox-content"
             onClick={(e) => e.stopPropagation()}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
