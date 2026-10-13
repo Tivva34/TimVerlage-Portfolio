@@ -259,38 +259,50 @@ export const featuredProjects = [
     tech: ["React", "Supabase", "PWA", "Service Worker", "Responsive Design"],
     screenshot: `${import.meta.env.BASE_URL}projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png`,
     gallery: {
-      "Customer Portal": [
-        "projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/2. Home - Info - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/3. Machines - Overview - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/4. Machines - Lazy Load - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/5. Machines - Sales Purchasing Transport - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/6. Machines - Contact form - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/7. Machines - Call Sales - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/9. Machines - Chosen Machine Images - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/10. Machines - Chosen Machine Image Gallery - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/11. Machines - Chosen Machine Lightbox - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/12. Machines - Chosen Machine Info - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/13. Machines - Chosen Machine Bottom - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/14. Machines - Contact form Chosen Machine - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/15. Machines - Transport Chosen Machine - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/16. Inventory - Overview - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/17. Inventory - All Inventory - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/18. Inventory - Cant Find - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/19. Inventory - Chosen Inventory - Page.png",
-        "projects/JannesMaskinOSmide/Kundsida/20. Inventory - Chosen Inventory Details - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/21. Inventory - Chosen Inventory Bottom - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/22. Inventory - Contact form Chosen Inventory - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/23. Workshop & Metalwork - Workshop - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/24. Workshop & Metalwork - Custom Manufacturing Transport - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/25. Workshop & Metalwork - Contact form - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/26. About us - About the Company - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/27. About us - What we do - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/28. About us - The family business - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/29. Contact - Contact us - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/30. Contact - Form - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/31. Home - Footer - Section.png"
-      ],
+      "Customer Portal": {
+        "Home": [
+          "projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/2. Home - Info - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/31. Home - Footer - Section.png"
+        ],
+        "Machines": [
+          "projects/JannesMaskinOSmide/Kundsida/3. Machines - Overview - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/4. Machines - Lazy Load - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/5. Machines - Sales Purchasing Transport - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/6. Machines - Contact form - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/7. Machines - Call Sales - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/9. Machines - Chosen Machine Images - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/10. Machines - Chosen Machine Image Gallery - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/11. Machines - Chosen Machine Lightbox - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/12. Machines - Chosen Machine Info - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/13. Machines - Chosen Machine Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/14. Machines - Contact form Chosen Machine - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/15. Machines - Transport Chosen Machine - Modal.png"
+        ],
+        "Inventory": [
+          "projects/JannesMaskinOSmide/Kundsida/16. Inventory - Overview - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/17. Inventory - All Inventory - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/18. Inventory - Cant Find - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/19. Inventory - Chosen Inventory - Page.png",
+          "projects/JannesMaskinOSmide/Kundsida/20. Inventory - Chosen Inventory Details - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/21. Inventory - Chosen Inventory Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/22. Inventory - Contact form Chosen Inventory - Modal.png"
+        ],
+        "Workshop & Metalwork": [
+          "projects/JannesMaskinOSmide/Kundsida/23. Workshop & Metalwork - Workshop - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/24. Workshop & Metalwork - Custom Manufacturing Transport - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/25. Workshop & Metalwork - Contact form - Modal.png"
+        ],
+        "About us": [
+          "projects/JannesMaskinOSmide/Kundsida/26. About us - About the Company - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/27. About us - What we do - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/28. About us - The family business - Section.png"
+        ],
+        "Contact": [
+          "projects/JannesMaskinOSmide/Kundsida/29. Contact - Contact us - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/30. Contact - Form - Modal.png"
+        ]
+      },
       "Customer Portal - Light Mode": [
         "projects/JannesMaskinOSmide/Kundsida-Lightmode/1. Home - Hero - Section.png",
         "projects/JannesMaskinOSmide/Kundsida-Lightmode/2. Home - Info - Section.png",
@@ -299,18 +311,30 @@ export const featuredProjects = [
         "projects/JannesMaskinOSmide/Kundsida-Lightmode/5. Workshop & Metalwork - Workshop - Section.png",
         "projects/JannesMaskinOSmide/Kundsida-Lightmode/6. About us - About the Company - Section.png"
       ],
-      "Customer Portal - English": [
-        "projects/JannesMaskinOSmide/Kundsida-English/1. Home - Hero - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/2. Home - Info - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/3. Machines - All Machines - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/4. Machines - Chosen Machine Top - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/5. Machines - Chosen Machine Bottom - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/6. Machines - Contactform - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/11. Inventory - All Inventory - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/12. Workshop & Metalwork - Workshop - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/13. About us - About us - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/14. Contact - Contactform - Modal.png"
-      ],
+      "Customer Portal - English": {
+        "Home": [
+          "projects/JannesMaskinOSmide/Kundsida-English/1. Home - Hero - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/2. Home - Info - Section.png"
+        ],
+        "Machines": [
+          "projects/JannesMaskinOSmide/Kundsida-English/3. Machines - All Machines - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/4. Machines - Chosen Machine Top - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/5. Machines - Chosen Machine Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/6. Machines - Contactform - Modal.png"
+        ],
+        "Inventory": [
+          "projects/JannesMaskinOSmide/Kundsida-English/11. Inventory - All Inventory - Section.png"
+        ],
+        "Workshop & Metalwork": [
+          "projects/JannesMaskinOSmide/Kundsida-English/12. Workshop & Metalwork - Workshop - Section.png"
+        ],
+        "About us": [
+          "projects/JannesMaskinOSmide/Kundsida-English/13. About us - About us - Section.png"
+        ],
+        "Contact": [
+          "projects/JannesMaskinOSmide/Kundsida-English/14. Contact - Contactform - Modal.png"
+        ]
+      },
       "Admin Panel": [
         "projects/JannesMaskinOSmide/Admin/1. Admin - Login - Page.png",
         "projects/JannesMaskinOSmide/Admin/2. Admin - Reset password - Page.png",
@@ -381,21 +405,70 @@ export const featuredProjects = [
     languages: ["JavaScript", "HTML", "CSS"],
     tech: ["React", "Vite", "Framer Motion", "SEO", "Responsive Design"],
     screenshot: `${import.meta.env.BASE_URL}projects/MacService/1. Home - Hero - Section.png`,
-    gallery: [
-      "projects/MacService/1. Home - Hero - Section.png",
-      "projects/MacService/2. Home - Our services - Section.png",
-      "projects/MacService/3. Home - About us - Section.png",
-      "projects/MacService/4. Home - About us - Slideshow.png",
-      "projects/MacService/5. Home - Contact us & Footer - Section.png",
-      "projects/MacService/6. About us - Hero - Section.png",
-      "projects/MacService/7. About us - About us - Section.png",
-      "projects/MacService/8. About us - Why choose MAC - Section.png",
-      "projects/MacService/9. Services - Hero - Section.png",
-      "projects/MacService/10. Services - Our services - Section.png",
-      "projects/MacService/11. Services - Detailed services - Section.png",
-      "projects/MacService/12. Services - Hiring us - Section.png",
-      "projects/MacService/13. Contact - Hero - Section.png"
-    ]
+    gallery: {
+      "Desktop View": {
+        "Home": [
+          "projects/MacService/1. Home - Hero - Section.png",
+          "projects/MacService/2. Home - Our services - Section.png",
+          "projects/MacService/3. Home - About us - Section.png",
+          "projects/MacService/4. Home - About us - Slideshow.png",
+          "projects/MacService/5. Home - Contact us & Footer - Section.png"
+        ],
+        "About us": [
+          "projects/MacService/6. About us - Hero - Section.png",
+          "projects/MacService/7. About us - About us - Section.png",
+          "projects/MacService/8. About us - Why choose MAC - Section.png"
+        ],
+        "Services": [
+          "projects/MacService/9. Services - Hero - Section.png",
+          "projects/MacService/10. Services - Our services - Section.png",
+          "projects/MacService/11. Services - Detailed services - Section.png",
+          "projects/MacService/12. Services - Hiring us - Section.png"
+        ],
+        "Contact": [
+          "projects/MacService/13. Contact - Hero - Section.png",
+          "projects/MacService/14. Contact - Find us - Section.png"
+        ]
+      },
+      "Mobile View": {
+        "Home": [
+          "projects/MacService/Mobil/1. Mobile - Home - Hero - Section.png",
+          "projects/MacService/Mobil/2. Mobile - Home - Our services - Section.png",
+          "projects/MacService/Mobil/3. Mobile - Home - Service cards - Section.png",
+          "projects/MacService/Mobil/4. Mobile - Home - About us - Section.png",
+          "projects/MacService/Mobil/5. Mobile - Home - Slideshow - Section.png",
+          "projects/MacService/Mobil/6. Mobile - Home - Why choose us - Section.png",
+          "projects/MacService/Mobil/7. Mobile - Home - Reviews - Section.png",
+          "projects/MacService/Mobil/8. Mobile - Home - Contact us - Section.png",
+          "projects/MacService/Mobil/9. Mobile - Home - Footer - Section.png"
+        ],
+        "About us": [
+          "projects/MacService/Mobil/10. Mobile - About us - Hero - Section.png",
+          "projects/MacService/Mobil/11. Mobile - About us - Story - Section.png",
+          "projects/MacService/Mobil/12. Mobile - About us - Team - Section.png",
+          "projects/MacService/Mobil/13. Mobile - About us - Values - Section.png",
+          "projects/MacService/Mobil/14. Mobile - About us - CTA - Section.png",
+          "projects/MacService/Mobil/15. Mobile - About us - Footer - Section.png"
+        ],
+        "Services": [
+          "projects/MacService/Mobil/16. Mobile - Services - Hero - Section.png",
+          "projects/MacService/Mobil/17. Mobile - Services - Construction - Section.png",
+          "projects/MacService/Mobil/18. Mobile - Services - Renovation - Section.png",
+          "projects/MacService/Mobil/19. Mobile - Services - Maintenance - Section.png",
+          "projects/MacService/Mobil/20. Mobile - Services - Gardening - Section.png",
+          "projects/MacService/Mobil/21. Mobile - Services - Process - Section.png",
+          "projects/MacService/Mobil/22. Mobile - Services - CTA - Section.png",
+          "projects/MacService/Mobil/23. Mobile - Services - Footer - Section.png"
+        ],
+        "Contact": [
+          "projects/MacService/Mobil/24. Mobile - Contact - Hero - Section.png",
+          "projects/MacService/Mobil/25. Mobile - Contact - Info - Section.png",
+          "projects/MacService/Mobil/26. Mobile - Contact - Form - Section.png",
+          "projects/MacService/Mobil/27. Mobile - Contact - Map & Find us - Section.png",
+          "projects/MacService/Mobil/28. Mobile - Contact - Footer - Section.png"
+        ]
+      }
+    }
   },
   {
     id: "sulans-skomakeri",
