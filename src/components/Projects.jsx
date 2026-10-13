@@ -33,7 +33,15 @@ const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDesc
     if (Array.isArray(repo.gallery)) {
       galleryImages = repo.gallery;
     } else {
-      galleryImages = Object.values(repo.gallery).flat();
+      const flattenVals = (obj) => {
+        let res = [];
+        for (const v of Object.values(obj)) {
+          if (Array.isArray(v)) res.push(...v);
+          else if (typeof v === "object" && v !== null) res.push(...flattenVals(v));
+        }
+        return res;
+      };
+      galleryImages = flattenVals(repo.gallery);
     }
   }
 

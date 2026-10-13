@@ -29,6 +29,9 @@ export const projectCategoryByName = {
   "The Turtlebase": "frontend",
   FadingLightDemo: "games",
   "Hammarö Maskin & Smide AB": "fullstack",
+  "Sulans Skomakeri": "frontend",
+  "Johans Bygg & Stenarbeten": "frontend",
+  "Buddas Måleri": "frontend",
   "Wermlands Skomakeri": "frontend",
   "Arvika Bygg & Stenarbeten": "frontend",
   "LJS Måleri Värmland": "frontend"
@@ -48,8 +51,11 @@ export const repoTechOverrides = {
 };
 export const projectOrder = [
   "Hammarö Maskin & Smide AB",
-  "Jannes Maskin o Smide",
+  "Jannes Maskin & Smide",
   "MAC Service",
+  "Sulans Skomakeri",
+  "Johans Bygg & Stenarbeten",
+  "Buddas Måleri",
   "Wermlands Skomakeri",
   "Arvika Bygg & Stenarbeten",
   "LJS Måleri Värmland",
@@ -198,7 +204,7 @@ export const featuredProjects = [
   },
   {
     id: "jannes-maskin-o-smide",
-    name: "Jannes Maskin o Smide",
+    name: "Jannes Maskin & Smide",
     category: "fullstack",
     type: "CUSTOM BUSINESS PLATFORM",
     slug: "jannes-maskin-o-smide",
@@ -253,38 +259,50 @@ export const featuredProjects = [
     tech: ["React", "Supabase", "PWA", "Service Worker", "Responsive Design"],
     screenshot: `${import.meta.env.BASE_URL}projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png`,
     gallery: {
-      "Customer Portal": [
-        "projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/2. Home - Info - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/3. Machines - Overview - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/4. Machines - Lazy Load - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/5. Machines - Sales Purchasing Transport - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/6. Machines - Contact form - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/7. Machines - Call Sales - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/9. Machines - Chosen Machine Images - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/10. Machines - Chosen Machine Image Gallery - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/11. Machines - Chosen Machine Lightbox - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/12. Machines - Chosen Machine Info - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/13. Machines - Chosen Machine Bottom - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/14. Machines - Contact form Chosen Machine - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/15. Machines - Transport Chosen Machine - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/16. Inventory - Overview - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/17. Inventory - All Inventory - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/18. Inventory - Cant Find - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/19. Inventory - Chosen Inventory - Page.png",
-        "projects/JannesMaskinOSmide/Kundsida/20. Inventory - Chosen Inventory Details - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/21. Inventory - Chosen Inventory Bottom - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/22. Inventory - Contact form Chosen Inventory - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/23. Workshop & Metalwork - Workshop - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/24. Workshop & Metalwork - Custom Manufacturing Transport - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/25. Workshop & Metalwork - Contact form - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/26. About us - About the Company - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/27. About us - What we do - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/28. About us - The family business - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/29. Contact - Contact us - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida/30. Contact - Form - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida/31. Home - Footer - Section.png"
-      ],
+      "Customer Portal": {
+        "Home": [
+          "projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/2. Home - Info - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/31. Home - Footer - Section.png"
+        ],
+        "Machines": [
+          "projects/JannesMaskinOSmide/Kundsida/3. Machines - Overview - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/4. Machines - Lazy Load - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/5. Machines - Sales Purchasing Transport - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/6. Machines - Contact form - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/7. Machines - Call Sales - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/9. Machines - Chosen Machine Images - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/10. Machines - Chosen Machine Image Gallery - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/11. Machines - Chosen Machine Lightbox - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/12. Machines - Chosen Machine Info - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/13. Machines - Chosen Machine Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/14. Machines - Contact form Chosen Machine - Modal.png",
+          "projects/JannesMaskinOSmide/Kundsida/15. Machines - Transport Chosen Machine - Modal.png"
+        ],
+        "Inventory": [
+          "projects/JannesMaskinOSmide/Kundsida/16. Inventory - Overview - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/17. Inventory - All Inventory - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/18. Inventory - Cant Find - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/19. Inventory - Chosen Inventory - Page.png",
+          "projects/JannesMaskinOSmide/Kundsida/20. Inventory - Chosen Inventory Details - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/21. Inventory - Chosen Inventory Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/22. Inventory - Contact form Chosen Inventory - Modal.png"
+        ],
+        "Workshop & Metalwork": [
+          "projects/JannesMaskinOSmide/Kundsida/23. Workshop & Metalwork - Workshop - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/24. Workshop & Metalwork - Custom Manufacturing Transport - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/25. Workshop & Metalwork - Contact form - Modal.png"
+        ],
+        "About us": [
+          "projects/JannesMaskinOSmide/Kundsida/26. About us - About the Company - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/27. About us - What we do - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/28. About us - The family business - Section.png"
+        ],
+        "Contact": [
+          "projects/JannesMaskinOSmide/Kundsida/29. Contact - Contact us - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida/30. Contact - Form - Modal.png"
+        ]
+      },
       "Customer Portal - Light Mode": [
         "projects/JannesMaskinOSmide/Kundsida-Lightmode/1. Home - Hero - Section.png",
         "projects/JannesMaskinOSmide/Kundsida-Lightmode/2. Home - Info - Section.png",
@@ -293,18 +311,30 @@ export const featuredProjects = [
         "projects/JannesMaskinOSmide/Kundsida-Lightmode/5. Workshop & Metalwork - Workshop - Section.png",
         "projects/JannesMaskinOSmide/Kundsida-Lightmode/6. About us - About the Company - Section.png"
       ],
-      "Customer Portal - English": [
-        "projects/JannesMaskinOSmide/Kundsida-English/1. Home - Hero - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/2. Home - Info - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/3. Machines - All Machines - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/4. Machines - Chosen Machine Top - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/5. Machines - Chosen Machine Bottom - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/6. Machines - Contactform - Modal.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/11. Inventory - All Inventory - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/12. Workshop & Metalwork - Workshop - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/13. About us - About us - Section.png",
-        "projects/JannesMaskinOSmide/Kundsida-English/14. Contact - Contactform - Modal.png"
-      ],
+      "Customer Portal - English": {
+        "Home": [
+          "projects/JannesMaskinOSmide/Kundsida-English/1. Home - Hero - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/2. Home - Info - Section.png"
+        ],
+        "Machines": [
+          "projects/JannesMaskinOSmide/Kundsida-English/3. Machines - All Machines - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/4. Machines - Chosen Machine Top - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/5. Machines - Chosen Machine Bottom - Section.png",
+          "projects/JannesMaskinOSmide/Kundsida-English/6. Machines - Contactform - Modal.png"
+        ],
+        "Inventory": [
+          "projects/JannesMaskinOSmide/Kundsida-English/11. Inventory - All Inventory - Section.png"
+        ],
+        "Workshop & Metalwork": [
+          "projects/JannesMaskinOSmide/Kundsida-English/12. Workshop & Metalwork - Workshop - Section.png"
+        ],
+        "About us": [
+          "projects/JannesMaskinOSmide/Kundsida-English/13. About us - About us - Section.png"
+        ],
+        "Contact": [
+          "projects/JannesMaskinOSmide/Kundsida-English/14. Contact - Contactform - Modal.png"
+        ]
+      },
       "Admin Panel": [
         "projects/JannesMaskinOSmide/Admin/1. Admin - Login - Page.png",
         "projects/JannesMaskinOSmide/Admin/2. Admin - Reset password - Page.png",
@@ -375,27 +405,268 @@ export const featuredProjects = [
     languages: ["JavaScript", "HTML", "CSS"],
     tech: ["React", "Vite", "Framer Motion", "SEO", "Responsive Design"],
     screenshot: `${import.meta.env.BASE_URL}projects/MacService/1. Home - Hero - Section.png`,
-    gallery: [
-      "projects/MacService/1. Home - Hero - Section.png",
-      "projects/MacService/2. Home - Our services - Section.png",
-      "projects/MacService/3. Home - About us - Section.png",
-      "projects/MacService/4. Home - About us - Slideshow.png",
-      "projects/MacService/5. Home - Contact us & Footer - Section.png",
-      "projects/MacService/6. About us - Hero - Section.png",
-      "projects/MacService/7. About us - About us - Section.png",
-      "projects/MacService/8. About us - Why choose MAC - Section.png",
-      "projects/MacService/9. Services - Hero - Section.png",
-      "projects/MacService/10. Services - Our services - Section.png",
-      "projects/MacService/11. Services - Detailed services - Section.png",
-      "projects/MacService/12. Services - Hiring us - Section.png",
-      "projects/MacService/13. Contact - Hero - Section.png"
-    ]
+    gallery: {
+      "Desktop View": {
+        "Home": [
+          "projects/MacService/1. Home - Hero - Section.png",
+          "projects/MacService/2. Home - Our services - Section.png",
+          "projects/MacService/3. Home - About us - Section.png",
+          "projects/MacService/4. Home - About us - Slideshow.png",
+          "projects/MacService/5. Home - Contact us & Footer - Section.png"
+        ],
+        "About us": [
+          "projects/MacService/6. About us - Hero - Section.png",
+          "projects/MacService/7. About us - About us - Section.png",
+          "projects/MacService/8. About us - Why choose MAC - Section.png"
+        ],
+        "Services": [
+          "projects/MacService/9. Services - Hero - Section.png",
+          "projects/MacService/10. Services - Our services - Section.png",
+          "projects/MacService/11. Services - Detailed services - Section.png",
+          "projects/MacService/12. Services - Hiring us - Section.png"
+        ],
+        "Contact": [
+          "projects/MacService/13. Contact - Hero - Section.png",
+          "projects/MacService/14. Contact - Find us - Section.png"
+        ]
+      },
+      "Mobile View": {
+        "Home": [
+          "projects/MacService/Mobil/1. Mobile - Home - Hero - Section.png",
+          "projects/MacService/Mobil/2. Mobile - Home - Our services - Section.png",
+          "projects/MacService/Mobil/3. Mobile - Home - Service cards - Section.png",
+          "projects/MacService/Mobil/4. Mobile - Home - About us - Section.png",
+          "projects/MacService/Mobil/5. Mobile - Home - Slideshow - Section.png",
+          "projects/MacService/Mobil/6. Mobile - Home - Why choose us - Section.png",
+          "projects/MacService/Mobil/7. Mobile - Home - Reviews - Section.png",
+          "projects/MacService/Mobil/8. Mobile - Home - Contact us - Section.png",
+          "projects/MacService/Mobil/9. Mobile - Home - Footer - Section.png"
+        ],
+        "About us": [
+          "projects/MacService/Mobil/10. Mobile - About us - Hero - Section.png",
+          "projects/MacService/Mobil/11. Mobile - About us - Story - Section.png",
+          "projects/MacService/Mobil/12. Mobile - About us - Team - Section.png",
+          "projects/MacService/Mobil/13. Mobile - About us - Values - Section.png",
+          "projects/MacService/Mobil/14. Mobile - About us - CTA - Section.png",
+          "projects/MacService/Mobil/15. Mobile - About us - Footer - Section.png"
+        ],
+        "Services": [
+          "projects/MacService/Mobil/16. Mobile - Services - Hero - Section.png",
+          "projects/MacService/Mobil/17. Mobile - Services - Construction - Section.png",
+          "projects/MacService/Mobil/18. Mobile - Services - Renovation - Section.png",
+          "projects/MacService/Mobil/19. Mobile - Services - Maintenance - Section.png",
+          "projects/MacService/Mobil/20. Mobile - Services - Gardening - Section.png",
+          "projects/MacService/Mobil/21. Mobile - Services - Process - Section.png",
+          "projects/MacService/Mobil/22. Mobile - Services - CTA - Section.png",
+          "projects/MacService/Mobil/23. Mobile - Services - Footer - Section.png"
+        ],
+        "Contact": [
+          "projects/MacService/Mobil/24. Mobile - Contact - Hero - Section.png",
+          "projects/MacService/Mobil/25. Mobile - Contact - Info - Section.png",
+          "projects/MacService/Mobil/26. Mobile - Contact - Form - Section.png",
+          "projects/MacService/Mobil/27. Mobile - Contact - Map & Find us - Section.png",
+          "projects/MacService/Mobil/28. Mobile - Contact - Footer - Section.png"
+        ]
+      }
+    }
+  },
+  {
+    id: "sulans-skomakeri",
+    name: "Sulans Skomakeri",
+    category: "frontend",
+    type: "COMPANY WEBSITE",
+    slug: "sulans-skomakeri",
+    description: "A modern and minimalistic corporate website for Sulans Skomakeri in Karlstad, focusing on traditional craftsmanship, shoe repairs, and personal service. The website highlights the workshop's craftsmanship and makes it easy for the visitor to find information, view services, and get in touch with the shoemaker.",
+    detailedContent: {
+      introTitle: "Genuine craftsmanship in a digital format.",
+      intro: "A custom and responsive corporate website for Sulans Skomakeri in Karlstad. The main purpose was to create a digital presence that feels just as genuine and crafted as the business itself. By combining a timeless visual expression with modern web technology, the result was a platform where the visitor can quickly find the right services, opening hours, and contact information.",
+      sections: [
+        {
+          tag: "03 — PRESENTATION OF CRAFTSMANSHIP",
+          title: "Showing the value of repairs.",
+          text: "To highlight the quality of the shoemaker's craftsmanship, specific sections were built to show before and after pictures. This gives the customer a direct understanding of the value of repairing instead of buying new.",
+          bullets: [
+            "Before and after pictures for different types of shoe repairs",
+            "Clear and structured presentation of available services"
+          ]
+        },
+        {
+          tag: "04 — INTEGRATION & ADMINISTRATION",
+          title: "Digital presence in symbiosis.",
+          text: "The website was built with a modern architecture and centralized management of customer data. To keep the content alive, the company's Instagram feed was also integrated, giving visitors an insight into the workshop's everyday life.",
+          bullets: [
+            "Instagram integration for current updates directly from the workshop",
+            "Centralized data management for opening hours and contact details",
+            "Optimized, fast, and fully responsive design for all devices"
+          ]
+        }
+      ]
+    },
+    html_url: "https://github.com/Tivva34/SulansSkomakeri",
+    liveUrl: "https://tivva34.github.io/SulansSkomakeri/",
+    languages: ["TypeScript", "HTML", "CSS"],
+    tech: ["React", "Vite", "Tailwind CSS", "Responsive Design"],
+    screenshot: `${import.meta.env.BASE_URL}projects/SulansSkomakeri/1. Home - Hero - Section.png`,
+    gallery: {
+      "Desktop View": [
+        "projects/SulansSkomakeri/1. Home - Hero - Section.png",
+        "projects/SulansSkomakeri/2. Home - Our services - Section.png",
+        "projects/SulansSkomakeri/3. Home - Craftsmanship - Section.png",
+        "projects/SulansSkomakeri/4. Home - Before & After - Section.png",
+        "projects/SulansSkomakeri/5. Home - The workshop - Section.png",
+        "projects/SulansSkomakeri/6. Home - Contact & Find us - Section.png",
+        "projects/SulansSkomakeri/7. Home - Footer - Section.png"
+      ],
+      "Mobile View": [
+        "projects/SulansSkomakeri/Mobil/1. Mobile - Hero - Section.png",
+        "projects/SulansSkomakeri/Mobil/2. Mobile - Trust - Section.png",
+        "projects/SulansSkomakeri/Mobil/3. Mobile - Services Overview - Section.png",
+        "projects/SulansSkomakeri/Mobil/4. Mobile - Services List - Section.png",
+        "projects/SulansSkomakeri/Mobil/5. Mobile - Craftsmanship - Section.png",
+        "projects/SulansSkomakeri/Mobil/6. Mobile - Before & After 1 - Section.png",
+        "projects/SulansSkomakeri/Mobil/7. Mobile - Before & After 2 - Section.png",
+        "projects/SulansSkomakeri/Mobil/8. Mobile - Before & After 3 - Section.png",
+        "projects/SulansSkomakeri/Mobil/9. Mobile - Workshop 1 - Section.png",
+        "projects/SulansSkomakeri/Mobil/10. Mobile - Workshop 2 - Section.png",
+        "projects/SulansSkomakeri/Mobil/11. Mobile - Contact & Find us - Section.png",
+        "projects/SulansSkomakeri/Mobil/12. Mobile - Map - Section.png",
+        "projects/SulansSkomakeri/Mobil/13. Mobile - Footer - Section.png"
+      ]
+    }
+  },
+  {
+    id: "johans-bygg-stenarbeten",
+    name: "Johans Bygg & Stenarbeten",
+    category: "frontend",
+    type: "COMPANY WEBSITE",
+    slug: "johans-bygg-stenarbeten",
+    description: "A professional corporate website built for a local company. The focus was on creating a trustworthy design, highlighting their services, and making it easy for customers to request a quote.",
+    detailedContent: {
+      introTitle: "Trust-building online presence.",
+      intro: "A professional and trustworthy corporate website developed for a local construction and stonework company in Arvika. The focus was on building a stable and fast digital presence that effectively highlights the company's core services and drives new quote requests.",
+      sections: [
+        {
+          tag: "03 — STRUCTURE & TRUST",
+          title: "Reference-driven design.",
+          text: "Since the construction industry relies heavily on trust, the website was structured to highlight reference projects and certifications. This creates a sense of security for potential customers right from the first impression.",
+          bullets: [
+            "Clear division of the company's construction and stonework services",
+            "Reference-driven structure designed to build customer trust"
+          ]
+        },
+        {
+          tag: "04 — USER EXPERIENCE",
+          title: "Conversion and accessibility.",
+          text: "The site was developed with a 'mobile-first' strategy to ensure an excellent experience regardless of which device the customer is using. Well-placed CTA buttons quickly lead the visitor to a smooth quote request.",
+          bullets: [
+            "Fast and easy path to a quote request",
+            "Fully responsive and accessible design"
+          ]
+        }
+      ]
+    },
+    html_url: "https://github.com/Tivva34/JohansBygg",
+    liveUrl: "https://tivva34.github.io/JohansBygg/",
+    languages: ["JavaScript", "HTML", "CSS"],
+    tech: ["React", "Vite", "Responsive Design"],
+    screenshot: `${import.meta.env.BASE_URL}projects/JohansBygg&Stenarbeten/1. Home - Hero - Section.png`,
+    gallery: {
+      "Desktop View": [
+        "projects/JohansBygg&Stenarbeten/1. Home - Hero - Section.png",
+        "projects/JohansBygg&Stenarbeten/2. Home - Our services - Section.png",
+        "projects/JohansBygg&Stenarbeten/3. Home - Authorized - Section.png",
+        "projects/JohansBygg&Stenarbeten/4. Home - Industry experience - Section.png",
+        "projects/JohansBygg&Stenarbeten/5. Home - Why choose us - Section.png",
+        "projects/JohansBygg&Stenarbeten/6. Home - Process - Section.png",
+        "projects/JohansBygg&Stenarbeten/7. Home - Contact - Section.png",
+        "projects/JohansBygg&Stenarbeten/8. Home - Map & Footer - Section.png"
+      ],
+      "Mobile View": [
+        "projects/JohansBygg&Stenarbeten/Mobil/1. Mobile - Hero - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/2. Mobile - Services Bygg - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/3. Mobile - Services Sten - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/4. Mobile - Services Golv - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/5. Mobile - Services Plattsattning - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/6. Mobile - Authorized - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/7. Mobile - Industry experience - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/8. Mobile - Why choose us 1 - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/9. Mobile - Why choose us 2 - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/10. Mobile - Process Step 1 - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/11. Mobile - Process Step 2 - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/12. Mobile - Contact Details - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/13. Mobile - Contact Form - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/14. Mobile - Map & Footer - Section.png"
+      ]
+    }
+  },
+  {
+    id: "buddas-maleri",
+    name: "Buddas Måleri",
+    category: "frontend",
+    type: "COMPANY WEBSITE",
+    slug: "buddas-maleri",
+    description: "Corporate website that helps the painting company showcase past reference projects and collect new customer inquiries. Fast loading time and optimized for local SEO.",
+    detailedContent: {
+      introTitle: "Local visibility and fast contact.",
+      intro: "A fast, modern, and locally optimized corporate website developed for Buddas Måleri in Arvika. The project's goal was to digitize the company's portfolio, showcase past reference projects, and create a simple, frictionless channel for new customer inquiries.",
+      sections: [
+        {
+          tag: "03 — PORTFOLIO & LOCAL SEO",
+          title: "Being visible where the customers are.",
+          text: "The architecture and content structure were built with local visibility (Local SEO) in mind. By clearly presenting specific painting services and local reference projects, the company's chances of reaching the right target audience were improved.",
+          bullets: [
+            "Optimized structure for better local visibility",
+            "Clear presentation of painting services and reference works"
+          ]
+        },
+        {
+          tag: "04 — FUNCTIONALITY",
+          title: "Responsive and accessible.",
+          text: "With a large proportion of visitors from mobile devices, the design was developed to be one hundred percent responsive. Contact paths were made extra clear so that customers can easily request a quote directly from the workplace or from home.",
+          bullets: [
+            "Clear contact paths optimized for conversion",
+            "Fully responsive experience on mobile, tablet, and desktop"
+          ]
+        }
+      ]
+    },
+    html_url: "https://github.com/Tivva34/BuddasMaleri",
+    liveUrl: "https://tivva34.github.io/BuddasMaleri/",
+    languages: ["JavaScript", "HTML", "CSS"],
+    tech: ["React", "Vite", "Responsive Design"],
+    screenshot: `${import.meta.env.BASE_URL}projects/BuddasMåleri/1. Home - Hero - Section.png`,
+    gallery: {
+      "Desktop View": [
+        "projects/BuddasMåleri/1. Home - Hero - Section.png",
+        "projects/BuddasMåleri/2. Home - Who are we - Section.png",
+        "projects/BuddasMåleri/3. Home - What we do - Section.png",
+        "projects/BuddasMåleri/4. Home - Process - Section.png",
+        "projects/BuddasMåleri/5. Home - Process - Section Hover.png",
+        "projects/BuddasMåleri/6. Home - Contact - Section.png",
+        "projects/BuddasMåleri/7. Home - Map - Section.png"
+      ],
+      "Mobile View": [
+        "projects/BuddasMåleri/Mobil/1. Mobile - Hero - Section.png",
+        "projects/BuddasMåleri/Mobil/2. Mobile - Hero Scrolled - Section.png",
+        "projects/BuddasMåleri/Mobil/3. Mobile - Who are we - Section.png",
+        "projects/BuddasMåleri/Mobil/4. Mobile - Services Exterior - Section.png",
+        "projects/BuddasMåleri/Mobil/5. Mobile - Services Interior - Section.png",
+        "projects/BuddasMåleri/Mobil/6. Mobile - Services Wallpaper - Section.png",
+        "projects/BuddasMåleri/Mobil/7. Mobile - Process Step 1 - Section.png",
+        "projects/BuddasMåleri/Mobil/8. Mobile - Process Step 2 - Section.png",
+        "projects/BuddasMåleri/Mobil/9. Mobile - Process Step 3 - Section.png",
+        "projects/BuddasMåleri/Mobil/10. Mobile - Contact Details - Section.png",
+        "projects/BuddasMåleri/Mobil/11. Mobile - Contact Form - Section.png",
+        "projects/BuddasMåleri/Mobil/12. Mobile - Map & Footer - Section.png"
+      ]
+    }
   },
   {
     id: "wermlands-skomakeri",
     name: "Wermlands Skomakeri",
     category: "frontend",
     type: "COMPANY WEBSITE",
+    hidden: true,
     slug: "wermlands-skomakeri",
     description: "A modern and minimalistic corporate website for Wermlands Skomakeri in Karlstad, focusing on traditional craftsmanship, shoe repairs, and personal service. The website highlights the workshop's craftsmanship and makes it easy for the visitor to find information, view services, and get in touch with the shoemaker.",
     detailedContent: {
@@ -444,6 +715,7 @@ export const featuredProjects = [
     name: "Arvika Bygg & Stenarbeten",
     category: "frontend",
     type: "COMPANY WEBSITE",
+    hidden: true,
     slug: "arvika-bygg-stenarbeten",
     description: "A professional corporate website built for a local company. The focus was on creating a trustworthy design, highlighting their services, and making it easy for customers to request a quote.",
     detailedContent: {
@@ -490,6 +762,7 @@ export const featuredProjects = [
     name: "LJS Måleri Värmland",
     category: "frontend",
     type: "COMPANY WEBSITE",
+    hidden: true,
     slug: "ljs-maleri-varmland",
     description: "Corporate website that helps the painting company showcase past reference projects and collect new customer inquiries. Fast loading time and optimized for local SEO.",
     detailedContent: {

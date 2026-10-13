@@ -18,11 +18,32 @@ export default function ProjectDetail(props) {
     return null;
   });
 
+  const [activeSubCategory, setActiveSubCategory] = useState(() => {
+    if (project && project.gallery && !Array.isArray(project.gallery)) {
+      const firstCat = Object.keys(project.gallery)[0];
+      const val = project.gallery[firstCat];
+      if (val && typeof val === "object" && !Array.isArray(val)) {
+        return Object.keys(val)[0];
+      }
+    }
+    return null;
+  });
+
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  const currentImages = project.gallery
-    ? (Array.isArray(project.gallery) ? project.gallery : (project.gallery[activeCategory] || []))
-    : [];
+  const getCategoryImages = () => {
+    if (!project || !project.gallery) return [];
+    if (Array.isArray(project.gallery)) return project.gallery;
+    const catData = project.gallery[activeCategory];
+    if (!catData) return [];
+    if (Array.isArray(catData)) return catData;
+    if (typeof catData === "object") {
+      return catData[activeSubCategory] || Object.values(catData)[0] || [];
+    }
+    return [];
+  };
+
+  const currentImages = getCategoryImages();
 
   const openLightbox = (index) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
@@ -57,7 +78,14 @@ export default function ProjectDetail(props) {
 
   useEffect(() => {
     if (project && project.gallery && !Array.isArray(project.gallery)) {
-      setActiveCategory(Object.keys(project.gallery)[0]);
+      const firstCat = Object.keys(project.gallery)[0];
+      setActiveCategory(firstCat);
+      const val = project.gallery[firstCat];
+      if (val && typeof val === "object" && !Array.isArray(val)) {
+        setActiveSubCategory(Object.keys(val)[0]);
+      } else {
+        setActiveSubCategory(null);
+      }
     }
   }, [project]);
 
@@ -145,7 +173,19 @@ export default function ProjectDetail(props) {
     }
 
     const categories = Object.keys(project.gallery);
-    const currentImages = project.gallery[activeCategory] || [];
+    const activeCategoryData = project.gallery[activeCategory];
+    const hasSubCategories = activeCategoryData && typeof activeCategoryData === "object" && !Array.isArray(activeCategoryData);
+    const subCategories = hasSubCategories ? Object.keys(activeCategoryData) : [];
+
+    const handleCategoryClick = (category) => {
+      setActiveCategory(category);
+      const catData = project.gallery[category];
+      if (catData && typeof catData === "object" && !Array.isArray(catData)) {
+        setActiveSubCategory(Object.keys(catData)[0]);
+      } else {
+        setActiveSubCategory(null);
+      }
+    };
 
     return (
       <div className="gallery-with-tabs">
@@ -155,7 +195,7 @@ export default function ProjectDetail(props) {
               <li key={category}>
                 <button
                   className={`gallery-tab-btn ${activeCategory === category ? "active" : ""}`}
-                  onClick={() => setActiveCategory(category)}
+                  onClick={() => handleCategoryClick(category)}
                   aria-current={activeCategory === category ? "true" : undefined}
                 >
                   {category.replace(/-/g, " ")}
@@ -165,19 +205,40 @@ export default function ProjectDetail(props) {
           </ul>
         </nav>
 
-        <div className="project-gallery-grid">
-          {currentImages.map((img, idx) => {
-            const meta = generateCaption(img);
-            return (
-              <figure key={idx} className="gallery-figure">
-                <img
-                  src={`${import.meta.env.BASE_URL}${img}`}
-                  alt={`${meta.content || 'Project view'} ${idx + 1}`}
-                  className="gallery-image"
-                  loading="lazy"
-                  onClick={() => openLightbox(idx)}
-                />
-                <figcaption className="gallery-caption">
+        {hasSubCategories && subCategories.length > 0 && (
+          <nav className="gallery-tabs-nav gallery-subtabs-nav" aria-label="Gallery subcategories">
+            <ul className="gallery-tabs-list">
+              {subCategories.map((subCategory) => (
+                <li key={subCategory}>
+                  <button
+                    className={`gallery-tab-btn gallery-subtab-btn ${activeSubCategory === subCategory ? "active" : ""}`}
+                    onClick={() => setActiveSubCategory(subCategory)}
+                    aria-current={activeSubCategory === subCategory ? "true" : undefined}
+                  >
+                    {subCategory.replace(/-/g, " ")}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
+        {(() => {
+          const isMobileView = activeCategory?.toLowerCase().includes("mobil");
+          return (
+            <div className={`project-gallery-grid ${isMobileView ? "mobile-gallery-grid" : ""}`}>
+              {currentImages.map((img, idx) => {
+                const meta = generateCaption(img);
+                return (
+                  <figure key={idx} className="gallery-figure">
+                    <img
+                      src={`${import.meta.env.BASE_URL}${img}`}
+                      alt={`${meta.content || 'Project view'} ${idx + 1}`}
+                      className={`gallery-image ${isMobileView ? "mobile-gallery-image" : ""}`}
+                      loading="lazy"
+                      onClick={() => openLightbox(idx)}
+                    />
+                    <figcaption className="gallery-caption">
                   {meta.page && (
                     <>
                       <strong>{meta.page}</strong>
@@ -191,6 +252,8 @@ export default function ProjectDetail(props) {
             );
           })}
         </div>
+          );
+        })()}
       </div>
     );
   };
@@ -320,7 +383,11 @@ export default function ProjectDetail(props) {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            <img src={`${import.meta.env.BASE_URL}${currentImages[lightboxIndex]}`} alt={`Lightbox view ${lightboxIndex + 1}`} className="lightbox-img" />
+            <img
+              src={`${import.meta.env.BASE_URL}${currentImages[lightboxIndex]}`}
+              alt={`Lightbox view ${lightboxIndex + 1}`}
+              className={`lightbox-img ${activeCategory?.toLowerCase().includes("mobil") ? "mobile-lightbox-img" : ""}`}
+            />
           </div>
 
           <button className="lightbox-next" onClick={(e) => { e.stopPropagation(); nextImage(); }} aria-label="Next image">
