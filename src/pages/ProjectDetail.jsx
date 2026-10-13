@@ -165,19 +165,22 @@ export default function ProjectDetail(props) {
           </ul>
         </nav>
 
-        <div className="project-gallery-grid">
-          {currentImages.map((img, idx) => {
-            const meta = generateCaption(img);
-            return (
-              <figure key={idx} className="gallery-figure">
-                <img
-                  src={`${import.meta.env.BASE_URL}${img}`}
-                  alt={`${meta.content || 'Project view'} ${idx + 1}`}
-                  className="gallery-image"
-                  loading="lazy"
-                  onClick={() => openLightbox(idx)}
-                />
-                <figcaption className="gallery-caption">
+        {(() => {
+          const isMobileView = activeCategory?.toLowerCase().includes("mobil");
+          return (
+            <div className={`project-gallery-grid ${isMobileView ? "mobile-gallery-grid" : ""}`}>
+              {currentImages.map((img, idx) => {
+                const meta = generateCaption(img);
+                return (
+                  <figure key={idx} className="gallery-figure">
+                    <img
+                      src={`${import.meta.env.BASE_URL}${img}`}
+                      alt={`${meta.content || 'Project view'} ${idx + 1}`}
+                      className={`gallery-image ${isMobileView ? "mobile-gallery-image" : ""}`}
+                      loading="lazy"
+                      onClick={() => openLightbox(idx)}
+                    />
+                    <figcaption className="gallery-caption">
                   {meta.page && (
                     <>
                       <strong>{meta.page}</strong>
@@ -191,6 +194,8 @@ export default function ProjectDetail(props) {
             );
           })}
         </div>
+          );
+        })()}
       </div>
     );
   };
@@ -320,7 +325,11 @@ export default function ProjectDetail(props) {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            <img src={`${import.meta.env.BASE_URL}${currentImages[lightboxIndex]}`} alt={`Lightbox view ${lightboxIndex + 1}`} className="lightbox-img" />
+            <img
+              src={`${import.meta.env.BASE_URL}${currentImages[lightboxIndex]}`}
+              alt={`Lightbox view ${lightboxIndex + 1}`}
+              className={`lightbox-img ${activeCategory?.toLowerCase().includes("mobil") ? "mobile-lightbox-img" : ""}`}
+            />
           </div>
 
           <button className="lightbox-next" onClick={(e) => { e.stopPropagation(); nextImage(); }} aria-label="Next image">

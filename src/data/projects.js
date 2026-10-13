@@ -51,7 +51,7 @@ export const repoTechOverrides = {
 };
 export const projectOrder = [
   "Hammarö Maskin & Smide AB",
-  "Jannes Maskin o Smide",
+  "Jannes Maskin & Smide",
   "MAC Service",
   "Sulans Skomakeri",
   "Johans Bygg & Stenarbeten",
@@ -204,7 +204,7 @@ export const featuredProjects = [
   },
   {
     id: "jannes-maskin-o-smide",
-    name: "Jannes Maskin o Smide",
+    name: "Jannes Maskin & Smide",
     category: "fullstack",
     type: "CUSTOM BUSINESS PLATFORM",
     slug: "jannes-maskin-o-smide",
