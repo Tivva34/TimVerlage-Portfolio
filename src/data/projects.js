@@ -29,6 +29,9 @@ export const projectCategoryByName = {
   "The Turtlebase": "frontend",
   FadingLightDemo: "games",
   "Hammarö Maskin & Smide AB": "fullstack",
+  "Sulans Skomakeri": "frontend",
+  "Johans Bygg & Stenarbeten": "frontend",
+  "Buddas Måleri": "frontend",
   "Wermlands Skomakeri": "frontend",
   "Arvika Bygg & Stenarbeten": "frontend",
   "LJS Måleri Värmland": "frontend"
@@ -50,6 +53,9 @@ export const projectOrder = [
   "Hammarö Maskin & Smide AB",
   "Jannes Maskin o Smide",
   "MAC Service",
+  "Sulans Skomakeri",
+  "Johans Bygg & Stenarbeten",
+  "Buddas Måleri",
   "Wermlands Skomakeri",
   "Arvika Bygg & Stenarbeten",
   "LJS Måleri Värmland",
@@ -392,10 +398,202 @@ export const featuredProjects = [
     ]
   },
   {
+    id: "sulans-skomakeri",
+    name: "Sulans Skomakeri",
+    category: "frontend",
+    type: "COMPANY WEBSITE",
+    slug: "sulans-skomakeri",
+    description: "A modern and minimalistic corporate website for Sulans Skomakeri in Karlstad, focusing on traditional craftsmanship, shoe repairs, and personal service. The website highlights the workshop's craftsmanship and makes it easy for the visitor to find information, view services, and get in touch with the shoemaker.",
+    detailedContent: {
+      introTitle: "Genuine craftsmanship in a digital format.",
+      intro: "A custom and responsive corporate website for Sulans Skomakeri in Karlstad. The main purpose was to create a digital presence that feels just as genuine and crafted as the business itself. By combining a timeless visual expression with modern web technology, the result was a platform where the visitor can quickly find the right services, opening hours, and contact information.",
+      sections: [
+        {
+          tag: "03 — PRESENTATION OF CRAFTSMANSHIP",
+          title: "Showing the value of repairs.",
+          text: "To highlight the quality of the shoemaker's craftsmanship, specific sections were built to show before and after pictures. This gives the customer a direct understanding of the value of repairing instead of buying new.",
+          bullets: [
+            "Before and after pictures for different types of shoe repairs",
+            "Clear and structured presentation of available services"
+          ]
+        },
+        {
+          tag: "04 — INTEGRATION & ADMINISTRATION",
+          title: "Digital presence in symbiosis.",
+          text: "The website was built with a modern architecture and centralized management of customer data. To keep the content alive, the company's Instagram feed was also integrated, giving visitors an insight into the workshop's everyday life.",
+          bullets: [
+            "Instagram integration for current updates directly from the workshop",
+            "Centralized data management for opening hours and contact details",
+            "Optimized, fast, and fully responsive design for all devices"
+          ]
+        }
+      ]
+    },
+    html_url: "https://github.com/Tivva34/SulansSkomakeri",
+    liveUrl: "https://tivva34.github.io/SulansSkomakeri/",
+    languages: ["TypeScript", "HTML", "CSS"],
+    tech: ["React", "Vite", "Tailwind CSS", "Responsive Design"],
+    screenshot: `${import.meta.env.BASE_URL}projects/SulansSkomakeri/1. Home - Hero - Section.png`,
+    gallery: {
+      "Desktop View": [
+        "projects/SulansSkomakeri/1. Home - Hero - Section.png",
+        "projects/SulansSkomakeri/2. Home - Our services - Section.png",
+        "projects/SulansSkomakeri/3. Home - Craftsmanship - Section.png",
+        "projects/SulansSkomakeri/4. Home - Before & After - Section.png",
+        "projects/SulansSkomakeri/5. Home - The workshop - Section.png",
+        "projects/SulansSkomakeri/6. Home - Contact & Find us - Section.png",
+        "projects/SulansSkomakeri/7. Home - Footer - Section.png"
+      ],
+      "Mobile View": [
+        "projects/SulansSkomakeri/Mobil/1. Mobile - Hero - Section.png",
+        "projects/SulansSkomakeri/Mobil/2. Mobile - Trust - Section.png",
+        "projects/SulansSkomakeri/Mobil/3. Mobile - Services Overview - Section.png",
+        "projects/SulansSkomakeri/Mobil/4. Mobile - Services List - Section.png",
+        "projects/SulansSkomakeri/Mobil/5. Mobile - Craftsmanship - Section.png",
+        "projects/SulansSkomakeri/Mobil/6. Mobile - Before & After 1 - Section.png",
+        "projects/SulansSkomakeri/Mobil/7. Mobile - Before & After 2 - Section.png",
+        "projects/SulansSkomakeri/Mobil/8. Mobile - Before & After 3 - Section.png",
+        "projects/SulansSkomakeri/Mobil/9. Mobile - Workshop 1 - Section.png",
+        "projects/SulansSkomakeri/Mobil/10. Mobile - Workshop 2 - Section.png",
+        "projects/SulansSkomakeri/Mobil/11. Mobile - Contact & Find us - Section.png",
+        "projects/SulansSkomakeri/Mobil/12. Mobile - Map - Section.png",
+        "projects/SulansSkomakeri/Mobil/13. Mobile - Footer - Section.png"
+      ]
+    }
+  },
+  {
+    id: "johans-bygg-stenarbeten",
+    name: "Johans Bygg & Stenarbeten",
+    category: "frontend",
+    type: "COMPANY WEBSITE",
+    slug: "johans-bygg-stenarbeten",
+    description: "A professional corporate website built for a local company. The focus was on creating a trustworthy design, highlighting their services, and making it easy for customers to request a quote.",
+    detailedContent: {
+      introTitle: "Trust-building online presence.",
+      intro: "A professional and trustworthy corporate website developed for a local construction and stonework company in Arvika. The focus was on building a stable and fast digital presence that effectively highlights the company's core services and drives new quote requests.",
+      sections: [
+        {
+          tag: "03 — STRUCTURE & TRUST",
+          title: "Reference-driven design.",
+          text: "Since the construction industry relies heavily on trust, the website was structured to highlight reference projects and certifications. This creates a sense of security for potential customers right from the first impression.",
+          bullets: [
+            "Clear division of the company's construction and stonework services",
+            "Reference-driven structure designed to build customer trust"
+          ]
+        },
+        {
+          tag: "04 — USER EXPERIENCE",
+          title: "Conversion and accessibility.",
+          text: "The site was developed with a 'mobile-first' strategy to ensure an excellent experience regardless of which device the customer is using. Well-placed CTA buttons quickly lead the visitor to a smooth quote request.",
+          bullets: [
+            "Fast and easy path to a quote request",
+            "Fully responsive and accessible design"
+          ]
+        }
+      ]
+    },
+    html_url: "https://github.com/Tivva34/JohansBygg",
+    liveUrl: "https://tivva34.github.io/JohansBygg/",
+    languages: ["JavaScript", "HTML", "CSS"],
+    tech: ["React", "Vite", "Responsive Design"],
+    screenshot: `${import.meta.env.BASE_URL}projects/JohansBygg&Stenarbeten/1. Home - Hero - Section.png`,
+    gallery: {
+      "Desktop View": [
+        "projects/JohansBygg&Stenarbeten/1. Home - Hero - Section.png",
+        "projects/JohansBygg&Stenarbeten/2. Home - Our services - Section.png",
+        "projects/JohansBygg&Stenarbeten/3. Home - Authorized - Section.png",
+        "projects/JohansBygg&Stenarbeten/4. Home - Industry experience - Section.png",
+        "projects/JohansBygg&Stenarbeten/5. Home - Why choose us - Section.png",
+        "projects/JohansBygg&Stenarbeten/6. Home - Process - Section.png",
+        "projects/JohansBygg&Stenarbeten/7. Home - Contact - Section.png",
+        "projects/JohansBygg&Stenarbeten/8. Home - Map & Footer - Section.png"
+      ],
+      "Mobile View": [
+        "projects/JohansBygg&Stenarbeten/Mobil/1. Mobile - Hero - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/2. Mobile - Services Bygg - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/3. Mobile - Services Sten - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/4. Mobile - Services Golv - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/5. Mobile - Services Plattsattning - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/6. Mobile - Authorized - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/7. Mobile - Industry experience - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/8. Mobile - Why choose us 1 - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/9. Mobile - Why choose us 2 - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/10. Mobile - Process Step 1 - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/11. Mobile - Process Step 2 - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/12. Mobile - Contact Details - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/13. Mobile - Contact Form - Section.png",
+        "projects/JohansBygg&Stenarbeten/Mobil/14. Mobile - Map & Footer - Section.png"
+      ]
+    }
+  },
+  {
+    id: "buddas-maleri",
+    name: "Buddas Måleri",
+    category: "frontend",
+    type: "COMPANY WEBSITE",
+    slug: "buddas-maleri",
+    description: "Corporate website that helps the painting company showcase past reference projects and collect new customer inquiries. Fast loading time and optimized for local SEO.",
+    detailedContent: {
+      introTitle: "Local visibility and fast contact.",
+      intro: "A fast, modern, and locally optimized corporate website developed for Buddas Måleri in Arvika. The project's goal was to digitize the company's portfolio, showcase past reference projects, and create a simple, frictionless channel for new customer inquiries.",
+      sections: [
+        {
+          tag: "03 — PORTFOLIO & LOCAL SEO",
+          title: "Being visible where the customers are.",
+          text: "The architecture and content structure were built with local visibility (Local SEO) in mind. By clearly presenting specific painting services and local reference projects, the company's chances of reaching the right target audience were improved.",
+          bullets: [
+            "Optimized structure for better local visibility",
+            "Clear presentation of painting services and reference works"
+          ]
+        },
+        {
+          tag: "04 — FUNCTIONALITY",
+          title: "Responsive and accessible.",
+          text: "With a large proportion of visitors from mobile devices, the design was developed to be one hundred percent responsive. Contact paths were made extra clear so that customers can easily request a quote directly from the workplace or from home.",
+          bullets: [
+            "Clear contact paths optimized for conversion",
+            "Fully responsive experience on mobile, tablet, and desktop"
+          ]
+        }
+      ]
+    },
+    html_url: "https://github.com/Tivva34/BuddasMaleri",
+    liveUrl: "https://tivva34.github.io/BuddasMaleri/",
+    languages: ["JavaScript", "HTML", "CSS"],
+    tech: ["React", "Vite", "Responsive Design"],
+    screenshot: `${import.meta.env.BASE_URL}projects/BuddasMåleri/1. Home - Hero - Section.png`,
+    gallery: {
+      "Desktop View": [
+        "projects/BuddasMåleri/1. Home - Hero - Section.png",
+        "projects/BuddasMåleri/2. Home - Who are we - Section.png",
+        "projects/BuddasMåleri/3. Home - What we do - Section.png",
+        "projects/BuddasMåleri/4. Home - Process - Section.png",
+        "projects/BuddasMåleri/5. Home - Process - Section Hover.png",
+        "projects/BuddasMåleri/6. Home - Contact - Section.png",
+        "projects/BuddasMåleri/7. Home - Map - Section.png"
+      ],
+      "Mobile View": [
+        "projects/BuddasMåleri/Mobil/1. Mobile - Hero - Section.png",
+        "projects/BuddasMåleri/Mobil/2. Mobile - Hero Scrolled - Section.png",
+        "projects/BuddasMåleri/Mobil/3. Mobile - Who are we - Section.png",
+        "projects/BuddasMåleri/Mobil/4. Mobile - Services Exterior - Section.png",
+        "projects/BuddasMåleri/Mobil/5. Mobile - Services Interior - Section.png",
+        "projects/BuddasMåleri/Mobil/6. Mobile - Services Wallpaper - Section.png",
+        "projects/BuddasMåleri/Mobil/7. Mobile - Process Step 1 - Section.png",
+        "projects/BuddasMåleri/Mobil/8. Mobile - Process Step 2 - Section.png",
+        "projects/BuddasMåleri/Mobil/9. Mobile - Process Step 3 - Section.png",
+        "projects/BuddasMåleri/Mobil/10. Mobile - Contact Details - Section.png",
+        "projects/BuddasMåleri/Mobil/11. Mobile - Contact Form - Section.png",
+        "projects/BuddasMåleri/Mobil/12. Mobile - Map & Footer - Section.png"
+      ]
+    }
+  },
+  {
     id: "wermlands-skomakeri",
     name: "Wermlands Skomakeri",
     category: "frontend",
     type: "COMPANY WEBSITE",
+    hidden: true,
     slug: "wermlands-skomakeri",
     description: "A modern and minimalistic corporate website for Wermlands Skomakeri in Karlstad, focusing on traditional craftsmanship, shoe repairs, and personal service. The website highlights the workshop's craftsmanship and makes it easy for the visitor to find information, view services, and get in touch with the shoemaker.",
     detailedContent: {
@@ -444,6 +642,7 @@ export const featuredProjects = [
     name: "Arvika Bygg & Stenarbeten",
     category: "frontend",
     type: "COMPANY WEBSITE",
+    hidden: true,
     slug: "arvika-bygg-stenarbeten",
     description: "A professional corporate website built for a local company. The focus was on creating a trustworthy design, highlighting their services, and making it easy for customers to request a quote.",
     detailedContent: {
@@ -490,6 +689,7 @@ export const featuredProjects = [
     name: "LJS Måleri Värmland",
     category: "frontend",
     type: "COMPANY WEBSITE",
+    hidden: true,
     slug: "ljs-maleri-varmland",
     description: "Corporate website that helps the painting company showcase past reference projects and collect new customer inquiries. Fast loading time and optimized for local SEO.",
     detailedContent: {
