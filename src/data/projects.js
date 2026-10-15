@@ -5,7 +5,7 @@ export const repoScreenshots = {
   IMDO: `${import.meta.env.BASE_URL}projects/1. IMDO - Student Project.png`,
   "Nasa-SpaceViewer": `${import.meta.env.BASE_URL}projects/1. Nasa SpaceViewer - Student Project.png`,
   ReadingSloth: `${import.meta.env.BASE_URL}projects/1. ReadingSloth - Student Project.png`,
-  FadingLightDemo: `${import.meta.env.BASE_URL}projects/1. FadingLight - Prototype.png`,
+  FadingLightDemo: `${import.meta.env.BASE_URL}projects/1. FadingLight - Tim Store.png`,
 };
 
 export const repoDemos = {
@@ -20,6 +20,7 @@ export const projectTabs = [
 ];
 
 export const projectCategoryByName = {
+  "GEM AI": "frontend",
   SuperMon: "games",
   "MAC Service": "frontend",
   IMDO: "frontend",
@@ -52,6 +53,7 @@ export const repoTechOverrides = {
 export const projectOrder = [
   "Hammarö Maskin & Smide AB",
   "Jannes Maskin & Smide",
+  "GEM AI",
   "MAC Service",
   "Sulans Skomakeri",
   "Johans Bygg & Stenarbeten",
@@ -78,6 +80,144 @@ export const getSortedProjects = (projects) =>
   });
 
 export const featuredProjects = [
+  {
+    id: "gem-ai",
+    name: "GEM AI",
+    category: "frontend",
+    type: "AI AUTOMATION — DIGITAL EXPERIENCE CONCEPT",
+    slug: "gem-ai",
+    description: "GEM AI is a self-initiated project exploring how AI-powered automation can be presented through a clear, engaging, and business-focused digital experience. The concept focuses on everyday operational challenges such as repetitive administrative work, document processing, and disconnected business systems, exploring how automation can simplify workflows while keeping important decisions under human control.",
+    detailedContent: {
+      summary: "Designing an interactive vision for business automation — An exploratory concept combining a distinctive visual identity, atmospheric animations, and human-in-the-loop system architecture.",
+      introTitle: "Designing an interactive vision for business automation.",
+      intro: "GEM AI is a self-initiated concept project where I explored how AI-powered business automation could be presented through a modern, engaging, and intuitive digital experience. My focus was to combine a distinctive visual identity with thoughtful interactions, atmospheric animations, and a clear presentation of how AI could support everyday business operations while keeping people in control.",
+      sections: [
+        {
+          tag: "03 — CONCEPT & PROBLEM",
+          title: "Making complex technology feel approachable.",
+          text: "I wanted to explore how business automation could be communicated without relying on generic SaaS visuals or overly technical explanations. The concept brings together practical business use cases and a visually driven interface, using clear layouts, interactive elements, and a consistent design language to make the experience easier to understand."
+        },
+        {
+          tag: "04 — VISUAL IDENTITY & ART DIRECTION",
+          title: "Building an atmospheric and distinctive visual identity.",
+          text: "I designed GEM AI around an atmospheric mountain landscape, a custom geometric emblem, and a restrained visual language inspired by modern digital products. Glass-like surfaces, subtle glows, layered backgrounds, and carefully chosen typography create depth while keeping the interface clean and readable.\n\nA key part of the design was developing both light and dark themes. I wanted each mode to feel intentional in its own right, with coordinated colours, visual assets, and smooth transitions that preserve the overall identity."
+        },
+        {
+          tag: "05 — ANIMATION & INTERACTION DESIGN",
+          title: "Creating movement, atmosphere, and responsive interactions.",
+          text: "I used animation to give the interface a sense of depth and continuity rather than adding movement purely for decoration. Subtle environmental effects, ambient glows, particle animations, and smooth transitions help bring the visual concept to life.\n\nI also designed the light and dark mode experience to feel seamless, with animated changes in colours, backgrounds, and visual elements. Interactive components and motion feedback help guide the user through the experience while keeping the interface intuitive across desktop, tablet, and mobile."
+        },
+        {
+          tag: "06 — INTERACTIVE EXPERIENCE & DEVELOPMENT",
+          title: "Turning the concept into a working interface.",
+          text: "I developed the concept into an interactive web experience using React, TypeScript, and Vite, with Tailwind CSS for styling and Framer Motion for animations and transitions. The interface combines reusable components, responsive layouts, and interactive elements to create a consistent experience across different screen sizes.\n\nA central part of the experience is an interactive walkthrough of an AI automation workflow. Rather than presenting the idea through static descriptions alone, I designed an interface where visitors can explore the different stages visually and see how structured automation and human oversight fit together.\n\nThe project also includes dedicated layouts and visual adjustments for desktop and mobile, ensuring that the experience remains cohesive across devices."
+        },
+        {
+          tag: "07 — REFLECTION",
+          title: "Exploring the relationship between design and technology.",
+          text: "GEM AI gave me the opportunity to explore how visual design, motion, and interaction can make a complex technical concept feel more accessible. Throughout the project, I focused on creating a coherent visual identity, purposeful animations, and a responsive interface where every element contributes to the overall experience.\n\nThe result is a concept that brings together visual storytelling and frontend development, demonstrating how thoughtful design can help communicate ideas around emerging technology in a clear and engaging way."
+        }
+      ]
+    },
+    html_url: null,
+    liveUrl: "https://tivva34.github.io/GemAI",
+    languages: ["TypeScript", "HTML", "CSS"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
+    screenshot: `${import.meta.env.BASE_URL}projects/GemAI/Darkmode/1. Home - Hero Mountain Landscape - Section.png`,
+    gallery: {
+      "Desktop Dark Mode": [
+        "projects/GemAI/Darkmode/1. Home - Hero Mountain Landscape - Section.png",
+        "projects/GemAI/Darkmode/2. Home - Services Overview & Partners - Section.png",
+        "projects/GemAI/Darkmode/3. Home - Practical AI Solutions Top - Section.png",
+        "projects/GemAI/Darkmode/4. Home - Practical AI Solutions Grid - Section.png",
+        "projects/GemAI/Darkmode/5. AI Systems - Four-Step Agent Architecture - Section.png",
+        "projects/GemAI/Darkmode/6. Solutions - Targeted Automation Top - Section.png",
+        "projects/GemAI/Darkmode/7. Solutions - Customer Support & Knowledge Search - Section.png",
+        "projects/GemAI/Darkmode/8. Solutions - Invoice Extraction & Lead Inbound - Section.png",
+        "projects/GemAI/Darkmode/9. Process - Four-Step Path to Launch - Section.png",
+        "projects/GemAI/Darkmode/10. Case Study - Invoice & Order Automation - Section.png",
+        "projects/GemAI/Darkmode/11. About us - Practical ROI & Data Security - Section.png",
+        "projects/GemAI/Darkmode/12. FAQ - Clarifications & Agent Questions - Section.png",
+        "projects/GemAI/Darkmode/13. FAQ - Data Privacy & Implementation Accordion - Section.png",
+        "projects/GemAI/Darkmode/14. Contact - Architectural Audit Request Form - Section.png",
+        "projects/GemAI/Darkmode/15. Home - Footer & Direct Contact Links - Section.png"
+      ],
+      "Desktop Light Mode": [
+        "projects/GemAI/Lightmode/1. Home - Hero Mountain Landscape - Section.png",
+        "projects/GemAI/Lightmode/2. Home - Services Overview & Partners - Section.png",
+        "projects/GemAI/Lightmode/3. Home - Practical AI Solutions Top - Section.png",
+        "projects/GemAI/Lightmode/4. Home - Practical AI Solutions Grid - Section.png",
+        "projects/GemAI/Lightmode/5. AI Systems - Four-Step Agent Architecture - Section.png",
+        "projects/GemAI/Lightmode/6. Solutions - Targeted Automation Top - Section.png",
+        "projects/GemAI/Lightmode/7. Solutions - Customer Support & Knowledge Search - Section.png",
+        "projects/GemAI/Lightmode/8. Solutions - Invoice Extraction & Lead Inbound - Section.png",
+        "projects/GemAI/Lightmode/9. Process - Four-Step Path to Launch - Section.png",
+        "projects/GemAI/Lightmode/10. Case Study - Invoice & Order Automation - Section.png",
+        "projects/GemAI/Lightmode/11. About us - Practical ROI & Data Security - Section.png",
+        "projects/GemAI/Lightmode/12. FAQ - Clarifications & Agent Questions - Section.png",
+        "projects/GemAI/Lightmode/13. FAQ - Data Privacy & Implementation Accordion - Section.png",
+        "projects/GemAI/Lightmode/14. Contact - Architectural Audit Request Form - Section.png",
+        "projects/GemAI/Lightmode/15. Home - Footer & Direct Contact Links - Section.png"
+      ],
+      "Mobile Darkmode": [
+        "projects/GemAI/Mobile Darkmode/1. Home - Hero Mountain Mobile - Section.png",
+        "projects/GemAI/Mobile Darkmode/2. Home - Services Marquee & Intro - Section.png",
+        "projects/GemAI/Mobile Darkmode/3. Home - AI Strategy & Feasibility Card - Section.png",
+        "projects/GemAI/Mobile Darkmode/4. Home - Workflow Automation Card - Section.png",
+        "projects/GemAI/Mobile Darkmode/5. Home - Custom AI Agents Card - Section.png",
+        "projects/GemAI/Mobile Darkmode/6. AI Systems - Agent Execution Overview - Section.png",
+        "projects/GemAI/Mobile Darkmode/7. AI Systems - Plan & Safety Policy Step - Section.png",
+        "projects/GemAI/Mobile Darkmode/8. AI Systems - Telemetry Log Terminal - Section.png",
+        "projects/GemAI/Mobile Darkmode/9. Solutions - Targeted Automation Intro - Section.png",
+        "projects/GemAI/Mobile Darkmode/10. Solutions - Support Assistant Blueprint - Section.png",
+        "projects/GemAI/Mobile Darkmode/11. Solutions - Knowledge & SOP Search Blueprint - Section.png",
+        "projects/GemAI/Mobile Darkmode/12. Solutions - Invoice Extraction & Lead Inbound - Section.png",
+        "projects/GemAI/Mobile Darkmode/13. Process - Four-Step Path Intro & Discovery - Section.png",
+        "projects/GemAI/Mobile Darkmode/14. Process - Architecture & Testing Phases - Section.png",
+        "projects/GemAI/Mobile Darkmode/15. Case Study - Order Automation Problem & Solution - Section.png",
+        "projects/GemAI/Mobile Darkmode/16. Case Study - Workflow Pipeline Validation - Section.png",
+        "projects/GemAI/Mobile Darkmode/17. About us - AI Philosophy & ROI Principles - Section.png",
+        "projects/GemAI/Mobile Darkmode/18. About us - Data Security & Stack Integration - Section.png",
+        "projects/GemAI/Mobile Darkmode/19. FAQ - Business Questions & AI Starting Point - Section.png",
+        "projects/GemAI/Mobile Darkmode/20. FAQ - Agents vs Chatbots & Data Protection - Section.png",
+        "projects/GemAI/Mobile Darkmode/21. Contact - Architectural Audit Request Form - Section.png",
+        "projects/GemAI/Mobile Darkmode/22. Home - Footer Links & Copyright Mobile - Section.png"
+      ],
+      "Mobile Lightmode": [
+        "projects/GemAI/Mobile Lightmode/1. Home - Hero Mountain Mobile - Section.png",
+        "projects/GemAI/Mobile Lightmode/2. Home - Services Marquee & Intro - Section.png",
+        "projects/GemAI/Mobile Lightmode/3. Home - AI Strategy & Feasibility Card - Section.png",
+        "projects/GemAI/Mobile Lightmode/4. Home - Workflow Automation Card - Section.png",
+        "projects/GemAI/Mobile Lightmode/5. Home - Custom AI Agents Card - Section.png",
+        "projects/GemAI/Mobile Lightmode/6. Home - Custom AI Software Card - Section.png",
+        "projects/GemAI/Mobile Lightmode/7. AI Systems - Agent Execution Overview - Section.png",
+        "projects/GemAI/Mobile Lightmode/8. AI Systems - Plan & Safety Policy Step - Section.png",
+        "projects/GemAI/Mobile Lightmode/9. AI Systems - Telemetry Log Terminal - Section.png",
+        "projects/GemAI/Mobile Lightmode/10. Solutions - Targeted Automation Intro - Section.png",
+        "projects/GemAI/Mobile Lightmode/11. Solutions - Support Assistant Blueprint - Section.png",
+        "projects/GemAI/Mobile Lightmode/12. Solutions - Knowledge & SOP Search Blueprint - Section.png",
+        "projects/GemAI/Mobile Lightmode/13. Solutions - Automated Invoice Extraction - Section.png",
+        "projects/GemAI/Mobile Lightmode/14. Solutions - Lead Research & Qualification - Section.png",
+        "projects/GemAI/Mobile Lightmode/15. Process - Four-Step Path Intro & Discovery - Section.png",
+        "projects/GemAI/Mobile Lightmode/16. Process - Phase 02 Architecture & Blueprint - Section.png",
+        "projects/GemAI/Mobile Lightmode/17. Process - Phase 03 Development & Testing - Section.png",
+        "projects/GemAI/Mobile Lightmode/18. Process - Phase 04 Launch & Optimization - Section.png",
+        "projects/GemAI/Mobile Lightmode/19. Case Study - Order Automation Problem & Solution - Section.png",
+        "projects/GemAI/Mobile Lightmode/20. Case Study - Pipeline Verification Detail - Section.png",
+        "projects/GemAI/Mobile Lightmode/21. About us - AI Philosophy & ROI Principles - Section.png",
+        "projects/GemAI/Mobile Lightmode/22. About us - Practical ROI & Privacy Cards - Section.png",
+        "projects/GemAI/Mobile Lightmode/23. About us - Data Security & Stack Integration - Section.png",
+        "projects/GemAI/Mobile Lightmode/24. FAQ - Business Questions & AI Starting Point - Section.png",
+        "projects/GemAI/Mobile Lightmode/25. FAQ - Agent Question Accordion Expanded - Section.png",
+        "projects/GemAI/Mobile Lightmode/26. FAQ - Software Integration Accordion Expanded - Section.png",
+        "projects/GemAI/Mobile Lightmode/27. FAQ - Agents vs Chatbots & Data Protection - Section.png",
+        "projects/GemAI/Mobile Lightmode/28. FAQ - Implementation Timelines Question - Section.png",
+        "projects/GemAI/Mobile Lightmode/29. Contact - Architectural Audit Request Top - Section.png",
+        "projects/GemAI/Mobile Lightmode/30. Contact - Architectural Audit Form - Section.png",
+        "projects/GemAI/Mobile Lightmode/31. Home - Footer Navigation & Direct Links - Section.png"
+      ]
+    }
+  },
   {
     id: "hammaro-maskin-smide",
     name: "Hammarö Maskin & Smide AB",
@@ -210,64 +350,64 @@ export const featuredProjects = [
     slug: "jannes-maskin-o-smide",
     description: "This self-initiated project explores how a traditional machinery and metalwork business can evolve into a connected digital operation. After identifying opportunities to improve an existing company's digital presence and workflows, I independently analyzed the business needs and developed a fully functional digital business platform concept.\n\nRather than building just another website, I designed and developed an integrated system connecting digital sales, customer inquiries, communication, and internal administration through a shared backend and context-driven workflows.\n\nThe project demonstrates my ability to identify real-world problems, translate business needs into technical solutions, and build a complete application ecosystem from the public-facing interface to the underlying infrastructure.",
     detailedContent: {
-          "introTitle": "From business problem to integrated solution.",
-          "intro": "The project began with an independent assessment of how a company's digital presence and internal workflows could be improved. I identified opportunities to connect previously separate processes and designed a solution around the entire customer journey.\n\nThe result is a cohesive platform concept that brings together customer acquisition, product discovery, sales inquiries, customer communication, and internal follow-up. The focus is not only on individual features, but on how the entire system works together to support everyday business operations.",
-          "sections": [
-                {
-                      "tag": "03 — PUBLIC WEBSITE & COMPANY AREA",
-                      "title": "A customer-facing digital experience.",
-                      "text": "The public website serves as the company's digital storefront, designed to make products, services, and contact options accessible across desktop, tablet, and mobile devices.\n\nThe interface prioritizes clear information architecture, responsive layouts, accessibility, and conversion-oriented user flows.",
-                      "bullets": [
-                            "Homepage and company information",
-                            "Machine sales, searchable listings, and individual detail pages",
-                            "Inventory presentation",
-                            "Dedicated workshop and metalwork sections",
-                            "Transport-related inquiry flows",
-                            "Context-aware contact options tailored to the selected product or service",
-                            "Direct click-to-call functionality on mobile devices"
-                      ]
-                },
-                {
-                      "tag": "04 — SALES",
-                      "title": "Connected machine and inventory management.",
-                      "text": "Sales functionality is integrated into the wider platform rather than treated as a standalone website feature. Authorized staff can manage machine and inventory information through the administration system, while published content is reflected on the public website.\n\nEach listing has its own detail page with relevant specifications, images, and contextual contact options, connecting product discovery directly to the inquiry process.\n\nThis architecture reduces duplicated content management and creates a more consistent experience between internal administration and the public-facing sales interface."
-                },
-                {
-                      "tag": "05 — CUSTOMER DIALOGUE",
-                      "title": "Context-driven inquiries and communication.",
-                      "text": "A core design principle is that every inquiry should retain the context in which it originated.\n\nForms connect customer information, messages, and relevant machines or services to structured inquiries, helping ensure that incoming requests reach the appropriate workflow. Workshop and metalwork inquiries follow their own paths instead of being mixed with machine sales.\n\nIntegrated email communication supports customer dialogue and follow-up, while the underlying data structure keeps relevant information connected to the corresponding inquiry."
-                },
-                {
-                      "tag": "06 — ADMIN & CRM",
-                      "title": "A dedicated internal business application.",
-                      "text": "The administration system is developed as a separate Progressive Web App (PWA), providing a dedicated interface for managing business data and customer interactions.\n\nSeparating the administration interface from the public website creates a more focused workspace for internal operations while allowing both applications to share the same underlying data and business logic.",
-                      "bullets": [
-                            "Centralized inquiry and ticket management",
-                            "Customer dialogue and interaction history",
-                            "Search, filtering, and structured follow-up",
-                            "Role-based access control",
-                            "Real-time updates",
-                            "Push notification functionality",
-                            "Responsive interfaces across devices",
-                            "App-like installation through supported browsers"
-                      ]
-                },
-                {
-                      "tag": "07 — TECHNICAL ARCHITECTURE & PERFORMANCE",
-                      "title": "Shared backend, real-time data, and security.",
-                      "text": "The platform is built with React and Vite on the frontend and Supabase as the backend infrastructure, using PostgreSQL for structured business data.\n\nThe architecture combines several interconnected components:\n\n• PostgreSQL: A relational data foundation for business entities and workflows.\n• Supabase Realtime: Live updates for supported application events.\n• Edge Functions: Server-side logic for workflows that require backend execution.\n• Row Level Security (RLS): Database-level access policies for controlling access to data.\n• Role-Based Access Control (RBAC): Application-level permissions for different user roles.\n• Progressive Web App technology: An app-like experience with service worker functionality and support for push notifications.\n• SEO and performance: Search-friendly page structure, responsive rendering, and performance-conscious implementation.\n\nThe architecture is designed to keep the public website and internal administration connected while maintaining clear boundaries between presentation, data access, and business logic."
-                },
-                {
-                      "tag": "08 — THE CUSTOMER JOURNEY",
-                      "title": "One connected flow from discovery to follow-up.",
-                      "text": "Google → Public website → Machine or service → Detail page → Contextual inquiry → Customer and inquiry linked in the system → Relevant staff notified → Customer communication through the administration system and integrated email → Follow-up and resolution.\n\nEach stage is designed to preserve relevant context and reduce the need to manually reconnect information across separate tools.\n\nThe result is a platform concept in which the customer-facing experience and internal business workflows operate as parts of the same system, rather than as disconnected digital services."
-                },
-                {
-                      "tag": "PROJECT APPROACH",
-                      "title": "Project Approach & Context",
-                      "text": "This is an independently initiated and developed portfolio project based on an anonymized business scenario. The company name and identifying details have been changed. The project demonstrates my approach to business analysis, product thinking, full-stack development, system architecture, and the implementation of connected digital workflows."
-                }
+      "introTitle": "From business problem to integrated solution.",
+      "intro": "The project began with an independent assessment of how a company's digital presence and internal workflows could be improved. I identified opportunities to connect previously separate processes and designed a solution around the entire customer journey.\n\nThe result is a cohesive platform concept that brings together customer acquisition, product discovery, sales inquiries, customer communication, and internal follow-up. The focus is not only on individual features, but on how the entire system works together to support everyday business operations.",
+      "sections": [
+        {
+          "tag": "03 — PUBLIC WEBSITE & COMPANY AREA",
+          "title": "A customer-facing digital experience.",
+          "text": "The public website serves as the company's digital storefront, designed to make products, services, and contact options accessible across desktop, tablet, and mobile devices.\n\nThe interface prioritizes clear information architecture, responsive layouts, accessibility, and conversion-oriented user flows.",
+          "bullets": [
+            "Homepage and company information",
+            "Machine sales, searchable listings, and individual detail pages",
+            "Inventory presentation",
+            "Dedicated workshop and metalwork sections",
+            "Transport-related inquiry flows",
+            "Context-aware contact options tailored to the selected product or service",
+            "Direct click-to-call functionality on mobile devices"
           ]
+        },
+        {
+          "tag": "04 — SALES",
+          "title": "Connected machine and inventory management.",
+          "text": "Sales functionality is integrated into the wider platform rather than treated as a standalone website feature. Authorized staff can manage machine and inventory information through the administration system, while published content is reflected on the public website.\n\nEach listing has its own detail page with relevant specifications, images, and contextual contact options, connecting product discovery directly to the inquiry process.\n\nThis architecture reduces duplicated content management and creates a more consistent experience between internal administration and the public-facing sales interface."
+        },
+        {
+          "tag": "05 — CUSTOMER DIALOGUE",
+          "title": "Context-driven inquiries and communication.",
+          "text": "A core design principle is that every inquiry should retain the context in which it originated.\n\nForms connect customer information, messages, and relevant machines or services to structured inquiries, helping ensure that incoming requests reach the appropriate workflow. Workshop and metalwork inquiries follow their own paths instead of being mixed with machine sales.\n\nIntegrated email communication supports customer dialogue and follow-up, while the underlying data structure keeps relevant information connected to the corresponding inquiry."
+        },
+        {
+          "tag": "06 — ADMIN & CRM",
+          "title": "A dedicated internal business application.",
+          "text": "The administration system is developed as a separate Progressive Web App (PWA), providing a dedicated interface for managing business data and customer interactions.\n\nSeparating the administration interface from the public website creates a more focused workspace for internal operations while allowing both applications to share the same underlying data and business logic.",
+          "bullets": [
+            "Centralized inquiry and ticket management",
+            "Customer dialogue and interaction history",
+            "Search, filtering, and structured follow-up",
+            "Role-based access control",
+            "Real-time updates",
+            "Push notification functionality",
+            "Responsive interfaces across devices",
+            "App-like installation through supported browsers"
+          ]
+        },
+        {
+          "tag": "07 — TECHNICAL ARCHITECTURE & PERFORMANCE",
+          "title": "Shared backend, real-time data, and security.",
+          "text": "The platform is built with React and Vite on the frontend and Supabase as the backend infrastructure, using PostgreSQL for structured business data.\n\nThe architecture combines several interconnected components:\n\n• PostgreSQL: A relational data foundation for business entities and workflows.\n• Supabase Realtime: Live updates for supported application events.\n• Edge Functions: Server-side logic for workflows that require backend execution.\n• Row Level Security (RLS): Database-level access policies for controlling access to data.\n• Role-Based Access Control (RBAC): Application-level permissions for different user roles.\n• Progressive Web App technology: An app-like experience with service worker functionality and support for push notifications.\n• SEO and performance: Search-friendly page structure, responsive rendering, and performance-conscious implementation.\n\nThe architecture is designed to keep the public website and internal administration connected while maintaining clear boundaries between presentation, data access, and business logic."
+        },
+        {
+          "tag": "08 — THE CUSTOMER JOURNEY",
+          "title": "One connected flow from discovery to follow-up.",
+          "text": "Google → Public website → Machine or service → Detail page → Contextual inquiry → Customer and inquiry linked in the system → Relevant staff notified → Customer communication through the administration system and integrated email → Follow-up and resolution.\n\nEach stage is designed to preserve relevant context and reduce the need to manually reconnect information across separate tools.\n\nThe result is a platform concept in which the customer-facing experience and internal business workflows operate as parts of the same system, rather than as disconnected digital services."
+        },
+        {
+          "tag": "PROJECT APPROACH",
+          "title": "Project Approach & Context",
+          "text": "This is an independently initiated and developed portfolio project based on an anonymized business scenario. The company name and identifying details have been changed. The project demonstrates my approach to business analysis, product thinking, full-stack development, system architecture, and the implementation of connected digital workflows."
+        }
+      ]
     },
     html_url: null,
     liveUrl: "https://tivva34.github.io/JannesMaskin/",
@@ -285,7 +425,6 @@ export const featuredProjects = [
           "projects/JannesMaskinOSmide/Kundsida/3. Machines - Overview - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/4. Machines - Lazy Load - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/5. Machines - Sales Purchasing Transport - Section.png",
-          "projects/JannesMaskinOSmide/Kundsida/6. Machines - Contact form - Modal.png",
           "projects/JannesMaskinOSmide/Kundsida/7. Machines - Call Sales - Modal.png",
           "projects/JannesMaskinOSmide/Kundsida/9. Machines - Chosen Machine Images - Section.png",
           "projects/JannesMaskinOSmide/Kundsida/10. Machines - Chosen Machine Image Gallery - Section.png",
@@ -1055,32 +1194,41 @@ export const featuredProjects = [
   {
     id: 'fading-light-demo',
     name: 'FadingLightDemo',
-    category: 'games',
+    type: "TOP-DOWN 2D PUZZLE GAME — UNITY",
     slug: 'fading-light-demo',
-    description: 'Fading Light is a top-down 2D puzzle solver with a strong focus on storytelling around mental health themes.',
+    description: 'An atmospheric, narrative-driven puzzle game exploring mental health through environmental storytelling, interactive gameplay, and mechanics that reflect the character’s emotional state.',
     detailedContent: {
-      introTitle: "Narrative-driven puzzle solving in Unity.",
-      intro: "Fading Light is a top-down 2D puzzle-solving game developed over the course of two years using Unity and C#. More than just a technical prototype, this project serves as an interactive demo specifically designed to showcase the integration of narrative game design with mechanical gameplay, exploring sensitive mental health themes.",
+      summary: "An atmospheric, narrative-driven puzzle game exploring mental health through environmental storytelling, interactive gameplay, and mechanics that reflect the character’s emotional state.",
+      introTitle: "Exploring mental health through interactive storytelling.",
+      intro: "Fading Light is a top-down 2D puzzle game developed in Unity using C#. Created over the course of two years, the project explores mental health through a combination of puzzle-solving, atmospheric environments, and narrative-driven gameplay.\n\nPlayers follow a character navigating a world shaped by their internal struggles, where challenges and environmental interactions reflect their emotional state. Rather than relying solely on dialogue, the game uses gameplay mechanics, visual effects, and sound design to communicate the character’s experiences and create a more immersive narrative.",
       sections: [
         {
-          tag: "03 — GAME DESIGN",
-          title: "Narrative through Mechanics.",
-          text: "The core gameplay loop revolves around puzzle-solving mechanics that metaphorically represent internal struggles. The atmospheric level design and intentional lighting choices are crafted to evoke specific emotional responses and drive the storytelling forward.",
+          tag: "03 — GAME DESIGN & MECHANICS",
+          title: "Turning emotional struggles into gameplay.",
+          text: "A central design goal was to connect the character’s mental state directly to the gameplay experience. The game features a custom mental-state system that affects the player’s perception of the world through tunnel vision and changes in audio, making the character’s emotional condition something the player experiences rather than simply observes.\n\nPuzzles, environmental obstacles, and interactions are designed to support the narrative while encouraging players to explore different ways of overcoming challenges.",
           bullets: [
-            "Intricate top-down 2D puzzle-solving mechanics",
-            "Deep storytelling elements focused on mental health themes",
-            "Atmospheric level design directly tied to narrative progression"
+            "Top-down 2D puzzle-solving built around exploration and environmental interaction",
+            "A mental-state system that influences visual perception through tunnel vision",
+            "Audio changes that respond to the character’s emotional condition",
+            "Self-care activities, including breathing exercises, meditation, and interacting with cats, that help improve the character’s mental state",
+            "Atmospheric environments that reinforce the mood and narrative"
           ]
         },
         {
-          tag: "04 — PROGRAMMING",
-          title: "Custom Systems in Unity.",
-          text: "Under the hood, the game relies entirely on custom-written C# scripts. These scripts control player movement, environmental interactions, puzzle state management, and the synchronization between gameplay events and narrative triggers.",
+          tag: "04 — PROGRAMMING & SYSTEMS",
+          title: "Bringing gameplay and narrative together in Unity.",
+          text: "I developed custom C# systems to connect player movement, environmental interactions, puzzle logic, and changes in the character’s mental state. A key part of the implementation was linking gameplay events to visual and audio feedback, allowing the character’s condition to influence how the game feels and plays.\n\nThe project explores how interconnected gameplay systems can support storytelling, turning abstract emotional experiences into tangible mechanics.",
           bullets: [
-            "Extensive custom C# scripting for character controllers and physics",
-            "Bespoke systems for handling in-game interactions and puzzle logic",
-            "Carefully crafted development to showcase the balance of narrative and mechanics"
+            "Custom C# scripting for player movement and interaction",
+            "Puzzle logic and environmental interaction systems",
+            "Mental-state tracking connected to visual and audio effects",
+            "Gameplay feedback designed to reinforce narrative progression"
           ]
+        },
+        {
+          tag: "05 — REFLECTION",
+          title: "Designing gameplay with emotional meaning.",
+          text: "Fading Light gave me the opportunity to explore how game mechanics can communicate complex themes and create a stronger connection between the player and the character. By connecting the mental-state system to visual perception, sound, and interactive self-care activities, I aimed to make the narrative an integral part of the gameplay rather than something separate from it.\n\nThe project reflects my interest in combining programming, game design, and storytelling to create interactive experiences with a deeper purpose."
         }
       ]
     },
@@ -1088,14 +1236,14 @@ export const featuredProjects = [
     liveUrl: null,
     languages: ['CSharp'],
     tech: ['Unity'],
-    screenshot: `${import.meta.env.BASE_URL}projects/1. FadingLight - Prototype.png`,
+    screenshot: `${import.meta.env.BASE_URL}projects/1. FadingLight - Tim Store.png`,
     gallery: [
-      'projects/1. FadingLight - Prototype.png',
+      'projects/1. FadingLight - Tim Store.png',
       'projects/2. FadingLight - Gameplay.png',
-      'projects/3. FadingLight - Level Design.png',
-      'projects/4. FadingLight - Combat.png',
+      'projects/3. FadingLight - Cat Encounter.png',
+      'projects/4. FadingLight - Exploration.png',
       'projects/5. FadingLight - Atmosphere.png',
-      'projects/6. FadingLight - Mind Map.png'
+      'projects/6. FadingLight - DreamWorld.png'
     ]
   }
 ];

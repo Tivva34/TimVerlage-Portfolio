@@ -1,5 +1,5 @@
 import { navigateTo, BASE_PATH } from "../App.jsx";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { featuredProjects } from "../data/projects.js";
 import { getTechKey, techLogos, darkLogos } from "../data/languageLogos.js";
 import "../styles/Projects.css";
@@ -177,7 +177,7 @@ export default function ProjectDetail(props) {
     const hasSubCategories = activeCategoryData && typeof activeCategoryData === "object" && !Array.isArray(activeCategoryData);
     const subCategories = hasSubCategories ? Object.keys(activeCategoryData) : [];
 
-    const handleCategoryClick = (category) => {
+    const handleCategoryClick = (category, e) => {
       setActiveCategory(category);
       const catData = project.gallery[category];
       if (catData && typeof catData === "object" && !Array.isArray(catData)) {
@@ -185,40 +185,86 @@ export default function ProjectDetail(props) {
       } else {
         setActiveSubCategory(null);
       }
+      if (e?.currentTarget && window.innerWidth <= 768) {
+        e.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    };
+
+    const handleSubCategoryClick = (subCategory, e) => {
+      setActiveSubCategory(subCategory);
+      if (e?.currentTarget && window.innerWidth <= 768) {
+        e.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
     };
 
     return (
       <div className="gallery-with-tabs">
         <nav className="gallery-tabs-nav" aria-label="Gallery categories">
-          <ul className="gallery-tabs-list">
-            {categories.map((category) => (
-              <li key={category}>
-                <button
-                  className={`gallery-tab-btn ${activeCategory === category ? "active" : ""}`}
-                  onClick={() => handleCategoryClick(category)}
-                  aria-current={activeCategory === category ? "true" : undefined}
-                >
-                  {category.replace(/-/g, " ")}
-                </button>
-              </li>
-            ))}
+          <ul className="gallery-tabs-list" role="tablist">
+            {categories.map((category, idx) => {
+              const catData = project.gallery[category];
+              let count = 0;
+              if (Array.isArray(catData)) {
+                count = catData.length;
+              } else if (catData && typeof catData === "object") {
+                count = Object.values(catData).reduce((acc, sub) => acc + (Array.isArray(sub) ? sub.length : 0), 0);
+              }
+              const isSelected = activeCategory === category;
+              const isMobileCat = category.toLowerCase().includes("mobil");
+              const isAdminCat = category.toLowerCase().includes("admin");
+              const isFirstAdminCat = isAdminCat && (idx === 0 || !categories[idx - 1].toLowerCase().includes("admin"));
+
+              return (
+                <React.Fragment key={category}>
+                  {isFirstAdminCat && (
+                    <li className="gallery-tabs-row-break" aria-hidden="true" role="presentation" />
+                  )}
+                  <li role="presentation" className="gallery-tabs-item">
+                    <button
+                      role="tab"
+                      id={`tab-${category}`}
+                      aria-controls={`panel-${category}`}
+                      className={`gallery-tab-btn ${isSelected ? "active" : ""}`}
+                      onClick={(e) => handleCategoryClick(category, e)}
+                      aria-selected={isSelected}
+                    >
+                      <span className="gallery-tab-indicator-icon" aria-hidden="true">
+                        {isMobileCat ? "📱" : "💻"}
+                      </span>
+                      <span className="gallery-tab-label">{category.replace(/-/g, " ")}</span>
+                      {count > 0 && <span className="gallery-tab-count" aria-label={`${count} images`}>{count}</span>}
+                    </button>
+                  </li>
+                </React.Fragment>
+              );
+            })}
           </ul>
         </nav>
 
         {hasSubCategories && subCategories.length > 0 && (
           <nav className="gallery-tabs-nav gallery-subtabs-nav" aria-label="Gallery subcategories">
-            <ul className="gallery-tabs-list">
-              {subCategories.map((subCategory) => (
-                <li key={subCategory}>
-                  <button
-                    className={`gallery-tab-btn gallery-subtab-btn ${activeSubCategory === subCategory ? "active" : ""}`}
-                    onClick={() => setActiveSubCategory(subCategory)}
-                    aria-current={activeSubCategory === subCategory ? "true" : undefined}
-                  >
-                    {subCategory.replace(/-/g, " ")}
-                  </button>
-                </li>
-              ))}
+            <ul className="gallery-tabs-list gallery-subtabs-list" role="tablist">
+              {subCategories.map((subCategory) => {
+                const subImages = activeCategoryData[subCategory] || [];
+                const count = Array.isArray(subImages) ? subImages.length : 0;
+                const isSelected = activeSubCategory === subCategory;
+
+                return (
+                  <li key={subCategory} role="presentation" className="gallery-tabs-item">
+                    <button
+                      role="tab"
+                      id={`subtab-${subCategory}`}
+                      aria-controls={`subpanel-${subCategory}`}
+                      className={`gallery-tab-btn gallery-subtab-btn ${isSelected ? "active" : ""}`}
+                      onClick={(e) => handleSubCategoryClick(subCategory, e)}
+                      aria-selected={isSelected}
+                    >
+                      <span className="gallery-tab-label">{subCategory.replace(/-/g, " ")}</span>
+                      {count > 0 && <span className="gallery-tab-count gallery-subtab-count">{count}</span>}
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         )}

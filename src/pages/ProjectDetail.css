@@ -97,91 +97,187 @@
 .gallery-with-tabs {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-}
-.gallery-tabs-nav {
-  display: flex;
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-  background: var(--bg-nav);
-  backdrop-filter: blur(10px);
-  border: var(--border-card-strong);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-nav);
-  margin-bottom: 2rem;
-}
-
-.gallery-subtabs-nav {
-  width: max-content;
-  max-width: 95%;
-  margin: -1rem auto 2.5rem auto;
-  padding: 0.6rem 1.75rem;
-  background: var(--bg-nav);
-  backdrop-filter: blur(10px);
-  border: var(--border-card-strong);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-nav);
-  overflow-x: auto;
-}
-
-.gallery-subtabs-nav .gallery-tabs-list {
-  flex-wrap: nowrap;
   gap: 1.5rem;
-  white-space: nowrap;
+  width: 100%;
 }
 
-.gallery-subtab-btn {
-  font-size: 0.95rem;
-  color: var(--color-nav-link);
+.gallery-tabs-nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 1.5rem auto;
+  padding: 0.45rem;
+  background: rgba(35, 23, 49, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(157, 92, 255, 0.22);
+  border-radius: var(--radius-pill, 999px);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  overflow: visible;
 }
 
 .gallery-tabs-list {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  width: 100%;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
+  flex-wrap: wrap;
+}
+
+.gallery-tabs-item {
+  flex-shrink: 0;
+}
+
+/* Force Admin Panel tabs to start on their own clean row on desktop */
+.gallery-tabs-row-break {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .gallery-tabs-row-break {
+    display: block;
+    flex-basis: 100%;
+    width: 100%;
+    height: 0.25rem;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+  }
 }
 
 .gallery-tab-btn {
-  background: none;
-  border: none;
-  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill, 999px);
+  padding: 0.65rem 1.25rem;
   cursor: pointer;
   position: relative;
-  color: var(--color-nav-link);
+  color: var(--color-text-soft, rgba(255, 255, 255, 0.7));
   font-weight: 500;
   font-family: inherit;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.gallery-tab-indicator-icon {
   font-size: 1rem;
+  line-height: 1;
+  opacity: 0.85;
+  transition: transform 0.25s ease;
 }
 
-
-.gallery-tab-btn::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
+.gallery-tab-label {
+  font-weight: 500;
 }
 
-.gallery-tab-btn:hover,
+.gallery-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.4rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s ease;
+}
+
+.gallery-tab-btn:hover {
+  color: #fff;
+  background: rgba(157, 92, 255, 0.12);
+  border-color: rgba(157, 92, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.gallery-tab-btn:hover .gallery-tab-indicator-icon {
+  transform: scale(1.15);
+}
+
 .gallery-tab-btn.active {
-  color: var(--color-accent);
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(157, 92, 255, 0.95) 0%, rgba(124, 58, 237, 0.95) 100%);
+  border-color: rgba(216, 180, 254, 0.4);
+  box-shadow: 0 4px 16px -2px rgba(124, 58, 237, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-weight: 600;
 }
 
-.gallery-tab-btn:hover::after,
-.gallery-tab-btn.active::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.gallery-tab-btn.active .gallery-tab-count {
+  background: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.gallery-tab-btn:focus-visible {
+  outline: 2px solid var(--color-cyan, #08c8ea);
+  outline-offset: 2px;
+}
+
+/* Secondary Subcategory Navigation (e.g. for Jannes Maskin Customer Portal) */
+.gallery-subtabs-nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  max-width: 100%;
+  margin: -0.5rem auto 2rem auto;
+  padding: 0.35rem 0.6rem;
+  background: rgba(26, 17, 36, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(157, 92, 255, 0.18);
+  border-radius: var(--radius-pill, 999px);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
+  overflow: visible;
+}
+
+.gallery-subtabs-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.gallery-subtab-btn {
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  border-radius: var(--radius-pill, 999px);
+}
+
+.gallery-subtab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: transparent;
+}
+
+.gallery-subtab-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.gallery-subtab-count {
+  font-size: 0.7rem;
+  min-width: 1.15rem;
+  height: 1.15rem;
 }
 
 .gallery-category {
@@ -269,6 +365,136 @@
   .project-gallery-grid.mobile-gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 1rem;
+  }
+
+  /* Mobile Gallery Navigation Overhauls */
+  .gallery-with-tabs {
+    gap: 1rem;
+    position: relative;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .gallery-tabs-nav {
+    position: sticky;
+    top: 4.5rem;
+    z-index: 40;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 1rem 0;
+    padding: 0.35rem 0.5rem;
+    background: rgba(22, 13, 33, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(157, 92, 255, 0.28);
+    border-radius: var(--radius-pill, 999px);
+    box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5), 0 0 18px rgba(124, 58, 237, 0.2);
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0.75rem;
+    overscroll-behavior-x: contain;
+    /* Soft edge fade indicating scrollable overflow if browser supports mask */
+    mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent 100%);
+  }
+
+  .gallery-tabs-nav::-webkit-scrollbar,
+  .gallery-subtabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-tabs-list {
+    justify-content: flex-start;
+    gap: 0.35rem;
+    padding: 0 0.5rem;
+    width: max-content;
+  }
+
+  .gallery-tabs-item {
+    scroll-snap-align: center;
+  }
+
+  .gallery-tab-btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.825rem;
+    font-weight: 500;
+    gap: 0.45rem;
+    min-height: 40px; /* Touch friendly tap target */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .gallery-tab-indicator-icon {
+    font-size: 0.9rem;
+  }
+
+  .gallery-tab-count {
+    min-width: 1.25rem;
+    height: 1.25rem;
+    font-size: 0.7rem;
+    padding: 0 0.35rem;
+  }
+
+  /* Subcategories (e.g. for Jannes Maskin sub-sections) */
+  .gallery-subtabs-nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin: -0.25rem 0 1.25rem 0;
+    padding: 0.25rem 0.4rem;
+    background: rgba(18, 10, 28, 0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: var(--radius-pill, 999px);
+    border: 1px solid rgba(157, 92, 255, 0.2);
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0.75rem;
+    overscroll-behavior-x: contain;
+    mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent 100%);
+  }
+
+  .gallery-subtabs-list {
+    justify-content: flex-start;
+    gap: 0.25rem;
+    padding: 0 0.4rem;
+    width: max-content;
+  }
+
+  .gallery-subtabs-item {
+    scroll-snap-align: center;
+  }
+
+  .gallery-subtab-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.775rem;
+    min-height: 34px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-tab-btn,
+  .gallery-subtab-btn,
+  .gallery-tab-count,
+  .gallery-tab-indicator-icon,
+  .gallery-image {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
   }
 }
 
