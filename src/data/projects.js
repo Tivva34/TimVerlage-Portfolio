@@ -208,55 +208,71 @@ export const featuredProjects = [
     category: "fullstack",
     type: "CUSTOM BUSINESS PLATFORM",
     slug: "jannes-maskin-o-smide",
-    description: "The project is a custom, web-based digital business platform. The goal of the solution is to gather the company's digital sales, customer inquiries, customer dialogue, and internal administration into a single, cohesive system.",
+    description: "This self-initiated project explores how a traditional machinery and metalwork business can evolve into a connected digital operation. After identifying opportunities to improve an existing company's digital presence and workflows, I independently analyzed the business needs and developed a fully functional digital business platform concept.\n\nRather than building just another website, I designed and developed an integrated system connecting digital sales, customer inquiries, communication, and internal administration through a shared backend and context-driven workflows.\n\nThe project demonstrates my ability to identify real-world problems, translate business needs into technical solutions, and build a complete application ecosystem from the public-facing interface to the underlying infrastructure.",
     detailedContent: {
-      introTitle: "A solution with a clear purpose.",
-      intro: "Through this architecture, previously isolated systems are replaced with a context-driven flow where all information is connected - from the first search on Google to a closed deal.",
-      sections: [
-        {
-          tag: "03 — PUBLIC WEBSITE & COMPANY AREA",
-          title: "The company's digital interface towards customers.",
-          text: "The public website is built to adapt fluidly across desktop, mobile, and tablet, with a clear focus on responsive design, accessibility, and conversion.",
-          bullets: [
-            "Home page and Company Information",
-            "Machine Sales and Machine Listings (incl. detail pages)",
-            "Presentation of Inventory",
-            "Specific sections for Workshop and Metalwork",
-            "Transport-related contact flows",
-            "Smart, contextual contact features and a direct \"Call us\" function for mobile devices"
+          "introTitle": "From business problem to integrated solution.",
+          "intro": "The project began with an independent assessment of how a company's digital presence and internal workflows could be improved. I identified opportunities to connect previously separate processes and designed a solution around the entire customer journey.\n\nThe result is a cohesive platform concept that brings together customer acquisition, product discovery, sales inquiries, customer communication, and internal follow-up. The focus is not only on individual features, but on how the entire system works together to support everyday business operations.",
+          "sections": [
+                {
+                      "tag": "03 — PUBLIC WEBSITE & COMPANY AREA",
+                      "title": "A customer-facing digital experience.",
+                      "text": "The public website serves as the company's digital storefront, designed to make products, services, and contact options accessible across desktop, tablet, and mobile devices.\n\nThe interface prioritizes clear information architecture, responsive layouts, accessibility, and conversion-oriented user flows.",
+                      "bullets": [
+                            "Homepage and company information",
+                            "Machine sales, searchable listings, and individual detail pages",
+                            "Inventory presentation",
+                            "Dedicated workshop and metalwork sections",
+                            "Transport-related inquiry flows",
+                            "Context-aware contact options tailored to the selected product or service",
+                            "Direct click-to-call functionality on mobile devices"
+                      ]
+                },
+                {
+                      "tag": "04 — SALES",
+                      "title": "Connected machine and inventory management.",
+                      "text": "Sales functionality is integrated into the wider platform rather than treated as a standalone website feature. Authorized staff can manage machine and inventory information through the administration system, while published content is reflected on the public website.\n\nEach listing has its own detail page with relevant specifications, images, and contextual contact options, connecting product discovery directly to the inquiry process.\n\nThis architecture reduces duplicated content management and creates a more consistent experience between internal administration and the public-facing sales interface."
+                },
+                {
+                      "tag": "05 — CUSTOMER DIALOGUE",
+                      "title": "Context-driven inquiries and communication.",
+                      "text": "A core design principle is that every inquiry should retain the context in which it originated.\n\nForms connect customer information, messages, and relevant machines or services to structured inquiries, helping ensure that incoming requests reach the appropriate workflow. Workshop and metalwork inquiries follow their own paths instead of being mixed with machine sales.\n\nIntegrated email communication supports customer dialogue and follow-up, while the underlying data structure keeps relevant information connected to the corresponding inquiry."
+                },
+                {
+                      "tag": "06 — ADMIN & CRM",
+                      "title": "A dedicated internal business application.",
+                      "text": "The administration system is developed as a separate Progressive Web App (PWA), providing a dedicated interface for managing business data and customer interactions.\n\nSeparating the administration interface from the public website creates a more focused workspace for internal operations while allowing both applications to share the same underlying data and business logic.",
+                      "bullets": [
+                            "Centralized inquiry and ticket management",
+                            "Customer dialogue and interaction history",
+                            "Search, filtering, and structured follow-up",
+                            "Role-based access control",
+                            "Real-time updates",
+                            "Push notification functionality",
+                            "Responsive interfaces across devices",
+                            "App-like installation through supported browsers"
+                      ]
+                },
+                {
+                      "tag": "07 — TECHNICAL ARCHITECTURE & PERFORMANCE",
+                      "title": "Shared backend, real-time data, and security.",
+                      "text": "The platform is built with React and Vite on the frontend and Supabase as the backend infrastructure, using PostgreSQL for structured business data.\n\nThe architecture combines several interconnected components:\n\n• PostgreSQL: A relational data foundation for business entities and workflows.\n• Supabase Realtime: Live updates for supported application events.\n• Edge Functions: Server-side logic for workflows that require backend execution.\n• Row Level Security (RLS): Database-level access policies for controlling access to data.\n• Role-Based Access Control (RBAC): Application-level permissions for different user roles.\n• Progressive Web App technology: An app-like experience with service worker functionality and support for push notifications.\n• SEO and performance: Search-friendly page structure, responsive rendering, and performance-conscious implementation.\n\nThe architecture is designed to keep the public website and internal administration connected while maintaining clear boundaries between presentation, data access, and business logic."
+                },
+                {
+                      "tag": "08 — THE CUSTOMER JOURNEY",
+                      "title": "One connected flow from discovery to follow-up.",
+                      "text": "Google → Public website → Machine or service → Detail page → Contextual inquiry → Customer and inquiry linked in the system → Relevant staff notified → Customer communication through the administration system and integrated email → Follow-up and resolution.\n\nEach stage is designed to preserve relevant context and reduce the need to manually reconnect information across separate tools.\n\nThe result is a platform concept in which the customer-facing experience and internal business workflows operate as parts of the same system, rather than as disconnected digital services."
+                },
+                {
+                      "tag": "PROJECT APPROACH",
+                      "title": "Project Approach & Context",
+                      "text": "This is an independently initiated and developed portfolio project based on an anonymized business scenario. The company name and identifying details have been changed. The project demonstrates my approach to business analysis, product thinking, full-stack development, system architecture, and the implementation of connected digital workflows."
+                }
           ]
-        },
-        {
-          tag: "04 — SALES",
-          title: "Machines & Inventory.",
-          text: "Sales are integrated directly into the platform. Staff can manage the inventory via the administration, and what is published internally is immediately mirrored externally. Each machine and inventory item has its own detail page with specifications, images, and unique contact options."
-        },
-        {
-          tag: "05 — CUSTOMER DIALOGUE",
-          title: "Context-based Inquiries.",
-          text: "A central concept in the platform is that all inquiries are linked to the right context. Smart forms automatically connect the customer, the message, and the machine in a ticket. Inquiries for metalwork and workshop are separated automatically, and email communication is fully integrated into the system."
-        },
-        {
-          tag: "06 — ADMIN & CRM",
-          title: "Administrative Business System.",
-          text: "The internal administration system is built as a separate application (PWA) for managing all business data. It includes handling tickets, customer dialogue with history, filtering, and role-based access control (RBAC) for security. The system can be installed as a real app on all devices."
-        },
-        {
-          tag: "07 — TECHNICAL ARCHITECTURE & PERFORMANCE",
-          title: "Real-time, Architecture & SEO.",
-          text: "The system uses advanced real-time functionality with Supabase Realtime for instant updates and Web Push notifications. The backend is handled by a robust PostgreSQL database with Edge Functions and RLS. The frontend is built in React & Vite and optimized for lightning-fast load times and high SEO ranking."
-        },
-        {
-          tag: "08 — THE CUSTOMER JOURNEY",
-          title: "Cohesive flow.",
-          text: "Google → Website → Machine / Service → Detail page → Contact inquiry → Automatically linked ticket → Notification to the right staff (via PWA) → Reply from within CRM (email integrated) → Follow-up and closing."
-        }
-      ]
     },
     html_url: null,
     liveUrl: "https://tivva34.github.io/JannesMaskin/",
     languages: ["JavaScript", "HTML", "CSS"],
-    tech: ["React", "Supabase", "PWA", "Service Worker", "Responsive Design"],
+    tech: ["React", "Supabase", "PostgreSQL", "PWA", "Service Worker", "Responsive Design"],
     screenshot: `${import.meta.env.BASE_URL}projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png`,
     gallery: {
       "Customer Portal": {

@@ -44,6 +44,8 @@ export const techLogos = {
     "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazondynamodb.svg",
   Supabase:
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+  PostgreSQL:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
 
   /* APIs */
   API:
@@ -94,6 +96,7 @@ export const getTechKey = (tech) => {
     "SEO": "SEO",
     "Responsive Design": "ResponsiveDesign",
     "Service Workers": "ServiceWorker",
+    "Postgres": "PostgreSQL",
   };
 
   return aliases[tech] || tech;

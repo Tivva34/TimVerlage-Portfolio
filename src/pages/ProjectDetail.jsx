@@ -327,8 +327,10 @@ export default function ProjectDetail(props) {
           {hasDetails && project.detailedContent.sections && (
             project.detailedContent.sections.map((section, idx) => {
               const currentNum = String(baseSectionOffset + idx + 1).padStart(2, '0');
-              const cleanTagTitle = section.tag ? section.tag.replace(/^\d+\s*[-—–]\s*/, '') : section.title;
-              const displayTag = `${currentNum} — ${cleanTagTitle}`;
+              const isNumbered = /^\d+\s*[-—–]/.test(section.tag || '');
+              const displayTag = isNumbered 
+                ? section.tag 
+                : (section.tag ? section.tag : `${currentNum} — ${section.title}`);
 
               return (
                 <div key={idx} className="project-detail-section">
