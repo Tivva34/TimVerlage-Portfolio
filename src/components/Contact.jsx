@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import ContactForm from "./ContactForm.jsx";
 import "../styles/Contact.css";
 
-
 export default function Contact() {
   return (
     <section
@@ -16,7 +15,20 @@ export default function Contact() {
         transition={{ duration: 0.35 }}
         viewport={{ amount: 0, once: false }}
       >
-        <header className="contact-copy aurora-glow">
+        <header className="contact-copy">
+          {/* Antique Geometric Corner Frame */}
+          <div className="contact-card-frame" aria-hidden="true">
+            <span className="contact-corner corner-tl" />
+            <span className="contact-corner corner-tr" />
+            <span className="contact-corner corner-bl" />
+            <span className="contact-corner corner-br" />
+          </div>
+
+          <div className="contact-sigil-badge">
+            <span className="contact-sigil-glyph" aria-hidden="true">🜚</span>
+            <span className="contact-sigil-tag">EPISTOLA · COMMUNICATIO</span>
+          </div>
+
           <h2 id="contact-title">Let's Build Something Great Together</h2>
           <p>
             I'm excited to contribute to meaningful projects and grow alongside
@@ -26,9 +38,17 @@ export default function Contact() {
         </header>
 
         <section
-          className="contact-form-shell aurora-glow"
+          className="contact-form-shell"
           aria-label="Contact form"
         >
+          {/* Antique Geometric Corner Frame */}
+          <div className="contact-card-frame" aria-hidden="true">
+            <span className="contact-corner corner-tl" />
+            <span className="contact-corner corner-tr" />
+            <span className="contact-corner corner-bl" />
+            <span className="contact-corner corner-br" />
+          </div>
+
           <ContactForm />
         </section>
       </motion.article>

@@ -1,48 +1,223 @@
+/* ==========================================================================
+   Contact Section: Alchemical Epistola & Transmission
+   ========================================================================== */
+
 .contact-section {
   display: grid;
   grid-template-columns: 1fr;
+  padding-top: var(--section-space-top);
+  padding-bottom: var(--section-space-end);
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
 }
 
-.contact-copy {
+/* Editorial Header Sigil Badge */
+.contact-sigil-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.32rem 0.75rem 0.32rem 0.6rem;
+  border-radius: 3px;
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #d4af37;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-sigil-glyph {
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #e2c992;
+  opacity: 0.95;
+}
+
+.contact-sigil-tag {
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+/* Cards: Header Copy Panel & Form Shell */
+.contact-copy,
+.contact-form-shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
   max-width: 900px;
+  width: 100%;
   margin: 0 auto 2rem;
+  padding: 2.25rem 2.25rem 2rem;
 
-  padding: 2rem;
+  /* Atmospheric Twilight Surface */
+  background: linear-gradient(145deg, rgba(16, 22, 38, 0.85) 0%, rgba(9, 13, 24, 0.95) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
-  background: var(--color-surface);
-  border: var(--border-card);
-  border-radius: var(--radius-md);
+  /* Antique Gold Fine-Line Border & Multi-layered Depth */
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow:
+    0 6px 24px -4px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 0 rgba(212, 175, 55, 0.25);
 
-  box-shadow: var(--shadow-card);
-  transition: var(--transition-card);
+  transition:
+    transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.contact-copy:hover {
+.contact-copy:hover,
+.contact-form-shell:hover {
   transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow:
+    0 14px 34px -6px rgba(0, 0, 0, 0.72),
+    0 0 24px -2px rgba(212, 175, 55, 0.16);
+}
 
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-card-hover);
+/* Delicate Double-Line Geometric Framing */
+.contact-copy>.contact-card-frame,
+.contact-form-shell>.contact-card-frame {
+  position: absolute !important;
+  inset: 6px;
+  pointer-events: none;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 4px;
+  z-index: 1 !important;
+  transition: border-color 0.35s ease;
+}
+
+.contact-copy:hover>.contact-card-frame,
+.contact-form-shell:hover>.contact-card-frame {
+  border-color: rgba(212, 175, 55, 0.28);
+}
+
+/* Ornamental Manuscript Corner Accents */
+.contact-corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-color: rgba(212, 175, 55, 0.45);
+  border-style: solid;
+  transition:
+    border-color 0.35s ease,
+    width 0.35s ease,
+    height 0.35s ease;
+}
+
+.contact-copy:hover .contact-corner,
+.contact-form-shell:hover .contact-corner {
+  border-color: #d4af37;
+  width: 12px;
+  height: 12px;
+}
+
+.contact-copy h2 {
+  font-family: var(--font-main, sans-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-copy p {
-  color: var(--color-text-muted);
+  color: #cbd5e1;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+  margin: 0;
 }
 
-.contact-form-shell {
-  margin-bottom: 2rem;
-  padding: 2rem;
+/* ==========================================================================
+   Contact: Light Mode Theme Adaptation
+   ========================================================================== */
 
-  background: var(--color-surface);
-  border: var(--border-card);
-  border-radius: var(--radius-md);
-
-  box-shadow: var(--shadow-card);
-  transition: var(--transition-card);
+:root[data-theme="light"] .contact-sigil-badge,
+html.light-theme .contact-sigil-badge {
+  background: rgba(160, 120, 45, 0.08);
+  border-color: rgba(160, 120, 45, 0.26);
+  color: #7a5412;
 }
 
-.contact-form-shell:hover {
-  transform: translateY(-4px);
+:root[data-theme="light"] .contact-sigil-glyph,
+html.light-theme .contact-sigil-glyph {
+  color: #6d4b0d;
+}
 
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-card-hover);
+:root[data-theme="light"] .contact-copy,
+:root[data-theme="light"] .contact-form-shell,
+html.light-theme .contact-copy,
+html.light-theme .contact-form-shell {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.97) 0%, rgba(248, 245, 238, 0.95) 100%);
+  border-color: rgba(160, 120, 45, 0.32);
+  box-shadow:
+    0 6px 20px -3px rgba(90, 70, 30, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.95),
+    inset 0 1px 0 0 rgba(180, 140, 50, 0.22);
+}
+
+:root[data-theme="light"] .contact-copy:hover,
+:root[data-theme="light"] .contact-form-shell:hover,
+html.light-theme .contact-copy:hover,
+html.light-theme .contact-form-shell:hover {
+  border-color: rgba(160, 120, 45, 0.58);
+  box-shadow:
+    0 14px 32px -4px rgba(90, 70, 30, 0.15),
+    0 0 18px rgba(160, 120, 45, 0.16);
+}
+
+:root[data-theme="light"] .contact-copy>.contact-card-frame,
+:root[data-theme="light"] .contact-form-shell>.contact-card-frame,
+html.light-theme .contact-copy>.contact-card-frame,
+html.light-theme .contact-form-shell>.contact-card-frame {
+  border-color: rgba(160, 120, 45, 0.18);
+}
+
+:root[data-theme="light"] .contact-corner,
+html.light-theme .contact-corner {
+  border-color: rgba(160, 120, 45, 0.55);
+}
+
+:root[data-theme="light"] .contact-copy:hover .contact-corner,
+:root[data-theme="light"] .contact-form-shell:hover .contact-corner,
+html.light-theme .contact-copy:hover .contact-corner,
+html.light-theme .contact-form-shell:hover .contact-corner {
+  border-color: #7a5412;
+}
+
+:root[data-theme="light"] .contact-copy h2,
+html.light-theme .contact-copy h2 {
+  color: #1a1612;
+}
+
+:root[data-theme="light"] .contact-copy p,
+html.light-theme .contact-copy p {
+  color: #334155;
+}
+
+@media (max-width: 640px) {
+
+  .contact-copy,
+  .contact-form-shell {
+    padding: 1.75rem 1.45rem 1.5rem;
+  }
+
+  .contact-copy h2 {
+    font-size: 1.65rem;
+  }
+
+  .contact-copy p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
 }

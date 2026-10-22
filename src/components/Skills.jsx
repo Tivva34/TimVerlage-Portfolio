@@ -1,80 +1,148 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { useMemo } from "react";
+import { useReducedMotion } from "framer-motion";
 import { skillGroups } from "../data/skills.js";
 import "../styles/Skills.css";
+
+function ToolChip({ tool }) {
+  const badgeLabel = tool.level || (tool.isLearning ? "Learning" : null);
+
+  return (
+    <div
+      className="tool-chip"
+      tabIndex={0}
+      role="group"
+      aria-label={`${tool.name}${tool.level ? ` (${tool.level})` : tool.isLearning ? " (Currently Learning)" : ""}`}
+    >
+      <div className="tool-chip-icon">
+        <img
+          src={tool.logo}
+          alt=""
+          aria-hidden="true"
+          className="tool-chip-img"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div className="tool-chip-content">
+        <span className="tool-chip-name">{tool.name}</span>
+        {badgeLabel && (
+          <span
+            className={`tool-chip-badge ${tool.level
+                ? `badge-${tool.level.toLowerCase()}`
+                : "badge-learning"
+              }`}
+          >
+            {badgeLabel}
+          </span>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function Skills() {
   const shouldReduceMotion = useReducedMotion();
 
-  const headingMotion = shouldReduceMotion
-    ? { initial: false }
-    : {
-        initial: { opacity: 0, y: 20 },
-        whileInView: { opacity: 1, y: 0 },
-        transition: { duration: 0.35 },
-        viewport: { amount: 0, margin: "0px 0px -15% 0px", once: false },
-      };
+  // Flatten all 26 tools from existing skillGroups data
+  const allSkills = useMemo(() => {
+    return skillGroups.flatMap((group) =>
+      group.skills.map((skill) => ({
+        ...skill,
+        category: group.title,
+        isLearning: group.title === "Currently Learning",
+      }))
+    );
+  }, []);
 
-  const cardMotion = (delay = 0) =>
-    shouldReduceMotion
-      ? { initial: false }
-      : {
-          initial: { opacity: 0, y: 30 },
-          whileInView: { opacity: 1, y: 0 },
-          transition: { delay, duration: 0.3 },
-          viewport: { amount: 0, margin: "0px 0px -15% 0px", once: false },
-        };
-
-  const getLevelColor = (level) => {
-    switch (level) {
-      case "Advanced":
-        return "#6f16a3ff";
-      case "Intermediate":
-        return "#08c8eaff";
-      case "Beginner":
-        return "#429e30ff";
-      default:
-        return "#888";
-    }
-  };
+  // Split into two balanced, visually engaging rows (13 tools per row)
+  const row1 = useMemo(() => allSkills.slice(0, 13), [allSkills]);
+  const row2 = useMemo(() => allSkills.slice(13), [allSkills]);
 
   return (
-    <section id="skills">
-      <motion.h2 {...headingMotion}>Technical Skills</motion.h2>
+    <section id="skills" className="skills-section">
+      {/* Brand Header Hub featuring the official V3.webp logo with celestial framing */}
+      <div className="skills-header-hub">
+        <div className="skills-sigil-badge">
+          <span className="skills-sigil-glyph" aria-hidden="true">🜁</span>
+          <span className="skills-sigil-tag">INDEX · ARSENAL</span>
+        </div>
 
-      <div className="skills-groups">
-        {skillGroups.map((group) => (
-          <div className="skill-group" key={group.title}>
-            <h3 className="skill-group-title">{group.title}</h3>
+        <div className="skills-brand-badge-container">
+          <div className="skills-celestial-orbit orbit-outer" aria-hidden="true" />
+          <div className="skills-celestial-orbit orbit-inner" aria-hidden="true" />
+          <div className="skills-brand-badge" aria-hidden="true">
+            <img
+              src={`${import.meta.env.BASE_URL}Images/Logo/V3.webp`}
+              alt=""
+              className="skills-hub-logo"
+              width="46"
+              height="46"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="skills-hub-glow" />
+          </div>
+        </div>
 
-            <div className="skills-grid">
-              {group.skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  className="skill-card aurora-glow"
-                  {...cardMotion(index * 0.05)}
-                >
-                  <img
-                    src={skill.logo}
-                    alt={`${skill.name} logo`}
-                    className="skill-logo"
-                  />
+        <h2 className="skills-title">Technical Skills &amp; Tools</h2>
+        <p className="skills-subtitle">
+          A continuous showcase of core languages, modern frontend &amp; backend frameworks, developer tooling, and emerging technologies.
+        </p>
+      </div>
 
-                  <h4>{skill.name}</h4>
-
-                  {skill.level && (
-                    <span
-                      className="skill-level"
-                      style={{ backgroundColor: getLevelColor(skill.level) }}
-                    >
-                      {skill.level}
-                    </span>
-                  )}
-                </motion.div>
-              ))}
+      {shouldReduceMotion ? (
+        /* Static, accessible layout for users with prefers-reduced-motion */
+        <div className="skills-static-grid" role="region" aria-label="Technical skills overview">
+          {allSkills.map((tool) => (
+            <ToolChip key={tool.name} tool={tool} />
+          ))}
+        </div>
+      ) : (
+        /* Dual-Row Continuous Infinite Marquee */
+        <div className="skills-marquee-container" aria-label="Continuous technical skills marquee">
+          {/* Row 1: Smoothly scrolling to the LEFT */}
+          <div className="skills-marquee-row" role="region" aria-label="Languages & Core Technologies">
+            <div className="skills-marquee-track track-left">
+              <div className="marquee-group">
+                {row1.map((tool) => (
+                  <ToolChip key={`r1-g1-${tool.name}`} tool={tool} />
+                ))}
+              </div>
+              <div className="marquee-group" aria-hidden="true">
+                {row1.map((tool) => (
+                  <ToolChip key={`r1-g2-${tool.name}`} tool={tool} />
+                ))}
+              </div>
+              <div className="marquee-group" aria-hidden="true">
+                {row1.map((tool) => (
+                  <ToolChip key={`r1-g3-${tool.name}`} tool={tool} />
+                ))}
+              </div>
             </div>
           </div>
-        ))}
-      </div>
+
+          {/* Row 2: Smoothly scrolling to the RIGHT in opposite direction */}
+          <div className="skills-marquee-row" role="region" aria-label="Tools & Modern Stack">
+            <div className="skills-marquee-track track-right">
+              <div className="marquee-group">
+                {row2.map((tool) => (
+                  <ToolChip key={`r2-g1-${tool.name}`} tool={tool} />
+                ))}
+              </div>
+              <div className="marquee-group" aria-hidden="true">
+                {row2.map((tool) => (
+                  <ToolChip key={`r2-g2-${tool.name}`} tool={tool} />
+                ))}
+              </div>
+              <div className="marquee-group" aria-hidden="true">
+                {row2.map((tool) => (
+                  <ToolChip key={`r2-g3-${tool.name}`} tool={tool} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

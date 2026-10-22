@@ -18,37 +18,66 @@
 .form-field input,
 .form-field textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 1.15rem;
 
-  background: var(--bg-input);
-  color: var(--color-text);
+  background: rgba(16, 22, 38, 0.72);
+  color: var(--color-text, #f8fafc);
 
-  border: var(--border-input);
-  border-radius: var(--radius-input);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 4px;
 
   font: inherit;
-
-  transition: var(--transition-input);
+  transition: var(--transition-input, border-color 0.25s ease, box-shadow 0.25s ease);
 }
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: var(--color-placeholder);
+  color: #64748b;
 }
 
 .form-field input:hover,
 .form-field textarea:hover {
-  border-color: var(--color-accent);
-  box-shadow: var(--shadow-input-hover);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.12);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: var(--color-cyan);
-  box-shadow:
-    var(--shadow-focus),
-    var(--shadow-input-focus);
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.22), 0 0 16px rgba(212, 175, 55, 0.15);
+}
+
+:root[data-theme="light"] .form-field input,
+:root[data-theme="light"] .form-field textarea,
+html.light-theme .form-field input,
+html.light-theme .form-field textarea {
+  background: #ffffff;
+  border: 1px solid rgba(160, 120, 45, 0.28);
+  color: #1a1612;
+}
+
+:root[data-theme="light"] .form-field input::placeholder,
+:root[data-theme="light"] .form-field textarea::placeholder,
+html.light-theme .form-field input::placeholder,
+html.light-theme .form-field textarea::placeholder {
+  color: #94a3b8;
+}
+
+:root[data-theme="light"] .form-field input:hover,
+:root[data-theme="light"] .form-field textarea:hover,
+html.light-theme .form-field input:hover,
+html.light-theme .form-field textarea:hover {
+  border-color: rgba(160, 120, 45, 0.55);
+  box-shadow: 0 0 12px rgba(160, 120, 45, 0.1);
+}
+
+:root[data-theme="light"] .form-field input:focus,
+:root[data-theme="light"] .form-field textarea:focus,
+html.light-theme .form-field input:focus,
+html.light-theme .form-field textarea:focus {
+  border-color: #7a5412;
+  box-shadow: 0 0 0 3px rgba(160, 120, 45, 0.2);
 }
 
 .form-field textarea {
@@ -65,10 +94,73 @@
   font-size: 0.9rem;
 }
 
-.contact-submit {
+.contact-submit,
+.btn-primary.contact-submit {
   justify-self: start;
-  border: 0;
+  border-radius: 4px;
+  padding: 0.85rem 2.25rem;
+  font-family: var(--font-main, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   cursor: pointer;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(180, 140, 45, 0.16) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: #f8fafc;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-submit:hover:not(:disabled),
+.btn-primary.contact-submit:hover:not(:disabled),
+.contact-submit:focus-visible:not(:disabled),
+.btn-primary.contact-submit:focus-visible:not(:disabled) {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.38) 0%, rgba(180, 140, 45, 0.28) 100%);
+  border-color: #d4af37;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.32);
+  outline: none;
+}
+
+.contact-submit:active:not(:disabled),
+.btn-primary.contact-submit:active:not(:disabled) {
+  transform: translateY(0);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.46) 0%, rgba(180, 140, 45, 0.36) 100%);
+}
+
+.contact-submit:focus-visible,
+.btn-primary.contact-submit:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.65);
+  outline-offset: 2px;
+}
+
+:root[data-theme="light"] .contact-submit,
+html.light-theme .contact-submit {
+  background: linear-gradient(135deg, rgba(244, 236, 218, 0.98) 0%, rgba(235, 222, 196, 0.95) 100%);
+  border-color: rgba(160, 120, 45, 0.55);
+  color: #382506;
+  box-shadow: 0 2px 10px rgba(90, 70, 30, 0.12);
+}
+
+:root[data-theme="light"] .contact-submit:hover:not(:disabled),
+html.light-theme .contact-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(235, 222, 196, 0.98) 0%, rgba(224, 207, 174, 0.95) 100%);
+  border-color: #7a5412;
+  color: #241703;
+  box-shadow: 0 4px 16px rgba(90, 70, 30, 0.22);
+}
+
+:root[data-theme="light"] .contact-submit:active:not(:disabled),
+html.light-theme .contact-submit:active:not(:disabled) {
+  background: linear-gradient(135deg, rgba(225, 208, 178, 0.98) 0%, rgba(215, 195, 160, 0.95) 100%);
+  border-color: #5c3c06;
+}
+
+:root[data-theme="light"] .contact-submit:focus-visible,
+html.light-theme .contact-submit:focus-visible {
+  outline: 2px solid rgba(122, 84, 18, 0.55);
+  outline-offset: 2px;
 }
 
 .contact-submit:disabled {

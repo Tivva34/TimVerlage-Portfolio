@@ -72,11 +72,27 @@ const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDesc
 
   return (
     <motion.article
-      className="project-card aurora-glow"
+      className="project-card"
       {...cardMotion(index * 0.05)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Antique Geometric Corner Frame */}
+      <div className="project-card-frame" aria-hidden="true">
+        <span className="project-corner corner-tl" />
+        <span className="project-corner corner-tr" />
+        <span className="project-corner corner-bl" />
+        <span className="project-corner corner-br" />
+      </div>
+
+      {/* Editorial Roman Index Moniker */}
+      <div className="project-card-header-bar">
+        <div className="project-sigil-badge">
+          <span className="project-sigil-glyph" aria-hidden="true">🝛</span>
+          <span className="project-sigil-tag">OPUS {String(index + 1).padStart(2, '0')}</span>
+        </div>
+      </div>
+
       <figure className="project-image-viewport">
         {images.map((img, idx) => (
           <img
@@ -226,11 +242,16 @@ export default function Projects() {
 
     const tech = repo.tech || repoTechOverrides[repo.name] || [];
 
-    return [...languages, ...tech];
+    return Array.from(new Set([...languages, ...tech]));
   };
 
   return (
     <section id="projects" aria-labelledby="projects-title">
+      <div className="projects-sigil-badge">
+        <span className="projects-sigil-glyph" aria-hidden="true">🝛</span>
+        <span className="projects-sigil-tag">OPERA · PORTFOLIO</span>
+      </div>
+
       <motion.h2 id="projects-title" {...headingMotion}>
         Projects
       </motion.h2>
