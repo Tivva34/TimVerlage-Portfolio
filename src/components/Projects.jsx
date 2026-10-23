@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { navigateTo, BASE_PATH } from "../App.jsx";
+import MysticLabel from "./MysticLabel.jsx";
 import {
   defaultImage,
   featuredProjects,
@@ -21,6 +22,24 @@ const truncate = (str, n) =>
 
 const hasLiveDemo = (project) =>
   Boolean(project.liveUrl || repoDemos[project.name] || project.homepage);
+
+const toRoman = (num) => {
+  const romanMap = [
+    [10, "X"],
+    [9, "IX"],
+    [5, "V"],
+    [4, "IV"],
+    [1, "I"],
+  ];
+  let result = "";
+  for (const [val, letter] of romanMap) {
+    while (num >= val) {
+      result += letter;
+      num -= val;
+    }
+  }
+  return result;
+};
 
 const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDescription, getProjectTech }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -69,14 +88,37 @@ const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDesc
   }, [isHovered, images.length]);
 
   const projectTech = getProjectTech(repo);
+  const romanNum = toRoman(index + 1);
+  const arabicNum = index + 1;
 
   return (
     <motion.article
-      className="project-card aurora-glow"
+      className="project-card"
       {...cardMotion(index * 0.05)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Antique Geometric Corner Frame */}
+      <div className="project-card-frame" aria-hidden="true">
+        <span className="project-corner corner-tl" />
+        <span className="project-corner corner-tr" />
+        <span className="project-corner corner-bl" />
+        <span className="project-corner corner-br" />
+      </div>
+
+      {/* Editorial Roman Index Moniker */}
+      <div className="project-card-header-bar">
+        <MysticLabel
+          defaultText={`OPUS ${romanNum}`}
+          revealText={`PROJECT ${arabicNum}`}
+          glyph="🝛"
+          className="project-sigil-badge"
+          glyphClassName="project-sigil-glyph"
+          tagClassName="project-sigil-tag"
+          cardHovered={isHovered}
+        />
+      </div>
+
       <figure className="project-image-viewport">
         {images.map((img, idx) => (
           <img
@@ -226,14 +268,21 @@ export default function Projects() {
 
     const tech = repo.tech || repoTechOverrides[repo.name] || [];
 
-    return [...languages, ...tech];
+    return Array.from(new Set([...languages, ...tech]));
   };
 
   return (
-    <section id="projects" aria-labelledby="projects-title">
-      <motion.h2 id="projects-title" {...headingMotion}>
-        Projects
-      </motion.h2>
+    <section id="projects" aria-label="Projects">
+      <MysticLabel
+        defaultText="OPERA · PORTFOLIO"
+        revealText="WORK · PROJECTS"
+        glyph="🝛"
+        className="projects-sigil-badge"
+        glyphClassName="projects-sigil-glyph"
+        tagClassName="projects-sigil-tag"
+      />
+
+
 
       <div className="projects-tabs" role="tablist" aria-label="Project categories">
         {projectTabs.map((tab) => (

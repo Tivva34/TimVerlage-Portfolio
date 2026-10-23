@@ -6,7 +6,6 @@ import About from './components/About.jsx';
 import Skills from './components/Skills.jsx';
 import Contact from './components/Contact.jsx';
 import ProjectDetail from './pages/ProjectDetail.jsx';
-import { useAurora } from './hooks/useAurora.js';
 
 export const BASE_PATH = '/TimVerlage-Portfolio';
 
@@ -16,7 +15,6 @@ export function navigateTo(path) {
 }
 
 function App() {
-  useAurora();
   const getProjectSlug = () => {
     const path = window.location.pathname;
     const prefix = `${BASE_PATH}/projects/`;

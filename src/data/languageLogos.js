@@ -110,5 +110,10 @@ export const darkLogos = [
   "ServiceWorker",
   "API",
   "Swiper",
-  "DynamoDB"
+  "DynamoDB",
+  "NASAAPI",
+  "ReactRouter",
+  "Unity",
+  "Express",
+  "GitHub"
 ];
