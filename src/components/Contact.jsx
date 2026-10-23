@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm.jsx";
+import MysticLabel from "./MysticLabel.jsx";
 import "../styles/Contact.css";
 
 export default function Contact() {
+  const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+
   return (
     <section
       id="contact"
@@ -15,7 +19,11 @@ export default function Contact() {
         transition={{ duration: 0.35 }}
         viewport={{ amount: 0, once: false }}
       >
-        <header className="contact-copy">
+        <header
+          className="contact-copy"
+          onMouseEnter={() => setIsHeaderHovered(true)}
+          onMouseLeave={() => setIsHeaderHovered(false)}
+        >
           {/* Antique Geometric Corner Frame */}
           <div className="contact-card-frame" aria-hidden="true">
             <span className="contact-corner corner-tl" />
@@ -24,16 +32,19 @@ export default function Contact() {
             <span className="contact-corner corner-br" />
           </div>
 
-          <div className="contact-sigil-badge">
-            <span className="contact-sigil-glyph" aria-hidden="true">🜚</span>
-            <span className="contact-sigil-tag">EPISTOLA · COMMUNICATIO</span>
-          </div>
+          <MysticLabel
+            defaultText="EPISTOLA · COMMUNICATIO"
+            revealText="CONTACT · CONNECT"
+            glyph="🜚"
+            className="contact-sigil-badge"
+            glyphClassName="contact-sigil-glyph"
+            tagClassName="contact-sigil-tag"
+            cardHovered={isHeaderHovered}
+          />
 
-          <h2 id="contact-title">Let's Build Something Great Together</h2>
+          <h2 id="contact-title">Open to Possibilities.</h2>
           <p>
-            I'm excited to contribute to meaningful projects and grow alongside
-            experienced development teams. Send me a message and I'll reply
-            directly to your inbox.
+            I'm always looking to learn, build, and take on interesting challenges. Whether you have a project in mind or just want to connect, my inbox is open.
           </p>
         </header>
 

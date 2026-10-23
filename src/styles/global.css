@@ -243,6 +243,7 @@ textarea:focus-visible,
 h1,
 h2,
 h3 {
+  font-family: var(--font-serif, "Cormorant Garamond", "Canela", "Cinzel", "Playfair Display", "Georgia", "Baskerville", serif);
   font-weight: 700;
   margin-bottom: 1rem;
 }

@@ -431,7 +431,7 @@ export default function ProjectDetail(props) {
     <section id="project-detail" className="projects-panel is-active" aria-labelledby="project-title">
       <div className="project-detail-header-container">
         <a href={BASE_PATH + '/'} onClick={(e) => { e.preventDefault(); navigateTo('/'); }} className="btn-outline project-btn back-btn">
-          &larr; Back to Portfolio
+          Back to Portfolio
         </a>
 
         <header className="project-detail-header">

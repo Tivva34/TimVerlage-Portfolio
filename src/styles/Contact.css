@@ -43,6 +43,18 @@
   line-height: 1;
 }
 
+:root[data-theme="light"] .contact-sigil-badge,
+html.light-theme .contact-sigil-badge {
+  background: rgba(160, 120, 45, 0.08);
+  border-color: rgba(160, 120, 45, 0.26);
+  color: #7a5412;
+}
+
+:root[data-theme="light"] .contact-sigil-glyph,
+html.light-theme .contact-sigil-glyph {
+  color: #6d4b0d;
+}
+
 /* Cards: Header Copy Panel & Form Shell */
 .contact-copy,
 .contact-form-shell {
@@ -119,7 +131,6 @@
 }
 
 .contact-copy h2 {
-  font-family: var(--font-main, sans-serif);
   font-size: clamp(1.8rem, 3.2vw, 2.35rem);
   font-weight: 700;
   letter-spacing: -0.02em;

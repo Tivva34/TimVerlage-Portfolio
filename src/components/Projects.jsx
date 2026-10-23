@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { navigateTo, BASE_PATH } from "../App.jsx";
+import MysticLabel from "./MysticLabel.jsx";
 import {
   defaultImage,
   featuredProjects,
@@ -21,6 +22,24 @@ const truncate = (str, n) =>
 
 const hasLiveDemo = (project) =>
   Boolean(project.liveUrl || repoDemos[project.name] || project.homepage);
+
+const toRoman = (num) => {
+  const romanMap = [
+    [10, "X"],
+    [9, "IX"],
+    [5, "V"],
+    [4, "IV"],
+    [1, "I"],
+  ];
+  let result = "";
+  for (const [val, letter] of romanMap) {
+    while (num >= val) {
+      result += letter;
+      num -= val;
+    }
+  }
+  return result;
+};
 
 const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDescription, getProjectTech }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -69,6 +88,8 @@ const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDesc
   }, [isHovered, images.length]);
 
   const projectTech = getProjectTech(repo);
+  const romanNum = toRoman(index + 1);
+  const arabicNum = index + 1;
 
   return (
     <motion.article
@@ -87,10 +108,15 @@ const ProjectCard = ({ repo, index, cardMotion, expandedDescriptions, toggleDesc
 
       {/* Editorial Roman Index Moniker */}
       <div className="project-card-header-bar">
-        <div className="project-sigil-badge">
-          <span className="project-sigil-glyph" aria-hidden="true">🝛</span>
-          <span className="project-sigil-tag">OPUS {String(index + 1).padStart(2, '0')}</span>
-        </div>
+        <MysticLabel
+          defaultText={`OPUS ${romanNum}`}
+          revealText={`PROJECT ${arabicNum}`}
+          glyph="🝛"
+          className="project-sigil-badge"
+          glyphClassName="project-sigil-glyph"
+          tagClassName="project-sigil-tag"
+          cardHovered={isHovered}
+        />
       </div>
 
       <figure className="project-image-viewport">
@@ -246,15 +272,17 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" aria-labelledby="projects-title">
-      <div className="projects-sigil-badge">
-        <span className="projects-sigil-glyph" aria-hidden="true">🝛</span>
-        <span className="projects-sigil-tag">OPERA · PORTFOLIO</span>
-      </div>
+    <section id="projects" aria-label="Projects">
+      <MysticLabel
+        defaultText="OPERA · PORTFOLIO"
+        revealText="WORK · PROJECTS"
+        glyph="🝛"
+        className="projects-sigil-badge"
+        glyphClassName="projects-sigil-glyph"
+        tagClassName="projects-sigil-tag"
+      />
 
-      <motion.h2 id="projects-title" {...headingMotion}>
-        Projects
-      </motion.h2>
+
 
       <div className="projects-tabs" role="tablist" aria-label="Project categories">
         {projectTabs.map((tab) => (

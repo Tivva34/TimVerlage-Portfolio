@@ -176,7 +176,7 @@ export default function Hero() {
   const rotationDuration = shouldReduceMotion ? 0.3 : (isMobileViewport ? 1.4 : 2.2);
 
   return (
-    <header id="home" className={`hero-cozy-forest ${isDark ? 'dark' : 'light'}`} ref={heroRef}>
+    <header id="home" className={`home-hero ${isDark ? 'dark' : 'light'}`} ref={heroRef}>
       {/* ============================================================ */}
       {/* LAYER 1: FULL-SCREEN SKY BACKGROUND (Rotating Sky Dome)       */}
       {/* Continuous 360-degree celestial rotation adapted from GemAI  */}
@@ -293,14 +293,6 @@ export default function Hero() {
           loading="eager"
           decoding="async"
         />
-
-        {/* Dual monitor screen luminescence & soft desk reflection */}
-        <div className={`cabin-monitor-glow-wrap ${isDark ? 'dark' : 'light'}`} aria-hidden="true">
-          <div className="monitor-screen-luminescence monitor-screen-left" />
-          <div className="monitor-screen-luminescence monitor-screen-right" />
-          <div className="monitor-desk-pool" />
-          <div className="monitor-ambient-spill" />
-        </div>
       </div>
 
       {/* ============================================================ */}
@@ -314,7 +306,7 @@ export default function Hero() {
       {/* HERO CONTENT & TYPOGRAPHY                                    */}
       {/* Balanced text placement with subtle dark gradient backing    */}
       {/* ============================================================ */}
-      <div className={`forest-content-container ${hideHeroContent ? 'hero-card-debug-hidden' : ''}`} ref={contentLayerRef}>
+      <div className={`Hero-content-Container ${hideHeroContent ? 'hero-card-debug-hidden' : ''}`} ref={contentLayerRef}>
         {/* Backdrop card scrim to guarantee flawless readability */}
         <div className="content-scrim-veil" aria-hidden="true" />
 

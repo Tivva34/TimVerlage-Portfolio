@@ -1,17 +1,16 @@
 import { useMemo } from "react";
 import { useReducedMotion } from "framer-motion";
+import MysticLabel from "./MysticLabel.jsx";
 import { skillGroups } from "../data/skills.js";
 import "../styles/Skills.css";
 
 function ToolChip({ tool }) {
-  const badgeLabel = tool.level || (tool.isLearning ? "Learning" : null);
-
   return (
     <div
       className="tool-chip"
       tabIndex={0}
       role="group"
-      aria-label={`${tool.name}${tool.level ? ` (${tool.level})` : tool.isLearning ? " (Currently Learning)" : ""}`}
+      aria-label={tool.name}
     >
       <div className="tool-chip-icon">
         <img
@@ -23,19 +22,7 @@ function ToolChip({ tool }) {
           decoding="async"
         />
       </div>
-      <div className="tool-chip-content">
-        <span className="tool-chip-name">{tool.name}</span>
-        {badgeLabel && (
-          <span
-            className={`tool-chip-badge ${tool.level
-                ? `badge-${tool.level.toLowerCase()}`
-                : "badge-learning"
-              }`}
-          >
-            {badgeLabel}
-          </span>
-        )}
-      </div>
+      <span className="tool-chip-name">{tool.name}</span>
     </div>
   );
 }
@@ -49,7 +36,6 @@ export default function Skills() {
       group.skills.map((skill) => ({
         ...skill,
         category: group.title,
-        isLearning: group.title === "Currently Learning",
       }))
     );
   }, []);
@@ -62,10 +48,14 @@ export default function Skills() {
     <section id="skills" className="skills-section">
       {/* Brand Header Hub featuring the official V3.webp logo with celestial framing */}
       <div className="skills-header-hub">
-        <div className="skills-sigil-badge">
-          <span className="skills-sigil-glyph" aria-hidden="true">🜁</span>
-          <span className="skills-sigil-tag">INDEX · ARSENAL</span>
-        </div>
+        <MysticLabel
+          defaultText="INDEX · ARSENAL"
+          revealText="SKILLS · TOOLKIT"
+          glyph="🜁"
+          className="skills-sigil-badge"
+          glyphClassName="skills-sigil-glyph"
+          tagClassName="skills-sigil-tag"
+        />
 
         <div className="skills-brand-badge-container">
           <div className="skills-celestial-orbit orbit-outer" aria-hidden="true" />
@@ -86,7 +76,7 @@ export default function Skills() {
 
         <h2 className="skills-title">Technical Skills &amp; Tools</h2>
         <p className="skills-subtitle">
-          A continuous showcase of core languages, modern frontend &amp; backend frameworks, developer tooling, and emerging technologies.
+          A growing collection of the languages, frameworks, platforms, and tools I use to build, experiment, and bring ideas to life.
         </p>
       </div>
 
