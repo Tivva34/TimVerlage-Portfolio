@@ -1,58 +1,520 @@
-.navbar {
+/* ==========================================================================
+   Site Header & Navigation Architecture
+   Modern, responsive floating header with frosted glass, brand anchor,
+   desktop navigation pill, animated theme toggle, and mobile menu drawer.
+   ========================================================================== */
+
+.site-header {
   position: fixed;
-  top: 1rem;
-  left: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
+  padding: 1.25rem 2rem;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    padding 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-  transform: translateX(-50%);
-
-  padding: 0.75rem 1.5rem;
-
-  background: var(--bg-nav);;
-  backdrop-filter: blur(10px);
-
-  border: var(--border-card-strong);
-  border-radius: var(--radius-pill);
-
+.site-header.scrolled {
+  padding: 0.75rem 2rem;
+  background: var(--bg-nav);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-nav);
   box-shadow: var(--shadow-nav);
 }
 
-.navbar-list {
+.header-inner {
+  max-width: 1240px;
+  margin: 0 auto;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 1.5rem;
+}
+
+/* ==========================================================================
+   Brand Logo & Monogram
+   ========================================================================== */
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.header-brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-logo-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #090d16;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  flex-shrink: 0;
+  display: block;
+}
+
+:root[data-theme="light"] .brand-logo-img,
+html.light-theme .brand-logo-img {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.header-brand:hover .brand-logo-img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  border-color: rgba(216, 180, 254, 0.4);
+}
+
+.brand-monogram {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-cyan) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.brand-name {
+  font-family: var(--font-serif, "Cormorant Garamond", "Canela", "Cinzel", "Playfair Display", "Georgia", "Baskerville", serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+  transition: color 0.25s ease;
+}
+
+.header-brand:hover .brand-name,
+.header-brand:focus-visible .brand-name {
+  color: #d4af37;
+}
+
+:root[data-theme="light"] .brand-name,
+html.light-theme .brand-name {
+  color: #987438;
+}
+
+:root[data-theme="light"] .header-brand:hover .brand-name,
+:root[data-theme="light"] .header-brand:focus-visible .brand-name,
+html.light-theme .header-brand:hover .brand-name,
+html.light-theme .header-brand:focus-visible .brand-name {
+  color: #5c3c06;
+}
+
+/* ==========================================================================
+   Desktop Navigation Links Pill
+   ========================================================================== */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
   list-style: none;
+  padding: 0.3rem 0.45rem;
+  border-radius: var(--radius-pill);
+  background: var(--bg-nav-pill);
+  border: 1px solid var(--border-nav-pill);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-nav-pill);
 }
 
-.navbar a {
+.nav-link {
   position: relative;
-
-  color: var(--color-nav-link);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.05rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
   font-weight: 500;
+  color: var(--color-nav-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  z-index: 1;
 }
 
-.navbar a::after {
-  content: "";
+.nav-link:hover {
+  color: var(--color-text);
+}
+
+.nav-link.active {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.nav-active-indicator {
   position: absolute;
-  left: 0;
-  bottom: -3px;
+  inset: 0;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(180, 140, 45, 0.16) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  z-index: -1;
+}
 
+/* ==========================================================================
+   Header Controls (Theme Toggle, Contact CTA, Mobile Toggle)
+   ========================================================================== */
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Theme Toggle Button */
+.header-theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-card-strong);
+  background: var(--bg-nav-pill);
+  color: var(--color-accent-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.header-theme-toggle:hover {
+  transform: scale(1.08) rotate(12deg);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.35);
+}
+
+.theme-icon-wrap {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-icon {
   width: 100%;
+  height: 100%;
+}
+
+.sun-icon {
+  color: #fbbf24;
+  filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.6));
+}
+
+.moon-icon {
+  color: var(--color-accent);
+  filter: drop-shadow(0 0 4px rgba(124, 58, 237, 0.4));
+}
+
+/* Quick Contact CTA Button - Alchemical Edition */
+.header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(180, 140, 45, 0.16) 100%);
+  color: #f8fafc;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-cta-btn:hover,
+.header-cta-btn:focus-visible {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.38) 0%, rgba(180, 140, 45, 0.28) 100%);
+  border-color: #d4af37;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.32);
+  color: #ffffff;
+  outline: none;
+}
+
+.header-cta-btn:active {
+  transform: translateY(0);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.46) 0%, rgba(180, 140, 45, 0.36) 100%);
+}
+
+.header-cta-btn:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.65);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Mobile Menu Button & Hamburger Animation
+   ========================================================================== */
+
+.mobile-menu-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border-card-strong);
+  background: var(--bg-nav-pill);
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.mobile-menu-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.hamburger-line {
+  display: block;
+  width: 20px;
   height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
 
-  background-color: var(--color-accent);
+/* Morph to 'X' when open */
+.mobile-menu-btn.open .line-1 {
+  transform: translateY(7px) rotate(45deg);
+}
 
+.mobile-menu-btn.open .line-2 {
+  opacity: 0;
   transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color:  var(--color-accent);
+.mobile-menu-btn.open .line-3 {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-.navbar a:hover::after,
-.navbar a.active::after {
-  transform: scaleX(1);
-  transform-origin: left;
+/* ==========================================================================
+   Mobile Navigation Drawer
+   ========================================================================== */
+
+.mobile-nav-drawer {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 1rem;
+  right: 1rem;
+  border-radius: 1.25rem;
+  background: var(--bg-surface-elevated);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-card-strong);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 24px rgba(124, 58, 237, 0.15);
+  padding: 1.25rem;
+  z-index: 1001;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.15rem;
+  border-radius: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-height: 48px;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background: var(--bg-nav-active);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.mobile-active-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 10px var(--color-accent);
+}
+
+.mobile-nav-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-card-light);
+}
+
+.mobile-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(180, 140, 45, 0.16) 100%);
+  color: #f8fafc;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  min-height: 48px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-cta-btn:hover,
+.mobile-cta-btn:focus-visible {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.38) 0%, rgba(180, 140, 45, 0.28) 100%);
+  border-color: #d4af37;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.32);
+  outline: none;
+}
+
+.mobile-cta-btn:active {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.46) 0%, rgba(180, 140, 45, 0.36) 100%);
+}
+
+.mobile-cta-btn:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.65);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Header CTA Button: Light Mode Theme Adaptation
+   ========================================================================== */
+
+:root[data-theme="light"] .header-cta-btn,
+html.light-theme .header-cta-btn,
+:root[data-theme="light"] .mobile-cta-btn,
+html.light-theme .mobile-cta-btn {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 245, 238, 0.95) 100%);
+  border-color: rgba(160, 120, 45, 0.45);
+  color: #1a1612;
+  box-shadow: 0 2px 10px rgba(90, 70, 30, 0.08);
+}
+
+:root[data-theme="light"] .header-cta-btn:hover,
+:root[data-theme="light"] .header-cta-btn:focus-visible,
+html.light-theme .header-cta-btn:hover,
+html.light-theme .header-cta-btn:focus-visible,
+:root[data-theme="light"] .mobile-cta-btn:hover,
+:root[data-theme="light"] .mobile-cta-btn:focus-visible,
+html.light-theme .mobile-cta-btn:hover,
+html.light-theme .mobile-cta-btn:focus-visible {
+  background: linear-gradient(135deg, rgba(244, 236, 218, 0.98) 0%, rgba(235, 222, 196, 0.95) 100%);
+  border-color: #7a5412;
+  color: #5c3c06;
+  box-shadow: 0 4px 16px rgba(90, 70, 30, 0.18);
+  outline: none;
+}
+
+:root[data-theme="light"] .header-cta-btn:active,
+html.light-theme .header-cta-btn:active,
+:root[data-theme="light"] .mobile-cta-btn:active,
+html.light-theme .mobile-cta-btn:active {
+  background: linear-gradient(135deg, rgba(235, 222, 196, 0.98) 0%, rgba(225, 208, 178, 0.95) 100%);
+  border-color: #5c3c06;
+}
+
+:root[data-theme="light"] .header-cta-btn:focus-visible,
+html.light-theme .header-cta-btn:focus-visible,
+:root[data-theme="light"] .mobile-cta-btn:focus-visible,
+html.light-theme .mobile-cta-btn:focus-visible {
+  outline: 2px solid rgba(122, 84, 18, 0.55);
+  outline-offset: 2px;
+}
+
+:root[data-theme="light"] .nav-active-indicator,
+html.light-theme .nav-active-indicator {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 245, 238, 0.95) 100%);
+  border-color: rgba(160, 120, 45, 0.45);
+  box-shadow: 0 2px 10px rgba(90, 70, 30, 0.08);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints for Header Navigation
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  .site-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .site-header.scrolled {
+    padding: 0.65rem 1.25rem;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .header-cta-btn {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name {
+    display: none;
+  }
+
+  .mobile-nav-drawer {
+    left: 0.75rem;
+    right: 0.75rem;
+  }
 }
