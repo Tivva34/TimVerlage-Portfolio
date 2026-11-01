@@ -409,8 +409,8 @@ export const featuredProjects = [
         }
       ]
     },
-    html_url: null,
-    liveUrl: "https://tivva34.github.io/JannesMaskin/",
+    html_url: "https://github.com/Tivva34/Jannes-Maskin-o-Smide",
+    liveUrl: "https://tivva34.github.io/Jannes-Maskin-o-Smide/",
     languages: ["JavaScript", "HTML", "CSS"],
     tech: ["React", "Supabase", "PostgreSQL", "PWA", "Service Worker", "Responsive Design"],
     screenshot: `${import.meta.env.BASE_URL}projects/JannesMaskinOSmide/Kundsida/1. Home - Hero - Section.png`,

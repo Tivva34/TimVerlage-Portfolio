@@ -516,11 +516,18 @@ export default function ProjectDetail(props) {
             })
           )}
 
-          {project.liveUrl && (
+          {(project.liveUrl || project.html_url) && (
             <div className="project-links">
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-outline project-btn">
-                Live Demo
-              </a>
+              {project.liveUrl && (
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-outline project-btn">
+                  Live Demo
+                </a>
+              )}
+              {project.html_url && (
+                <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="btn-outline project-btn">
+                  GitHub Repository
+                </a>
+              )}
             </div>
           )}
         </div>
